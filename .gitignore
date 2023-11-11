@@ -13,5 +13,4 @@ Scripts
 Lib
 *.cfg
 .gitignore
-Procfile
-requirements.txt
+
