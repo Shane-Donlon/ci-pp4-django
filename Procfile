@@ -1,0 +1,1 @@
+web: sh -c 'cd swarms/ && gunicorn swarms.wsgi:application'
