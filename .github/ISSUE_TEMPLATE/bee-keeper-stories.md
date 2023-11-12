@@ -10,7 +10,7 @@ assignees: Shane-Donlon
 Epic: #epicNumberHere
 
 Card:
-As a User I want to <CAPABILITY> so that <BENEFIT>
+As a Bee-Keeper I want to <CAPABILITY> so that <BENEFIT>
 
 
 Conversation:
