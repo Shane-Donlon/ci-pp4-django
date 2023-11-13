@@ -1,3 +1,33 @@
-h1 {
-  color: red;
+.nav-wrapper {
+  display: flex;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+.nav-ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.beekeeper-expanding {
+  display: grid;
+  cursor: pointer;
+}
+
+.beekeeper-ul {
+  transform: scaleY(0);
+  overflow: hidden;
+  transition: 500ms ease;
+  transform-origin: top;
+  padding: 0;
+}
+
+.opened {
+  transform: scaleY(1);
+  overflow: hidden;
+  transition: 500ms ease;
 }
