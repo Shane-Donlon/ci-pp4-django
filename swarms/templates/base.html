@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,7 +9,17 @@
         <meta name="keywords"
               content="bee removal ireland,bee swarm removal,Rehoming bees,bee removal,bee nest removal,bee nest removal near me,bee movers near me, Swarm of bees,  how to get rid of bees in chimney,how to get rid of bees in roof, bee rescue removal,honeybee ireland, how to get rid of bees nest in roof tiles, bee collection service, bee home,how to get rid of bees in roof space, bee collector,Local beekeeper, swarm.ie, swarms ie" />
         <meta name="author" content="Swarms.ie" />
-        <title>Swarms.ie | Honeybee swarm removals</title>
+        <link rel="stylesheet" href="{% static "base.css" %}">
+        {% block cssfiles %}
+        {% endblock cssfiles %}
+        <title>Swarms.ie | Honeybee Swarm Removals</title>
     </head>
-    <body></body>
+    <body>
+        <h1>This should be red</h1>
+        {% block content %}
+        {% endblock content %}
+        <script src="{% static "base.js" %}"></script>
+        {% block jsfiles %}
+        {% endblock jsfiles %}
+    </body>
 </html>
