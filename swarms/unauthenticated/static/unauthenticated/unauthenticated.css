@@ -1,3 +1,25 @@
-h2 {
-  color: aqua;
+.intro h1 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.intro h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.intro a {
+  text-decoration: none;
+  padding: 1.5rem 3rem;
+  background-color: #f89510;
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border-radius: 100vmax;
+  box-shadow: 2px 5px 15px 0px rgba(0, 0, 0, 0.55);
+}
+
+.findKeeper {
+  display: block;
 }
