@@ -12,14 +12,19 @@
 .intro a {
   text-decoration: none;
   padding: 1.5rem 3rem;
-  background-color: #f89510;
+  background-color: #ea9d34;
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: clamp(1.125rem, 1.4047rem + -1.3983vw, 0.09375rem);
   text-transform: uppercase;
   border-radius: 100vmax;
-  box-shadow: 2px 5px 15px 0px rgba(0, 0, 0, 0.55);
+  box-shadow: 10px 10px 12px 1px rgba(0, 0, 0, 0.19);
 }
 
 .findKeeper {
   display: block;
+}
+
+.img-Honeybee {
+  max-height: 500px;
+  max-width: 500px;
 }
