@@ -32,6 +32,20 @@
   text-align: center;
 }
 
+.data-section {
+  padding-block: 3em;
+  position: relative;
+}
+
+.data-section::after {
+  content: "";
+  position: absolute;
+  isolation: isolate;
+  inset: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .data-section h2 {
   font-size: clamp(1.75rem, 0.7521rem + 1.8644vw, 2.5rem);
   font-weight: 600;
