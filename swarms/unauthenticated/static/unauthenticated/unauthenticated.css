@@ -33,7 +33,7 @@
 }
 
 .data-section h2 {
-  font-size: clamp(1.5rem, 0.7521rem + 1.8644vw, 2.5rem);
+  font-size: clamp(1.75rem, 0.7521rem + 1.8644vw, 2.5rem);
   font-weight: 600;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .data-section .card {
-  padding: 1em 1em;
+  padding: 1em 2em;
   background-color: rgba(0, 0, 0, 0.59);
   border-radius: 5px;
   color: #ea9d34;
