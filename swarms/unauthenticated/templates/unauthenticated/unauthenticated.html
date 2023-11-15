@@ -5,11 +5,18 @@
 {% endblock cssfiles %}
 {% block content %}
     <section class="intro">
-        <h1>Ireland’s Honeybee Rescue Network</h1>
-        <h2>
-            Found a swarm? <span class="findKeeper">We will find you a keeper</span>
-        </h2>
-        <a href="#">Report a swarm</a>
+        <div class="content-wrapper grid-intro">
+            <div class="col1">
+                <h1>Ireland’s Honeybee Rescue Network</h1>
+                <h2>
+                    Found a swarm? <span class="findKeeper">We will find you a keeper</span>
+                </h2>
+                <a href="#">Report a swarm</a>
+            </div>
+            <div class="col2">
+                <img src="{% static "unauthenticated/images/honey_bee.png" %}" alt="" class="img-Honeybee">
+            </div>
+        </div>
     </section>
 {% endblock content %}
 {% block jsfiles %}
