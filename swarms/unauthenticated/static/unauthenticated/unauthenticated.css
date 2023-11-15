@@ -1,12 +1,12 @@
 .intro h1 {
-  font-size: 1rem;
+  font-size: clamp(1rem, 0.8644rem + 0.678vw, 1.5rem);
   font-weight: 800;
   margin-bottom: 0.5em;
   color: #ea9d34;
 }
 
 .intro h2 {
-  font-size: 1.5rem;
+  font-size: clamp(1.125rem, 0.7521rem + 1.8644vw, 2.5rem);
   font-weight: 600;
   margin-bottom: 2rem;
   color: #ea9d34;
@@ -15,6 +15,7 @@
 .intro a {
   text-decoration: none;
   padding: 1.5rem 3rem;
+  font-weight: 700;
   background-color: #ea9d34;
   color: #ffffff;
   font-size: clamp(1.125rem, 1.4047rem + -1.3983vw, 0.09375rem);
@@ -27,45 +28,28 @@
   display: block;
 }
 
-.img-Honeybee {
-  height: 320px;
-  width: 400px;
-  position: relative;
-}
-
-.grid-intro {
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-}
-
 .col1 {
   text-align: center;
 }
 
-@media (max-width: 600px) {
-  /* Desktop first design due to position absolute */
+@media (max-width: 601px) {
+}
+
+@media (min-width: 600px) {
   .grid-intro {
-    position: relative;
-    isolation: isolate;
-    padding-block: 3rem;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
   }
 
-  .col2 {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-  }
-
-  .intro {
+  .img-Honeybee {
+    height: 750px;
+    width: 550px;
     position: relative;
-    padding-block: 1.5rem;
   }
-  .intro::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+}
+
+::selection {
+  background-color: #ea9d34;
+  color: white;
 }
