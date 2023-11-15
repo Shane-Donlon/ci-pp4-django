@@ -32,6 +32,49 @@
   text-align: center;
 }
 
+.data-section h2 {
+  font-size: clamp(1.5rem, 0.7521rem + 1.8644vw, 2.5rem);
+  font-weight: 600;
+}
+
+.data-section h3 {
+  font-size: clamp(1.25rem, 0.8644rem + 0.678vw, 3rem);
+  font-weight: 600;
+}
+
+.data-section .card {
+  padding: 1em 1em;
+  background-color: rgba(0, 0, 0, 0.59);
+  border-radius: 5px;
+  color: #ea9d34;
+}
+
+.card {
+  text-align: center;
+}
+
+.data-section .grid-data-section {
+  display: grid;
+
+  gap: 1rem;
+}
+
+.grid-data-section-col2 {
+  display: grid;
+  gap: 1rem;
+}
+
+.data-section span {
+  display: block;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.grid-wrapper {
+  width: min(100% - 1rem, 1000px);
+  margin-inline: auto;
+}
+
 @media (max-width: 601px) {
 }
 
@@ -41,11 +84,24 @@
     grid-auto-flow: column;
     align-items: center;
   }
-
+  .grid-data-section-col2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    grid-template-rows: 1fr 1fr;
+  }
   .img-Honeybee {
     height: 750px;
     width: 550px;
     position: relative;
+  }
+
+  .grid-data-section {
+    grid-template-columns: 0.5fr 0.5fr;
+    align-items: start;
+  }
+  .bees-saved {
+    grid-column: 1/-1;
   }
 }
 
