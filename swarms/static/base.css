@@ -52,3 +52,24 @@ h6 {
   width: min(100% - 3rem, 1500px);
   margin-inline: auto;
 }
+
+footer {
+  background-color: #3b3838;
+  color: #ea9d34;
+  display: grid;
+  align-items: center;
+  grid-template-columns: min-content 1fr;
+  padding: 1.5em 2.5em;
+}
+
+.footer-content {
+  justify-self: center;
+}
+
+footer .footer-h2 {
+  font-size: clamp(2.5rem, 2.3644rem + 0.678vw, 3rem);
+}
+
+footer :not(.footer-h2) {
+  text-align: center;
+}
