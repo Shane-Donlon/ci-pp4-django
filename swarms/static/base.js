@@ -5,3 +5,6 @@ beekeeperMenu.addEventListener("click", (e) => {
   beekeeperUL.classList.toggle("opened");
   console.log(e);
 });
+
+document.querySelector(".copyright-year").textContent =
+  new Date().getFullYear();
