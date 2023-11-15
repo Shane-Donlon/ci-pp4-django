@@ -105,7 +105,7 @@
 .img-div {
   grid-row: 1 / -1;
   grid-column: 1 / -1;
-  background-color: red;
+  background-color: #3b3838;
 }
 .img-div > img {
   height: 100%;
