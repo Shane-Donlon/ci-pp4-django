@@ -89,6 +89,33 @@
   margin-inline: auto;
 }
 
+.about-us-grid {
+  margin-block: 2em;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.about-us-card {
+  background-color: #3b3838;
+  color: white;
+  padding: 2em 1em;
+}
+
+.img-div {
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+  background-color: red;
+}
+.img-div > img {
+  height: 100%;
+  width: 100%;
+}
+.about-us-text-wrapper {
+  grid-row: 2 / -1;
+  grid-column: 2 / -1;
+}
+
 @media (max-width: 601px) {
 }
 
@@ -116,6 +143,22 @@
   }
   .bees-saved {
     grid-column: 1/-1;
+  }
+
+  .img-div {
+    grid-row: 1 / -1;
+    grid-column: 1 / 6;
+    background-color: red;
+  }
+
+  .about-us-grid {
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 80px);
+  }
+
+  .about-us-text-wrapper {
+    grid-row: 5 / 9;
+    grid-column: 4 / -1;
   }
 }
 
