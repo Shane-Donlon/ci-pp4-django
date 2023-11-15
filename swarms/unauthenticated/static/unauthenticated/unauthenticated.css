@@ -1,12 +1,15 @@
 .intro h1 {
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 800;
+  margin-bottom: 0.5em;
+  color: #ea9d34;
 }
 
 .intro h2 {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 2rem;
+  color: #ea9d34;
 }
 
 .intro a {
@@ -25,6 +28,44 @@
 }
 
 .img-Honeybee {
-  max-height: 500px;
-  max-width: 500px;
+  height: 320px;
+  width: 400px;
+  position: relative;
+}
+
+.grid-intro {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+.col1 {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  /* Desktop first design due to position absolute */
+  .grid-intro {
+    position: relative;
+    isolation: isolate;
+    padding-block: 3rem;
+  }
+
+  .col2 {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  .intro {
+    position: relative;
+    padding-block: 1.5rem;
+  }
+  .intro::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 }
