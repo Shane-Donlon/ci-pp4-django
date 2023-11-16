@@ -143,6 +143,39 @@
   z-index: -2;
 }
 
+.btn-wrapper {
+  margin-top: 2em;
+  margin-inline: auto;
+  width: max-content;
+}
+
+.learn-more-btn {
+  text-decoration: none;
+  background-color: #ea9d34;
+  color: #ffffff;
+  padding: 1em 3em;
+  border-radius: 100vmax;
+  font-size: 1.125rem;
+  text-transform: capitalize;
+  font-weight: 800;
+}
+
+.beekeeper-text > h3,
+.about-us-h2 {
+  font-size: 3rem;
+  color: #ea9d34;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+.beekeeper-text > h3 {
+  margin-left: 0.65em;
+}
+
+.beekeeper-p {
+  margin-bottom: 1em;
+  margin-inline: 1.5em;
+  font-size: 1.25rem;
+}
 @media (max-width: 601px) {
 }
 
