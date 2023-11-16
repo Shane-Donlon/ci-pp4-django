@@ -1,4 +1,50 @@
 {% extends "base.html" %}
+{% load static %}
+{% block cssfiles %}
+    <link rel="stylesheet" href="{% static "unauthenticated/unauthenticated.css" %}">
+{% endblock cssfiles %}
 {% block content %}
-    This is the about us page
+    <section class="about-intro about-us-page-grid">
+        <div class="about-us-page-text-wrapper">
+            <div class="about-us-page">
+                <h2 class="about-us-h2">About Us</h2>
+            </div>
+            <p class="about-us-page-p">
+                Swarms.ie began life in 2018 when Steve realized it was fairly difficult to get timely help if you are a member of the public, just minding your own business, until bees decide to enter your life uninvited some fine summers day
+            </p>
+            <p class="about-us-page-p">
+                Back in 2018, Ireland had around 75 regional beekeeping groups, with club names that made it hard to determine one that could be helpful in this location or that. Who do you call for bees?
+            </p>
+            <p class="about-us-page-p">
+                Unless you know a beekeeper, its can be a bit of a nightmare. It can be even worse in a town or city.
+            </p>
+            <p class="about-us-page-p">
+                Having worked in various technical support roles for a number of years with Pfizer and Hewlett Packard’s incident teams
+            </p>
+            <p class="about-us-page-p">
+                Steve was already plenty experienced to translate the corporate structure of inter-departmental support teams (yeah it was fairly dull), and apply it to beekeeping (far less dull!) :D. 
+            </p>
+        </div>
+        <div class="about-us-page-img-wrapper">
+            <img src="{% static "unauthenticated/images/swarms4.jpg" %}" alt="">
+        </div>
+    </section>
+    <section class="about-us-page-outro about-us-page-outro-grid">
+        <div class="about-us-outro-img-wrapper">
+            <img src="{% static "unauthenticated/images/swarms4.jpg" %}" alt="">
+        </div>
+        <div class="outro-grid-text-wrapper">
+            <p class="about-us-page-outro-p">
+                Some of the loveliest people I’ve ever chatted to have been across the airwaves of Ireland, beekeepers who have answered the phone to an unknown number, received a spiel, but then no matter, within a minute or two and with a smile these people sling their gear in the car then greet the apprehensive homeowner with a coolness as gentle as their smoke.
+            </p>
+            <p class="about-us-page-outro-p">
+                Before the kettle is cold, the bees are nicely tucked up in a nuc, the kids have seen a biology lesson and all is right in the world. It can be fairly challenging running swarms.ie on the busy days, but it genuinely is very rewarding when it all works out for everyone.
+            </p>
+            <p class="about-us-page-outro-p">
+                <span class="new-line">Thanks for reading</span>
+                <span class="new-line">Abigail & Steve</span>
+                <span class="new-line">Swarms.ie</span>
+            </p>
+        </div>
+    </section>
 {% endblock content %}
