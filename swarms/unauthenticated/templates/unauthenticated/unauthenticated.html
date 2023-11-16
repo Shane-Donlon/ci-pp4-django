@@ -14,7 +14,7 @@
                 <a href="#">Report a swarm</a>
             </div>
             <div class="col2">
-                <img src="{% static "unauthenticated/images/honey_bee.png" %}" alt="Illustration of Honeybee" class="img-Honeybee">
+                <img src="{% static "unauthenticated/images/honey_bee.png" %}" alt="Illustration of Honeybee" class="img-Honeybee img">
             </div>
         </div>
     </section>
@@ -50,21 +50,38 @@
             </div>
         </div>
     </section>
-    <div class="content-wrapper">
-        <section class="about-us-section about-us-grid">
-            <div class="img-div">
-                <img src="{% static "unauthenticated/images/swarms1.jpg" %}" alt="Beekeeper moving Honeybees">
+    <section class="about-us-section about-us-grid">
+        <div class="img-div">
+            <img src="{% static "unauthenticated/images/swarms1.jpg" %}" alt="Beekeeper moving Honeybees">
+        </div>
+        <div class="about-us-text-wrapper">
+            <div class="about-us-card">
+                <h2 class="about-us-h2">About us</h2>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae rerum id necessitatibus omnis ipsum dignissimos accusantium distinctio, quaerat quasi nulla nihil quos natus exercitationem iste inventore dolore fugit officiis quisquam fugiat, culpa in quo maiores. Amet necessitatibus ipsam sed impedit ratione rerum placeat vero est, corporis debitis minima quam soluta inventore enim delectus dolore corrupti earum veniam. At in necessitatibus, modi maiores itaque nulla magnam distinctio reprehenderit beatae quidem asperiores sed iusto vel dolores odit totam odio placeat nihil laborum vitae temporibus non tempore! Consequuntur iste, aspernatur modi ipsum eaque minus et culpa, illum, laboriosam non assumenda! Possimus, delectus iure.
+                </p>
             </div>
-            <div class="about-us-text-wrapper">
-                <div class="about-us-card">
-                    <h2 class="about-us-h2">About us</h2>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae rerum id necessitatibus omnis ipsum dignissimos accusantium distinctio, quaerat quasi nulla nihil quos natus exercitationem iste inventore dolore fugit officiis quisquam fugiat, culpa in quo maiores. Amet necessitatibus ipsam sed impedit ratione rerum placeat vero est, corporis debitis minima quam soluta inventore enim delectus dolore corrupti earum veniam. At in necessitatibus, modi maiores itaque nulla magnam distinctio reprehenderit beatae quidem asperiores sed iusto vel dolores odit totam odio placeat nihil laborum vitae temporibus non tempore! Consequuntur iste, aspernatur modi ipsum eaque minus et culpa, illum, laboriosam non assumenda! Possimus, delectus iure.
-                    </p>
-                </div>
+        </div>
+    </section>
+    <section class="beekeeper-section beekeeper-grid ">
+        <div class="beekeeper-text-wrapper">
+            <div class="beekeeper-text beekeeper-card">
+                <h3>Beekeeper</h3>
+                <p class="beekeeper-p">
+                    Fine weather prompts the honeybee to swarm, to reproduce as a colony and go out into the world. This is a perfectly natural event, swarming bees mean us no harm.
+                </p>
+                <p class="beekeeper-p">
+                    As a precaution, keep children and animals away from the swarm and do not approach yourself as honeybees can get defensive. They are less likely to sting when swarming than at any other time, but they do not lose the ability to sting. Getting stung once can elicit numerous bees to defend by stinging the same target. Avoid the problem, give them space & respect.
+                </p>
+                <p class="beekeeper-p">
+                    Swarms can collect for short periods on nearly anything while scout bees search for a perfect new abode. Once a suitable location has been agreed up (bees are very democratic!), they all move en masse to the new location, the sight of a cloud of bees moving is something else!
+                </p>
             </div>
-        </section>
-    </div>
+        </div>
+        <div class="beekeeper-img-wrapper">
+            <img src="{% static "unauthenticated/images/swarms2.jpg" %}" alt="" class="img">
+        </div>
+    </section>
 {% endblock content %}
 {% block jsfiles %}
     <script src="{% static "unauthenticated/unauthenticated.js" %}"></script>
