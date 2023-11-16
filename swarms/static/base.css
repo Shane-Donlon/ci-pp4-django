@@ -15,9 +15,11 @@ h6 {
 
 .nav-wrapper {
   display: flex;
+  justify-content: space-around;
   gap: 2rem;
   flex-wrap: wrap;
   padding-top: 2rem;
+  background-size: contain;
 }
 
 .nav-ul {
