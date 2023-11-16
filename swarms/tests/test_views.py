@@ -1,6 +1,6 @@
 from django.test import SimpleTestCase, TestCase
 from django.urls import resolve, reverse
-from unauthenticated.views import testingView
+# from unauthenticated.views import testingView
 # Create your tests here.
 
 
@@ -14,3 +14,9 @@ class TestUrls(SimpleTestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(
             response, "unauthenticated/unauthenticated.html")
+
+    def test_about_url_resolves(self):
+        response = self.client.get(reverse("about"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response, "unauthenticated/about-us.html")
