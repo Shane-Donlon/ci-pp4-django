@@ -14,12 +14,21 @@ h6 {
 }
 
 .nav-wrapper {
+  position: sticky;
   display: flex;
-  justify-content: space-around;
   gap: 2rem;
   flex-wrap: wrap;
-  padding-top: 2rem;
-  background-size: contain;
+  padding-top: 3rem;
+  /* background-repeat: repeat-x;
+  background-position: bottom left;
+  background-size: contain; */
+}
+
+.bg-image {
+  position: absolute;
+  isolation: isolate;
+  z-index: -1;
+  inset: 0;
 }
 
 .nav-ul {
