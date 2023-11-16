@@ -130,6 +130,19 @@
   grid-column: 2 / -1;
 }
 
+.beekeeper-section {
+  position: relative;
+}
+
+.beekeeper-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  isolation: isolate;
+  background-color: #7f7f7f;
+  z-index: -2;
+}
+
 @media (max-width: 601px) {
 }
 
