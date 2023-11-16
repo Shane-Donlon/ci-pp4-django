@@ -19,15 +19,14 @@ header {
 }
 
 .nav-wrapper {
-  width: 100%;
   display: flex;
   gap: 4rem;
   flex-wrap: wrap;
-  padding-top: 3rem;
+  padding-top: 2rem;
   justify-content: center;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat;
   background-position: bottom left;
-  background-size: cover;
+  background-size: cover; */
 }
 
 .bg-image {
