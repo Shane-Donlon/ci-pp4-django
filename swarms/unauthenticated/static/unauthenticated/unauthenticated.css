@@ -1,3 +1,17 @@
+.intro,
+.data-section,
+.about-us-section,
+.beekeeper-section {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.data-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .intro h1 {
   font-size: clamp(1rem, 0.8644rem + 0.678vw, 1.5rem);
   font-weight: 800;
@@ -90,13 +104,13 @@
 }
 
 .about-us-grid {
-  margin-block: 2em;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(3, 1fr);
 }
 
-.about-us-card {
+.about-us-card,
+.beekeeper-card {
   background-color: #3b3838;
   color: white;
   padding: 2em 1em;
@@ -107,7 +121,7 @@
   grid-column: 1 / -1;
   background-color: #3b3838;
 }
-.img-div > img {
+.img-div > .img {
   height: 100%;
   width: 100%;
 }
@@ -147,18 +161,41 @@
 
   .img-div {
     grid-row: 1 / -1;
-    grid-column: 1 / 6;
-    background-color: red;
+    grid-column: 2 / 6;
+    background-color: #3b3838;
   }
 
   .about-us-grid {
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 80px);
+    grid-template-rows: repeat(10, 1fr);
   }
 
   .about-us-text-wrapper {
     grid-row: 5 / 9;
-    grid-column: 4 / -1;
+    grid-column: 4 / -3;
+  }
+
+  .beekeeper-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+
+  .beekeeper-text-wrapper {
+    grid-column: 2 / 8;
+    grid-row: 2 / -2;
+  }
+
+  .beekeeper-img-wrapper {
+    background-color: red;
+    grid-column: 7 / -2;
+    grid-row: 1 / -1;
+    position: relative;
+    z-index: -1;
+  }
+  .beekeeper-img-wrapper > .img {
+    height: 100%;
+    width: 100%;
   }
 }
 
