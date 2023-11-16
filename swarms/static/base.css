@@ -13,15 +13,21 @@ h6 {
   font-family: "Oswald", sans-serif;
 }
 
-.nav-wrapper {
+header {
   position: sticky;
+  top: 0;
+}
+
+.nav-wrapper {
+  width: 100%;
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
   flex-wrap: wrap;
   padding-top: 3rem;
-  /* background-repeat: repeat-x;
+  justify-content: center;
+  background-repeat: no-repeat;
   background-position: bottom left;
-  background-size: contain; */
+  background-size: cover;
 }
 
 .bg-image {
