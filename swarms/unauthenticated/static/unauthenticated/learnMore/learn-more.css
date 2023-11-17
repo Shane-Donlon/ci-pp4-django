@@ -1,0 +1,40 @@
+.short-page-body {
+  /* Why? page is short - this pushes footer to end */
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header-short-page"
+    "main-short-page"
+    "footer-short-page";
+}
+
+.honeyBeeH2 {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 2em;
+}
+
+.honeyBeeCardTextIntro {
+  margin-bottom: 1.5em;
+}
+.honeyBee-Card-img {
+  width: 320px;
+  margin-inline: auto;
+}
+
+.honeyBeeCardTextMain > p {
+  margin-block: 0.5em;
+}
+
+@media (min-width: 700px) {
+  .honey-bee-Card {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    align-items: center;
+    gap: 2em;
+  }
+}
