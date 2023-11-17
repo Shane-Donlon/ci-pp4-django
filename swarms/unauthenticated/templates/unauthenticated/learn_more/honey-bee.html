@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cssfiles %}
+    <link rel="stylesheet" href="{% static "unauthenticated/learnMore/learn-more.css" %}">
+{% endblock cssfiles %}
+{% block content %}
+    <div class="content-wrapper">
+        <main id="main">
+            <h2 class="honeyBeeH2">HoneyBees</h2>
+            <div class="honey-bee-Card">
+                <div class="honeyBee-Card-img">
+                    <img src="{% static "unauthenticated/images/learnMore/swarmHoneyBee.jpg" %}" alt="" class="honeyBeeImg">
+                </div>
+                <div class="honeyBee-Card-text">
+                    <div class="honeyBeeCardTextIntro">
+                        <h3 class="honeyBeeHeading">
+                            Specicies: <span class="honeyBeeSpan">apis mellifera</span>
+                        </h3>
+                        <h3 class="honeyBeeHeading">
+                            Can a beekeeper help me:  <span class="honeyBeeSpan">Yes and as soon as possible!</span>
+                        </h3>
+                        <h3 class="honeyBeeHeading">
+                            Should I contact an exterminator: <span class="honeyBeeSpan">No</span>
+                        </h3>
+                    </div>
+                    <div class="honeyBeeCardTextMain">
+                        <p>Observing a swarm of bees is a wonderous event, should you happen to see one, enjoy it.</p>
+                        <p>
+                            They are not looking to harm you so try not to panic, in fact, you’ve just witnessed honey bees reproducing. A swarm of bees are at their most vulnerable while like this, so allow them a wide berth. Honeybees are capable of stinging of course, and a single sting could result in many more occurring, the cluster calling to defend. A swarm could contain anywhere from five thousand to over fifty thousand bees so it is highly advised not to attempt to deal with this yourself, unless you are properly versed in what to do.
+                        </p>
+                        <p>
+                            If a swarm lands on an object like a bench, a pillar or a branch, it may be only resting briefly before moving on again. Scout bees will be exploring locally  looking for a new home to settle, they mostly favour dry cavities of a certain volume with a defendable entrance, the kind of cavity you might find in a tree. Other cavities, far less suitable perhaps from our perspective, can also win their favour. Cavities include chimney flues, inside walls, behind fascia & guttering and even places like car engine or wheel bays. It is prudent however to not approach a swarm and give it its deserved space, it is time to contact a local beekeeper.
+                        </p>
+                        <p>Honeybee venom can cause anaphylactic shock. Click here for HSE advice.</p>
+                        <p>
+                            Honeybees generally lose their barb when stinging, and die afterward. Their venom sac is attached to the barb and continues to administer venom detached from the main body. Scrap the barb out with your fingernail to prevent more venom from working its way into the bloodstream.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock content %}
+{% block jsfiles %}
+    <script src="{% static "unauthenticated/unauthenticated.js" %}"></script>
+{% endblock jsfiles %}
