@@ -42,21 +42,9 @@
   position: relative;
 }
 
-.svg-wrapper {
-  position: absolute;
-  isolation: isolate;
-  z-index: -1;
-  inset: 0;
-  height: 100%;
-}
-
+.svg-wrapper,
 .svg-wrapper-bottom {
-  position: absolute;
-  isolation: isolate;
-  z-index: -1;
-  top: 300vh;
-  left: 0;
-  right: 0;
+  display: none;
 }
 
 .findKeeper {
@@ -239,7 +227,8 @@
 }
 
 .faq-section {
-  margin-block: 3rem;
+  background-color: white;
+  margin-block: 10rem;
 }
 
 .faq-section > h2 {
@@ -424,6 +413,23 @@
     display: grid;
     gap: 4em;
     grid-template-columns: repeat(2, 1fr);
+  }
+  .svg-wrapper {
+    display: initial;
+    position: absolute;
+    isolation: isolate;
+    z-index: -1;
+    inset: 0;
+  }
+
+  .svg-wrapper-bottom {
+    display: initial;
+    position: absolute;
+    isolation: isolate;
+    z-index: -1;
+    top: 300vh;
+    left: 0;
+    right: 0;
   }
 }
 
