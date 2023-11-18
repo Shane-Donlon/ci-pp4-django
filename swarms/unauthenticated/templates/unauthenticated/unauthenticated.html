@@ -85,6 +85,20 @@
             <img src="{% static "unauthenticated/images/swarms2.jpg" %}" alt="" class="img">
         </div>
     </section>
+    <section class="faq-section content-wrapper">
+        <h2>
+            <abbr title="Frequently Asked Questions">FAQs</abbr>
+        </h2>
+        <h3>Please see below some of our Frequest Asked Questions</h3>
+        <div class="faq-grid">
+            {% for question in faq %}
+                <details class="faq-details">
+                    <div class="faq-content">{{ question.details }}</div>
+                    <summary class="faq-summary">{{ question.summary }}</summary>
+                </details>
+            {% endfor %}
+        </div>
+    </section>
 {% endblock content %}
 {% block jsfiles %}
     <script src="{% static "unauthenticated/unauthenticated.js" %}"></script>
