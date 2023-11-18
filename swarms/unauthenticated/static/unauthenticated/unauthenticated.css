@@ -215,11 +215,20 @@
   display: none;
 }
 
+.faq-section > h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.faq-section > h3 {
+  font-size: 1.5rem;
+}
+
 .faq-grid {
   margin-block: 2em;
   display: grid;
   gap: 4em;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .faq-summary {
@@ -227,7 +236,6 @@
   color: white;
   padding: 1.5em 2em;
   text-align: center;
-  border: 2px solid black;
 }
 
 @media (max-width: 601px) {
@@ -382,6 +390,13 @@
     z-index: -1;
     grid-row: 15 / -1;
     grid-column: 1 / 10;
+  }
+
+  .faq-grid {
+    margin-block: 2em;
+    display: grid;
+    gap: 4em;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
