@@ -20,13 +20,31 @@ header {
 
 .nav-wrapper {
   display: flex;
-  gap: 4rem;
   flex-wrap: wrap;
-  padding-top: 2rem;
-  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin-left: 1em;
+
   /* background-repeat: no-repeat;
   background-position: bottom left;
   background-size: cover; */
+}
+
+.branding-link {
+  height: 100px;
+  width: 100px;
+}
+.nav {
+  margin-inline: auto;
+  padding-top: 2em;
+  color: black;
+  font-weight: 600;
+}
+
+.nav a {
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .bg-image {
