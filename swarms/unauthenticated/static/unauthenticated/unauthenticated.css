@@ -196,8 +196,8 @@
   background-color: #7f7f7f;
 }
 
-.about-us-page-p,
-.about-us-page-outro-p {
+.about-us-page-p:nth-child(2),
+.about-us-page-outro-p:nth-child(2) {
   margin-block: 1em;
 }
 
