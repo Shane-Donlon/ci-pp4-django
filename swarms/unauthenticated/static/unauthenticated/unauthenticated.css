@@ -112,12 +112,6 @@
   margin-inline: auto;
 }
 
-.about-us-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-}
-
 .about-us-card,
 .beekeeper-card {
   background-color: #3b3838;
@@ -134,7 +128,6 @@
 .img-div {
   grid-row: 1 / -1;
   grid-column: 1 / -1;
-  background-color: #3b3838;
 }
 .img-div > .img {
   height: 100%;
@@ -286,10 +279,10 @@
   .img-div {
     grid-row: 1 / -1;
     grid-column: 2 / 6;
-    background-color: #3b3838;
   }
 
   .about-us-grid {
+    display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
   }
