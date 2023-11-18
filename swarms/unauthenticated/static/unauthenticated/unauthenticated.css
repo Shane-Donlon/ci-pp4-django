@@ -38,6 +38,27 @@
   box-shadow: 10px 10px 12px 1px rgba(0, 0, 0, 0.19);
 }
 
+.intro {
+  position: relative;
+}
+
+.svg-wrapper {
+  position: absolute;
+  isolation: isolate;
+  z-index: -1;
+  inset: 0;
+  height: 100%;
+}
+
+.svg-wrapper-bottom {
+  position: absolute;
+  isolation: isolate;
+  z-index: -1;
+  top: 300vh;
+  left: 0;
+  right: 0;
+}
+
 .findKeeper {
   display: block;
 }
