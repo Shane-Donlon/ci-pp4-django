@@ -33,14 +33,13 @@
                     <path class="cls-1" d="m1712.61.09h5.21c-1.78-.13-3.51-.12-5.21,0Z" />
                 </svg>
                 </div> {% endcomment %}
-                <a href={% url "home" %} class="branding-link">Company Logo here</a>
+                <a href={% url "home" %} class="branding-link">
+                    <img src="{% static "images/logo.png" %}" alt="">
+                </a>
                 <nav class="nav">
                     <ul class="nav-ul" role="list">
                         <li class="nav-li">
                             <a href="#" class="nav-link">Report a Swarm</a>
-                        </li>
-                        <li class="nav-li">
-                            <a href="#" class="nav-link"><abbr title="Frequntely Asked Questions">FAQs</abbr></a>
                         </li>
                         <li class="nav-li">
                             <a href="{% url "about" %}" class="nav-link">About</a>
