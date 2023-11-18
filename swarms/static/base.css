@@ -100,6 +100,10 @@ footer {
   justify-self: center;
 }
 
+footer a {
+  color: white;
+}
+
 footer .footer-h2 {
   font-size: clamp(2.5rem, 2.3644rem + 0.678vw, 3rem);
 }
