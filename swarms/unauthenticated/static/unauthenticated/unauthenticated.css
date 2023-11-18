@@ -201,12 +201,8 @@
   margin-block: 1em;
 }
 
-.about-us-page-outro-p {
-  margin-inline: 2em;
-}
-
 .about-us-page-grid-row {
-  background-color: #3b3838d1;
+  background-color: #3b3838;
   color: white;
   padding: 1em 1.125em;
 }
@@ -374,8 +370,8 @@
     grid-template-rows: repeat(20, 1fr);
   }
   .about-us-page-grid-row {
-    grid-row: 1 / -1;
-    grid-column: 3 / 15;
+    grid-row: 1 / -2;
+    grid-column: 3 / 14;
   }
 
   .about-us-page-img > img {
@@ -390,7 +386,7 @@
     position: absolute;
     isolation: isolate;
     z-index: -1;
-    grid-column: 11 / -2;
+    grid-column: 11 / -1;
     grid-row: 2 / 5;
   }
 
@@ -398,7 +394,7 @@
     position: absolute;
     isolation: isolate;
     z-index: -1;
-    grid-row: 15 / -1;
+    grid-row: 15 / -5;
     grid-column: 1 / 10;
   }
 
