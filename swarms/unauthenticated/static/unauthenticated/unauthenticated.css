@@ -116,6 +116,12 @@
   padding: 2em 1em;
 }
 
+.learn-more-about-us {
+  margin-top: 2em;
+  width: max-content;
+  margin-inline: auto;
+}
+
 .img-div {
   grid-row: 1 / -1;
   grid-column: 1 / -1;
@@ -213,6 +219,10 @@
 .img-grid-top-image {
   /* why? turns the images off on mobile, keeps viewport cleaner */
   display: none;
+}
+
+.faq-section {
+  margin-block: 3rem;
 }
 
 .faq-section > h2 {
