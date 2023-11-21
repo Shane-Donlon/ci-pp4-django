@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django.contrib.staticfiles',
     'unauthenticated',
-    "auth",
+    "sign_in_sign_out",
 ]
 
 SITE_ID = 1
@@ -63,7 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-        "allauth.account.middleware.AccountMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'swarms.urls'
