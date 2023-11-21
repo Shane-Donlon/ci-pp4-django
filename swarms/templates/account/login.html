@@ -3,30 +3,33 @@
 {% load i18n %}
 {% load allauth account socialaccount %}
 {% block head_title %}
-    {% trans "Sign In" %}
+    {% trans "Swarms | Sign In" %}
 {% endblock head_title %}
 {% block cssfiles %}
+    <link rel="stylesheet" href="{% static "base.css" %}">
     <link rel="stylesheet" href="{% static "allauth/allauth.css" %}">
 {% endblock cssfiles %}
 {% block content %}
-    {% element h1 %}
-    {% trans "Sign In" %}
-{% endelement %}
-<p>
-    {% blocktrans %}If you have not created an account yet, then please
+    <div class="content-wrapper">
+        {% element h1 %}
+        {% trans "Sign In" %}
+    {% endelement %}
+    <p>
+        {% blocktrans %}If you have not created an account yet, then please
     <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
-</p>
-{% url 'account_login' as login_url %}
-{% element form form=form method="post" action=login_url tags="entrance,login" %}
-{% slot body %}
-{% csrf_token %}
-{% element fields form=form unlabeled=True %}
-{% endelement %}
-{% if redirect_field_value %}
-    <input type="hidden"
-           name="{{ redirect_field_name }}"
-           value="{{ redirect_field_value }}" />
-{% endif %}
+    </p>
+    {% url 'account_login' as login_url %}
+    <fieldset>
+        {% element form form=form method="post" action=login_url tags="entrance,login" %}
+        {% slot body %}
+        {% csrf_token %}
+        {% element fields form=form unlabeled=True %}
+    {% endelement %}
+    {% if redirect_field_value %}
+        <input type="hidden"
+               name="{{ redirect_field_name }}"
+               value="{{ redirect_field_value }}" />
+    {% endif %}
 {% endslot %}
 {% slot actions %}
 {% element button type="submit" tags="prominent,login" %}
@@ -34,7 +37,9 @@
 {% endelement %}
 {% endslot %}
 {% endelement %}
+</fieldset>
 {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+</div>
 {% endblock content %}
 {% block jsfiles %}
     <script src="{% static "allauth/allauth.js" %}"></script>
