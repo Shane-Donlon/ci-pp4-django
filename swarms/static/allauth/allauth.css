@@ -62,4 +62,12 @@ fieldset {
     width: max-content;
     margin-inline: auto;
   }
+
+  /* signup form */
+  form[action="/accounts/signup/"] > p {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+  }
 }
