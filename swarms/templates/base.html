@@ -18,7 +18,7 @@
     <body class="short-page-body">
         <header>
             <div class="nav-wrapper">
-                <a href={% url "home" %} class="branding-link">
+                <a href={% url "index" %} class="branding-link">
                     <img src="{% static "images/logo.png" %}" alt="">
                 </a>
                 <nav class="nav">
@@ -33,10 +33,10 @@
                             Beekeeper
                             <ul class="beekeeper-ul" role="list">
                                 <li class="beekeeper-li ">
-                                    <a href="#" class="beekeeper-link nav-link">Login</a>
+                                    <a href="{% url "account_login" %}" class="beekeeper-link nav-link">Login</a>
                                 </li>
                                 <li class="beekeeper-li">
-                                    <a href="#" class="beekeeper-link nav-link">Sign-up</a>
+                                    <a href="{% url "account_signup" %}" class="beekeeper-link nav-link">Sign-up</a>
                                 </li>
                             </ul>
                         </li>
