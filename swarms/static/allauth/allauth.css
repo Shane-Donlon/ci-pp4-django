@@ -57,20 +57,20 @@ fieldset {
   margin-block: 2em;
 }
 
-form[action="/accounts/login/"] > :nth-child(2),
-form[action="/accounts/login/"] > :nth-child(3) {
-  display: grid;
-  grid-template-columns: 0.5fr 1fr;
-}
-
-form[action="/accounts/login/"] .helptext {
-  grid-column: 1/-1;
-}
-
 @media (min-width: 700px) {
   fieldset {
     width: max-content;
     margin-inline: auto;
+  }
+
+  form[action="/accounts/login/"] > :nth-child(2),
+  form[action="/accounts/login/"] > :nth-child(3) {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+  }
+
+  form[action="/accounts/login/"] .helptext {
+    grid-column: 1/-1;
   }
 
   /* signup form */
