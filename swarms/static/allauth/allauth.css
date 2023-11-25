@@ -40,7 +40,7 @@ form input[type="checkbox"] {
   width: fit-content;
 }
 
-form button {
+form button[type="submit"] {
   font-size: 1.5rem;
   padding: 0.25em 1.5em;
   border-radius: 100vmax;
