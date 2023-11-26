@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("unauthenticated.urls")),
     path("accounts/", include("allauth.urls")),
+    path("report-a-swarm", include("ReportSwarm.urls")),
 ]

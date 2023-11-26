@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'unauthenticated',
     "sign_in_sign_out",
+    'ReportSwarm'
 ]
 
 SITE_ID = 1
