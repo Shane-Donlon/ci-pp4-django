@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ["ci-sd-pp4-swarms-ie-54c976de26c1.herokuapp.com", "127.0.0.1"]
 
 INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
+    'widget_tweaks',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     "sign_in_sign_out",
     'ReportSwarm'
 ]
+
 
 SITE_ID = 1
 # LOGIN_REDIRECT_URL = "index"
