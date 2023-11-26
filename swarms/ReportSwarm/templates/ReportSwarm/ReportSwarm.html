@@ -1,3 +1,38 @@
-<h1>This is the reporting page</h1>
-{{ form.first_name.label_tag }}
-{{ form.first_name }}
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block cssfiles %}
+    <link rel="stylesheet" href="{% static "ReportSwarm/ReportSwarm.css" %}">
+{% endblock cssfiles %}
+{% block content %}
+    <h1>this is the reporting page</h1>
+    <main id="#main">
+        <fieldset>
+            <form action="" autocomplete="on">
+                <div class="form-wrapper">
+                    <div class="personal-details">
+                        {% render_field form.first_name.label_tag %}
+                        {% render_field form.first_name autocomplete="given-name" %}
+                        {% render_field form.last_name.label_tag %}
+                        {% render_field form.last_name autocomplete="family-name" %}
+                        {% render_field form.email.label_tag %}
+                        {% render_field form.email autocomplete="email" %}
+                        {% render_field form.address1.label_tag %}
+                        {% render_field form.address1 autocomplete="address-line1" %}
+                        {% render_field form.address2.label_tag %}
+                        {% render_field form.address2 autocomplete="address-line2" %}
+                        {% render_field form.address3.label_tag %}
+                        {% render_field form.address3 autocomplete="address-line3" %}
+                        {% render_field form.county.label_tag %}
+                        {% render_field form.county list="countyNames" %}
+                        {% render_field form.eircode.label_tag %}
+                        {% render_field form.eircode autocomplete="postal-code" %}
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </main>
+    <datalist id="countyNames">
+        {% for county in counties %}<option value="{{ county }}"></option>{% endfor %}
+    </datalist>
+{% endblock content %}
