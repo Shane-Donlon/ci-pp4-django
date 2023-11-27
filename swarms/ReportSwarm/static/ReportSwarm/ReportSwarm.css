@@ -1,5 +1,5 @@
 :root {
-  --progress-empty: #e0e0e9;
+  --disabled: #e0e0e9;
 }
 
 fieldset,
@@ -17,19 +17,6 @@ fieldset,
   width: 350px;
   margin-bottom: 3em;
 }
-
-/* .progress::before {
-  content: "";
-  background-color: var(--progress-empty);
-  border: 1px solid var(--progress-empty);
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  height: 6px;
-  width: 73%;
-  z-index: -1;
-} */
 
 #progress {
   position: absolute;
@@ -53,7 +40,7 @@ fieldset,
   display: grid;
   align-items: center;
   justify-content: center;
-  border: 3px solid var(--progress-empty);
+  border: 3px solid var(--disabled);
   transition: 0.4s ease;
   position: relative;
 }
@@ -84,7 +71,7 @@ fieldset,
 }
 
 .btn:disabled {
-  background-color: var(--progress-empty);
+  background-color: var(--disabled);
   cursor: not-allowed;
 }
 
@@ -99,4 +86,15 @@ fieldset,
 
 #checkbox {
   accent-color: var(--bk-yellow);
+}
+
+.labelRequiredAsterisk {
+  position: relative;
+}
+.labelRequiredAsterisk::after {
+  content: "*";
+  color: red;
+  position: absolute;
+  top: -5px;
+  right: -5px;
 }
