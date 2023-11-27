@@ -5,34 +5,54 @@
     <link rel="stylesheet" href="{% static "ReportSwarm/ReportSwarm.css" %}">
 {% endblock cssfiles %}
 {% block content %}
-    <h1>this is the reporting page</h1>
-    <main id="#main">
-        <fieldset>
-            <form action="" autocomplete="on">
-                <div class="form-wrapper">
-                    <div class="personal-details">
-                        {% render_field form.first_name.label_tag %}
-                        {% render_field form.first_name autocomplete="given-name" %}
-                        {% render_field form.last_name.label_tag %}
-                        {% render_field form.last_name autocomplete="family-name" %}
-                        {% render_field form.email.label_tag %}
-                        {% render_field form.email autocomplete="email" %}
-                        {% render_field form.address1.label_tag %}
-                        {% render_field form.address1 autocomplete="address-line1" %}
-                        {% render_field form.address2.label_tag %}
-                        {% render_field form.address2 autocomplete="address-line2" %}
-                        {% render_field form.address3.label_tag %}
-                        {% render_field form.address3 autocomplete="address-line3" %}
-                        {% render_field form.county.label_tag %}
-                        {% render_field form.county list="countyNames" %}
-                        {% render_field form.eircode.label_tag %}
-                        {% render_field form.eircode autocomplete="postal-code" %}
+    <div class="content-wrapper">
+        <main id="#main">
+            <div class="check-box-wrapper">
+                <p>In order to complete this form you will be required to upload an image</p>
+                <label for="checkbox">Please confirm you have an image for upload in order to proceed</label>
+                <input type="checkbox" name="checkbox" id="checkbox">
+            </div>
+            <div class="progress-container">
+                <progress id="progress" class="progress" value="0" max="100"></progress>
+                <div class="circle active">1</div>
+                <div class="circle">2</div>
+                <div class="circle">3</div>
+            </div>
+            <fieldset>
+                <form action="" autocomplete="on">
+                    <div class="form-wrapper">
+                        <div class="personal-details">
+                            <h2>Personal Details</h2>
+                            {% render_field form.first_name.label_tag %}
+                            {% render_field form.first_name autocomplete="given-name" %}
+                            {% render_field form.last_name.label_tag %}
+                            {% render_field form.last_name autocomplete="family-name" %}
+                            {% render_field form.email.label_tag %}
+                            {% render_field form.email autocomplete="email" %}
+                            {% render_field form.address1.label_tag %}
+                            {% render_field form.address1 autocomplete="address-line1" %}
+                            {% render_field form.address2.label_tag %}
+                            {% render_field form.address2 autocomplete="address-line2" %}
+                            {% render_field form.address3.label_tag %}
+                            {% render_field form.address3 autocomplete="address-line3" %}
+                            {% render_field form.county.label_tag %}
+                            {% render_field form.county list="countyNames" %}
+                            {% render_field form.eircode.label_tag %}
+                            {% render_field form.eircode autocomplete="postal-code" %}
+                        </div>
                     </div>
-                </div>
-            </form>
-        </fieldset>
-    </main>
+                    <div class="btn-container">
+                        <button class="btn" id="prev" disabled type="button">Prev</button>
+                        <button class="btn" id="next"type="button">Next</button>
+                    </div>
+                </form>
+            </fieldset>
+        </main>
+    </div>
     <datalist id="countyNames">
         {% for county in counties %}<option value="{{ county }}"></option>{% endfor %}
     </datalist>
 {% endblock content %}
+{% block jsfiles %}
+    <script src="{% static "ReportSwarm/ReportSwarm.js" %}"></script>
+{% endblock jsfiles %}
