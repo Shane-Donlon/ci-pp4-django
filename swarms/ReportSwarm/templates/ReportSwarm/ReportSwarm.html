@@ -19,59 +19,75 @@
                 <div class="circle">3</div>
             </div>
             <form action="" autocomplete="on">
-                <fieldset class="personal-details-fieldset">
-                    <legend>Personal Details</legend>
-                    <div class="form-group">
-                        {% render_field form.first_name.label_tag %}
-                        {% render_field form.first_name autocomplete="given-name" %}
-                        <p class="display-none"></p>
-                    </div>
-                    <div class="form-group">
-                        {% render_field form.last_name.label_tag %}
-                        {% render_field form.last_name autocomplete="family-name" %}
-                        <p class="display-none"></p>
-                    </div>
-                    <div class="form-group">
-                        {% render_field form.email.label_tag %}
-                        {% render_field form.email autocomplete="email" %}
-                        <p class="display-none"></p>
-                    </div>
-                    <div class="form-group">
-                        {% render_field form.address1.label_tag %}
-                        {% render_field form.address1 autocomplete="address-line1" %}
-                        <p class="display-none"></p>
-                    </div>
-                    <div class="form-group">
-                        {% render_field form.address2.label_tag %}
-                        {% render_field form.address2 autocomplete="address-line2" %}
-                        <p class="display-none"></p>
-                    </div>
-                    <div class="form-group">
-                        {% render_field form.address3.label_tag %}
-                        {% render_field form.address3 autocomplete="address-line3" %}
-                        <p class="display-none"></p>
-                    </div>
-                    <div class="form-group">
-                        {% render_field form.county.label_tag %}
-                        {% render_field form.county list="countyNames" %}
-                        <p class="display-none countiesErrors"></p>
-                    </div>
-                    <div class="form-group">
-                        {% render_field form.eircode.label_tag %}
-                        {% render_field form.eircode autocomplete="postal-code"  minlength="7" %}
-                        <p class="display-none"></p>
-                    </div>
-                    <div class="btn-container">
-                        <button class="btn" id="prev" disabled type="button">Prev</button>
-                        <button class="btn" id="next" type="button">Next</button>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>HoneyBee Details</legend>
-                    <label for="inputTest">Testing Input</label>
-                    <input type="text" id="inputTest">
-                    <p class="display-none"></p>
-                </fieldset>
+                <div class="absolute-form-field">
+                    <fieldset class="personal-details-fieldset ">
+                        <legend>Personal Details</legend>
+                        <div class="form-group">
+                            {% render_field form.first_name.label_tag %}
+                            {% render_field form.first_name autocomplete="given-name" %}
+                            <p class="display-none"></p>
+                        </div>
+                        <div class="form-group">
+                            {% render_field form.last_name.label_tag %}
+                            {% render_field form.last_name autocomplete="family-name" %}
+                            <p class="display-none"></p>
+                        </div>
+                        <div class="form-group">
+                            {% render_field form.phone.label_tag %}
+                            {% render_field form.phone autocomplete="tel" pattern="[0-9]{10}" placeholder="0881234567" %}
+                            <p class="display-none"></p>
+                        </div>
+                        <div class="form-group">
+                            {% render_field form.email.label_tag %}
+                            {% render_field form.email autocomplete="email" %}
+                            <p class="display-none"></p>
+                        </div>
+                        <div class="form-group">
+                            {% render_field form.address1.label_tag %}
+                            {% render_field form.address1 autocomplete="address-line1" %}
+                            <p class="display-none"></p>
+                        </div>
+                        <div class="form-group">
+                            {% render_field form.address2.label_tag %}
+                            {% render_field form.address2 autocomplete="address-line2" %}
+                            <p class="display-none"></p>
+                        </div>
+                        <div class="form-group">
+                            {% render_field form.address3.label_tag %}
+                            {% render_field form.address3 autocomplete="address-line3" %}
+                            <p class="display-none"></p>
+                        </div>
+                        <div class="form-group">
+                            {% render_field form.county.label_tag %}
+                            {% render_field form.county list="countyNames" %}
+                            <p class="display-none countiesErrors"></p>
+                        </div>
+                        <div class="form-group">
+                            {% render_field form.eircode.label_tag %}
+                            {% render_field form.eircode autocomplete="postal-code"  minlength="7" %}
+                            <p class="display-none"></p>
+                        </div>
+                        <div class="btn-container">
+                            <button class="btn" id="prev" disabled type="button">Prev</button>
+                            <button class="btn" id="next" type="button">Next</button>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="absolute-form-field ">
+                    <fieldset class="honeyBee-fieldset hide">
+                        <legend>HoneyBee Details</legend>
+                        <div class="form-group">
+                            {% render_field form.location.label_tag %}
+                            {% render_field form.location %}
+                            <p class="display-none"></p>
+                        </div>
+                        <div class="form-group">
+                            {% render_field form.description.label_tag %}
+                            {% render_field form.description %}
+                            <p class="display-none"></p>
+                        </div>
+                    </fieldset>
+                </div>
             </form>
         </main>
     </div>
