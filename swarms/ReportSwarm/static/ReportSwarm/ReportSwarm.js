@@ -6,12 +6,15 @@ let confirmationCheckbox = document.querySelector("#checkbox");
 let formWrapper = document.querySelectorAll(".form-group");
 let NextBtn = document.querySelector("#next");
 let eircodeField = document.querySelector("#id_eircode");
+let progressCircles = document.querySelectorAll(".circle");
+let progressBar = document.querySelector("progress");
 PersonalDetailsInputs.forEach((input) => {
   /**  on page load disable all the input fields for the form, this will be toggled with an event listener
    *as an image is required in Step2 of the form, I am seeking confirmation that the user understands this before proceeding, 
    and that this image upload will not be a surprise for the user when reaching step2
    */
   input.disabled = true;
+  NextBtn.disabled = true;
 });
 
 confirmationCheckbox.addEventListener("input", (e) => {
@@ -24,6 +27,7 @@ confirmationCheckbox.addEventListener("input", (e) => {
   PersonalDetailsInputs.forEach((input) => {
     input.disabled = value;
   });
+  NextBtn.disabled = value;
 });
 
 addRequiredAsterisksToLabels();
@@ -62,6 +66,10 @@ then wait for 3 seconds and remove the error message.
 
 NextBtn.addEventListener("click", (e) => {
   let countyValue = document.querySelector("#id_county").value;
+  let PersonalDetailsFieldset = document.querySelector(
+    ".personal-details-fieldset"
+  );
+  let honeyBeeDetailsFieldset = document.querySelector(".honeyBee-fieldset");
   validateCounty(countyValue);
   checkEircode(eircodeField.value, eircodeField);
   validateRequredInputPersonalDetails(PersonalDetailsInputs);
@@ -73,6 +81,16 @@ NextBtn.addEventListener("click", (e) => {
   ) {
     // all form fields passed validation
     // open the next section of the form
+    // set the 1st circle to green
+    // set the 2nd circle to yellow
+    // set progress bar value to 50%
+    PersonalDetailsFieldset.classList.add("hide");
+    honeyBeeDetailsFieldset.classList.remove("hide");
+
+    progressBar.value = 50;
+    progressCircles[0].classList.add("completed");
+    progressCircles[0].classList.remove("active");
+    progressCircles[1].classList.add("active");
   }
 });
 
