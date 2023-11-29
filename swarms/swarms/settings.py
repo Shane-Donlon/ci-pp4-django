@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ["ci-sd-pp4-swarms-ie-54c976de26c1.herokuapp.com", "127.0.0.1"]
 INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     'widget_tweaks',
+    'phonenumber_field',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
