@@ -47,6 +47,23 @@ fieldset,
 
 .circle.active {
   border-color: var(--bk-yellow);
+  color: black;
+}
+
+.circle.completed {
+  border-color: green;
+}
+
+.honeyBee-fieldset {
+  width: 100%;
+}
+
+.honeyBee-fieldset label {
+  margin-right: 1em;
+}
+
+.form-group #id_description {
+  padding-inline: 1em;
 }
 
 .btn {
@@ -100,13 +117,15 @@ fieldset,
 }
 
 fieldset {
-  border: 2.5px groove black;
+  border-image: linear-gradient(to right, black, var(--bk-yellow)) 1;
+  border-width: 2.5px;
   padding: 1em;
   width: min-content;
 }
 
 .btn-container {
   display: flex;
+  align-items: center;
 }
 
 .display-none {
@@ -117,6 +136,36 @@ fieldset {
   display: block;
   font-size: 0.75rem;
   color: red;
+}
+
+.hide {
+  transform: scaleX(0);
+  overflow: hidden;
+  transform-origin: left;
+  transition: 400ms ease-in-out;
+}
+
+form {
+  position: relative;
+  background-color: white;
+  margin-bottom: 50rem;
+}
+
+.absolute-form-field {
+  position: absolute;
+  inset: 0;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+fieldset {
+  position: relative;
+  transition: transform 400ms ease;
+}
+
+textarea {
+  display: block;
+  width: 100%;
 }
 
 @media (min-width: 600px) {
@@ -130,5 +179,9 @@ fieldset {
 
   legend {
     padding-inline: 1em;
+  }
+  .honeyBee-fieldset {
+    display: grid;
+    gap: 1em;
   }
 }
