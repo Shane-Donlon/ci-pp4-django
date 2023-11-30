@@ -2,6 +2,12 @@
   --disabled: #e0e0e9;
 }
 
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 fieldset,
 .progress-container {
   max-width: 500px;
@@ -117,10 +123,11 @@ fieldset,
 }
 
 fieldset {
-  border-image: linear-gradient(to right, black, var(--bk-yellow)) 1;
+  border-image: linear-gradient(var(--angle), black, var(--bk-yellow)) 1;
   border-width: 2.5px;
   padding: 1em;
   width: min-content;
+  animation: 20000ms gradientRotate linear infinite;
 }
 
 .btn-container {
@@ -163,6 +170,25 @@ fieldset {
   transition: transform 400ms ease;
 }
 
+.imageRequiredSpan {
+  position: relative;
+  font-weight: 600;
+}
+.imageRequiredSpan::after {
+  --height: 5px;
+  content: "";
+  position: absolute;
+  bottom: calc(var(--height) * -1);
+  left: -2px;
+  right: -2px;
+  transform: scaleX(0);
+  background-color: var(--bk-yellow);
+  height: var(--height);
+  border-radius: 10px;
+  transform-origin: left center;
+  animation: 1000ms underLineAnimation linear forwards;
+}
+
 textarea {
   display: block;
   width: 100%;
@@ -183,5 +209,23 @@ textarea {
   .honeyBee-fieldset {
     display: grid;
     gap: 1em;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  fieldset {
+    --angle: 100deg;
+  }
+}
+
+@keyframes gradientRotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@keyframes underLineAnimation {
+  to {
+    transform: scaleX(1);
   }
 }
