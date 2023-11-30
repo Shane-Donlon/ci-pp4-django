@@ -216,6 +216,9 @@ textarea {
   fieldset {
     --angle: 100deg;
   }
+  .imageRequiredSpan::after {
+    transform: scale(1);
+  }
 }
 
 @keyframes gradientRotate {
