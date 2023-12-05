@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.validators import MinLengthValidator
 from phonenumber_field.modelfields import PhoneNumberField
-from phonenumber_field.widgets import PhoneNumberPrefixWidget
+
 
 # County_Choices = [("Antrim","Antrim"),("Armagh","Armagh"),("Carlow","Carlow")]
 # "Antrim","Armagh","Carlow","Cavan","Clare","Cork","Derry","Donegal","Down","Dublin","Fermanagh","Galway","Kerry","Kildare","Kilkenny","Laois","Leitrim","Limerick","Longford","Louth","Mayo","Meath","Monaghan","Offaly","Roscommon","Sligo","Tipperary","Tyrone","Waterford","Westmeath","Wexford","Wicklow"

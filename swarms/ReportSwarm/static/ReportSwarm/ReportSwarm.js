@@ -2,13 +2,16 @@
 let PersonalDetailsInputs = document.querySelectorAll(
   ".personal-details-fieldset input"
 );
+// All inputs includes select and text area not just input fields
+let allInputs = document.querySelectorAll(".form-group >*:not(label):not(p)");
+
 let confirmationCheckbox = document.querySelector("#checkbox");
 let formWrapper = document.querySelectorAll(".form-group");
 let NextBtn = document.querySelector("#next");
 let eircodeField = document.querySelector("#id_eircode");
 let progressCircles = document.querySelectorAll(".circle");
 let progressBar = document.querySelector("progress");
-PersonalDetailsInputs.forEach((input) => {
+allInputs.forEach((input) => {
   /**  on page load disable all the input fields for the form, this will be toggled with an event listener
    *as an image is required in Step2 of the form, I am seeking confirmation that the user understands this before proceeding, 
    and that this image upload will not be a surprise for the user when reaching step2
@@ -24,7 +27,7 @@ confirmationCheckbox.addEventListener("input", (e) => {
   if (confirmationCheckbox.checked) {
     value = !value;
   }
-  PersonalDetailsInputs.forEach((input) => {
+  allInputs.forEach((input) => {
     input.disabled = value;
   });
   NextBtn.disabled = value;
@@ -230,10 +233,27 @@ function validateRequredInputPersonalDetails(listOfInputs) {
         input.nextElementSibling.classList.remove("errors");
         input.nextElementSibling.classList.add("display-none");
       }, 3000);
+    } else {
+      // the field is required and so a blank space fills the requirement, checking if empty string in field
+      let inputValue = input.value.trim();
+      if (input.hasAttribute("required") && inputValue.length === 0) {
+        input.nextElementSibling.classList.remove("display-none");
+        input.nextElementSibling.classList.add("errors");
+        input.nextElementSibling.innerText = `${input.previousElementSibling.innerText} is required`;
+        valid.push(false);
+        setTimeout(() => {
+          input.nextElementSibling.innerText = "";
+          input.nextElementSibling.classList.remove("errors");
+          input.nextElementSibling.classList.add("display-none");
+        }, 3000);
+      }
     }
   });
   if (valid.length === 0) {
     correct = true;
+    listOfInputs.forEach((input) => {
+      input.value = input.value.trim();
+    });
   }
   return correct;
 }

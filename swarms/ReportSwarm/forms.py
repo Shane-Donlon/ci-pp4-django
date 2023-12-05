@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import ReportSwarmCase, COUNTIES
+from .models import ReportSwarmCase
 class ReportSwarmForm(ModelForm):
 
     class Meta:
