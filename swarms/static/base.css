@@ -116,3 +116,8 @@ footer .footer-h2 {
 footer :not(.footer-h2) {
   text-align: center;
 }
+
+::selection {
+  background-color: #ea9d34;
+  color: white;
+}
