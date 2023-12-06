@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MinLengthValidator
+from cloudinary.models import CloudinaryField
 from phonenumber_field.modelfields import PhoneNumberField
 
 
@@ -19,5 +20,6 @@ class ReportSwarmCase(models.Model):
     eircode = models.CharField(max_length=8, null=True, blank=False,validators=[MinLengthValidator(7),])
     location = models.CharField(max_length=8,choices = [("outside", "Outside"), ("inside", "Inside")])
     description = models.TextField(max_length=10000, null=True, blank=False)
+    image = CloudinaryField('image')
     createdOn = models.DateTimeField(auto_now_add=True, )
     updatedOn = models.DateTimeField(auto_now=True,)
