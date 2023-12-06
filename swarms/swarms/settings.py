@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    
+    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'unauthenticated',
     "sign_in_sign_out",
     'ReportSwarm',
-
 ]
 
 
