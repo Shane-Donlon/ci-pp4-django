@@ -22,7 +22,7 @@
             </div>
             <form action="" autocomplete="on">
                 <div class="absolute-form-field">
-                    <fieldset class="personal-details-fieldset ">
+                    <fieldset class="personal-details-fieldset hide">
                         <legend>Personal Details</legend>
                         <div class="form-group">
                             {% render_field form.first_name.label_tag %}
@@ -66,17 +66,17 @@
                         </div>
                         <div class="form-group">
                             {% render_field form.eircode.label_tag %}
-                            {% render_field form.eircode autocomplete="postal-code"  minlength="7" %}
+                            {% render_field form.eircode autocomplete="postal-code" minlength="7" %}
                             <p class="display-none"></p>
                         </div>
                         <div class="btn-container">
-                            <button class="btn" id="prev" disabled type="button">Prev</button>
+                            <button class="btn btn-disabled" id="prev" disabled type="button">Prev</button>
                             <button class="btn" id="next" type="button">Next</button>
                         </div>
                     </fieldset>
                 </div>
                 <div class="absolute-form-field ">
-                    <fieldset class="honeyBee-fieldset hide">
+                    <fieldset class="honeyBee-fieldset">
                         <legend>HoneyBee Details</legend>
                         <div class="form-group">
                             {% render_field form.location.label_tag %}
@@ -87,6 +87,15 @@
                             {% render_field form.description.label_tag %}
                             {% render_field form.description %}
                             <p class="display-none"></p>
+                        </div>
+                        <div class="form-group">
+                            {% render_field form.image.label_tag %}
+                            {% render_field form.image accept="image/*" %}
+                            <p class="display-none"></p>
+                        </div>
+                        <div class="btn-container">
+                            <button class="btn" id="prevBtn2" type="button">Prev</button>
+                            <button class="btn" id="nextBtn2" type="button">Next</button>
                         </div>
                     </fieldset>
                 </div>
