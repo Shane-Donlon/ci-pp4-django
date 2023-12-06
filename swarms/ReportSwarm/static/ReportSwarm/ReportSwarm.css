@@ -198,6 +198,10 @@ textarea {
   width: 100%;
 }
 
+.btn:focus-visible {
+  border: 2px solid black;
+}
+
 @media (min-width: 600px) {
   .personal-details-fieldset {
     display: grid;
