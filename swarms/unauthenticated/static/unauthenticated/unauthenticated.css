@@ -425,8 +425,3 @@
     right: 0;
   }
 }
-
-::selection {
-  background-color: #ea9d34;
-  color: white;
-}
