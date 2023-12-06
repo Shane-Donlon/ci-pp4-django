@@ -26,7 +26,7 @@ fieldset,
 
 #progress {
   position: absolute;
-
+  appearance: none;
   -webkit-appearance: none;
   top: 50%;
   left: 0;
@@ -39,6 +39,11 @@ fieldset,
 ::-webkit-progress-value {
   background-color: var(--bk-yellow);
   transition: width 400ms ease;
+}
+
+::-moz-progress-bar {
+  transition: width 400ms ease;
+  background-color: var(--bk-yellow);
 }
 
 .circle {
