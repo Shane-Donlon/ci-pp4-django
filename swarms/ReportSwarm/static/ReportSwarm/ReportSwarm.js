@@ -8,6 +8,11 @@ let allInputs = document.querySelectorAll(".form-group >*:not(label):not(p)");
 let confirmationCheckbox = document.querySelector("#checkbox");
 let formWrapper = document.querySelectorAll(".form-group");
 let NextBtn = document.querySelector("#next");
+let allBtns = document.querySelectorAll(".btn");
+
+// I could just index allBtns to the correct btn, but for readability of code I'll declare them independently
+let NextBtn2 = document.querySelector("#nextBtn2");
+let PrevBtn2 = document.querySelector("#prevBtn2");
 let eircodeField = document.querySelector("#id_eircode");
 let progressCircles = document.querySelectorAll(".circle");
 let progressBar = document.querySelector("progress");
@@ -17,7 +22,9 @@ allInputs.forEach((input) => {
    and that this image upload will not be a surprise for the user when reaching step2
    */
   input.disabled = true;
-  NextBtn.disabled = true;
+  allBtns.forEach((btn) => {
+    btn.disabled = true;
+  });
 });
 
 confirmationCheckbox.addEventListener("input", (e) => {
@@ -30,7 +37,11 @@ confirmationCheckbox.addEventListener("input", (e) => {
   allInputs.forEach((input) => {
     input.disabled = value;
   });
-  NextBtn.disabled = value;
+  allBtns.forEach((btn) => {
+    if (!btn.classList.contains("btn-disabled")) {
+      btn.disabled = value;
+    }
+  });
 });
 
 addRequiredAsterisksToLabels();
@@ -96,7 +107,19 @@ NextBtn.addEventListener("click", (e) => {
     progressCircles[1].classList.add("active");
   }
 });
+NextBtn2.addEventListener("click", (e) => {
+  // some inputs are TextArea some are Select, css selector below selects everything that is not a label or error message
+  let inputs = document.querySelectorAll(
+    ".honeyBee-fieldset > .form-group > *:not(label):not(p)"
+  );
 
+  validateRequredInputPersonalDetails(inputs);
+});
+
+PrevBtn2.addEventListener("click", (e) => {
+  // this is step 2 of the form go back to step 1
+  console.log(e);
+});
 function checkEircode(eircode, eircodeSelector) {
   /** 
 Eircode format should be 3 characters space 4 characters
@@ -252,8 +275,12 @@ function validateRequredInputPersonalDetails(listOfInputs) {
   if (valid.length === 0) {
     correct = true;
     listOfInputs.forEach((input) => {
-      input.value = input.value.trim();
+      if (input.type != "file") {
+        // file types have a length of 0 but are valid once a file is added
+        input.value = input.value.trim();
+      }
     });
   }
+
   return correct;
 }
