@@ -15,7 +15,11 @@ let NextBtn2 = document.querySelector("#nextBtn2");
 let PrevBtn2 = document.querySelector("#prevBtn2");
 let eircodeField = document.querySelector("#id_eircode");
 let progressCircles = document.querySelectorAll(".circle");
-let progressBar = document.querySelector("progress");
+let progressBar = document.querySelector("#progress");
+let PersonalDetailsFieldset = document.querySelector(
+  ".personal-details-fieldset"
+);
+let honeyBeeDetailsFieldset = document.querySelector(".honeyBee-fieldset");
 allInputs.forEach((input) => {
   /**  on page load disable all the input fields for the form, this will be toggled with an event listener
    *as an image is required in Step2 of the form, I am seeking confirmation that the user understands this before proceeding, 
@@ -80,10 +84,7 @@ then wait for 3 seconds and remove the error message.
 
 NextBtn.addEventListener("click", (e) => {
   let countyValue = document.querySelector("#id_county").value;
-  let PersonalDetailsFieldset = document.querySelector(
-    ".personal-details-fieldset"
-  );
-  let honeyBeeDetailsFieldset = document.querySelector(".honeyBee-fieldset");
+
   validateCounty(countyValue);
   checkEircode(eircodeField.value, eircodeField);
   validateRequredInputPersonalDetails(PersonalDetailsInputs);
@@ -100,9 +101,8 @@ NextBtn.addEventListener("click", (e) => {
     // set progress bar value to 50%
     PersonalDetailsFieldset.classList.add("hide");
     honeyBeeDetailsFieldset.classList.remove("hide");
-
-    progressBar.value = 50;
     progressCircles[0].classList.add("completed");
+    progressBar.value = 50;
     progressCircles[0].classList.remove("active");
     progressCircles[1].classList.add("active");
   }
@@ -118,7 +118,13 @@ NextBtn2.addEventListener("click", (e) => {
 
 PrevBtn2.addEventListener("click", (e) => {
   // this is step 2 of the form go back to step 1
-  console.log(e);
+  PersonalDetailsFieldset.classList.remove("hide");
+  honeyBeeDetailsFieldset.classList.add("hide");
+  progressCircles[0].classList.add("active");
+  progressBar.value = 50;
+  progressCircles[0].classList.remove("completed");
+  progressCircles[1].classList.remove("active");
+  progressBar.value = 0;
 });
 function checkEircode(eircode, eircodeSelector) {
   /** 
