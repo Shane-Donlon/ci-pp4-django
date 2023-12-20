@@ -20,8 +20,12 @@
                 <div class="circle">2</div>
                 <div class="circle">3</div>
             </div>
-            <form action="" autocomplete="on" class="swarm-form">
+            <form method="post"
+                  autocomplete="on"
+                  class="swarm-form"
+                  enctype="multipart/form-data">
                 {% csrf_token %}
+                {% if errors %}<p>{{ errors }}</p>{% endif %}
                 <h2 id="form-title">Reporting a Swarm Form</h2>
                 <div class="absolute-form-field">
                     <fieldset class="personal-details-fieldset " id="step1" aria-labelledby="tab-1">
@@ -104,9 +108,6 @@
                 <div class="absolute-form-field hide">
                     <fieldset>
                         <h2>Confimation</h2>
-                        {% if form.errors %}
-                            {% for error in form.errors %}<p>{{ error }}</p>{% endfor %}
-                        {% endif %}
                         <div class="btn-container">
                             <button type="reset">Reset</button>
                             <button type="Submit">Submit</button>
