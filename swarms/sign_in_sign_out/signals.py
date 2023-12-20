@@ -6,7 +6,6 @@ from django.contrib.auth.models import User
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
     if created:
-        print("profile created")
         Profile.objects.create(user=instance)
   
 
@@ -14,4 +13,3 @@ def create_profile(sender, instance, created, **kwargs):
 def update_profile(sender, instance, created, **kwargs):
     if not created:
         instance.profile.save()
-        print("profile updated")
