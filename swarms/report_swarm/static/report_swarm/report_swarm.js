@@ -114,7 +114,12 @@ NextBtn2.addEventListener("click", (e) => {
     ".honeyBee-fieldset > .form-group > *:not(label):not(p)"
   );
 
-  validateRequredInputPersonalDetails(inputs);
+  if (validateRequredInputPersonalDetails(inputs)) {
+    let nextField = document.querySelectorAll(".absolute-form-field")[2];
+    nextField.classList.remove("hide");
+    let currentField = document.querySelectorAll(".absolute-form-field")[1];
+    currentField.classList.add("hide");
+  }
 });
 
 PrevBtn2.addEventListener("click", (e) => {
