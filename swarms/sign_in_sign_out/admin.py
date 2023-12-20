@@ -1,30 +1,28 @@
 from django.contrib import admin
+from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 
-
-from .models import MyUser
-
-
-class CustomUserAdmin(UserAdmin):
-
-    model = MyUser
-    list_display = ("email", "is_staff", "is_active",)
-    list_filter = ("email", "is_staff", "is_active",)
-    fieldsets = (
-        (None, {"fields": ("email", "password")}),
-        ("Permissions", {"fields": ("is_staff", "is_active", "groups", "user_permissions")}),
-    )
-    add_fieldsets = (
-        (None, {
-            "classes": ("wide",),
-            "fields": (
-                "email", "password1", "password2", "is_staff",
-                "is_active", "groups", "user_permissions"
-            )}
-        ),
-    )
-    search_fields = ("email",)
-    ordering = ("email",)
+from .models import Profile
 
 
-admin.site.register(MyUser, CustomUserAdmin)
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ["first_name", "user"]
+    list_filter = ["county"]
+
+
+
+admin.site.unregister(User)
+@admin.register(User)
+class MyUserAdmin(UserAdmin):
+    """_summary_
+sets the email address as the editable link in Admin (Unregister user is important here)
+UserAdmin keeps all the standard items in the Change User screen
+    """
+    
+
+
+    list_display = ['email', 'first_name', 'last_name', 'is_staff', 'is_superuser',"username"]
+    search_fields = ["email"]
+
+    
