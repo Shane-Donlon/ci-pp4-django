@@ -2,7 +2,7 @@ from django.db import models
 from django.core.validators import MinLengthValidator
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
-
+from django.shortcuts import get_object_or_404
 StatusOptions = [("Open","Open"),("Closed_Resolved","Resolved"),("Closed_Unresolved","Unable to Resolve")]
 
 
@@ -23,7 +23,8 @@ class ReportSwarmCase(models.Model):
     createdOn = models.DateTimeField(auto_now_add=True, )
     updatedOn = models.DateTimeField(auto_now=True,)
     status = models.CharField(choices =StatusOptions,default="Open",max_length=100 )
-    assignee = models.OneToOneField(User, on_delete=models.CASCADE,default = 3,related_name="assignee")
+    assignee = models.ForeignKey(User, on_delete=models.CASCADE,related_name="user",default = 1)
+   
     # UPDATE DEFAULT ASSIGNEE
     
-    
+#  default = User.objects.filter(is_superuser=True)[0].id,
