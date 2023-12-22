@@ -6,6 +6,7 @@ from django_tables2 import SingleTableView, tables, RequestConfig
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from report_swarm.models import ReportSwarmCase
+from .filters import TicketFilter
 
 class ticketTable(tables.Table):
     class Meta:
@@ -23,10 +24,15 @@ class SuperUserView(SingleTableView,View):
 
         """
         if request.user.is_superuser:
-            allOpenTickets =ReportSwarmCase.objects.all()
-            table = ticketTable(allOpenTickets,template_name = "django_tables2/bootstrap5-responsive.html")
+
+            allTickets =ReportSwarmCase.objects.all()
+            CaseFilter = TicketFilter(request.GET, queryset=allTickets)
+    
+            # if there is a filtered queryset we are remaking the varaible data with the filtered data
+            allTickets = CaseFilter.qs
+            table = ticketTable(allTickets,template_name = "django_tables2/bootstrap5-responsive.html")
             RequestConfig(request).configure(table)
-            context = {"tables":table}
+            context = {"tables":table,"filter":CaseFilter,}
             return render(request, "tickets/tickets.html",context)
         else:
             return redirect("profile")
