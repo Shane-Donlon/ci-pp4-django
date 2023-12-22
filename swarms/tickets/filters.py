@@ -1,0 +1,8 @@
+import django_filters
+from django_filters import FilterSet
+from report_swarm.models import ReportSwarmCase
+
+class TicketFilter(FilterSet):
+    class Meta:
+        model = ReportSwarmCase
+        fields = ["status", "assignee"]
