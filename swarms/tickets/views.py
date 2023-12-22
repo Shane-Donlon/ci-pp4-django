@@ -33,7 +33,7 @@ class SuperUserView(SingleTableView,View):
             table = ticketTable(allTickets,template_name = "django_tables2/bootstrap5-responsive.html")
             RequestConfig(request).configure(table)
             context = {"tables":table,"filter":CaseFilter,}
-            return render(request, "tickets/tickets.html",context)
+            return render(request, "tickets/allTickets.html",context)
         else:
             return redirect("profile")
         
