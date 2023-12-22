@@ -55,4 +55,24 @@ class OpenTickets(SingleTableView,View):
             return render(request, "tickets/allTickets.html",context)
         else:
             return redirect("profile")
-        
+
+@method_decorator(login_required, name='dispatch')
+class ResolvedTickets(SingleTableView,View):
+    def get(self, request):
+        """_summary_
+    if user is super user go to all tickets templates, else redirect back to profile page
+
+        """
+        if request.user.is_superuser:
+            resolvedTickets =ReportSwarmCase.objects.filter(status="Closed_Resolved")
+            CaseFilter = OpenTicket(request.GET, queryset=resolvedTickets)
+            # if there is a filtered queryset we are remaking the variable data with the filtered data
+            resolvedTickets = CaseFilter.qs
+            table = ticketTable(resolvedTickets,template_name = "django_tables2/bootstrap5-responsive.html")
+            RequestConfig(request).configure(table)
+            table.paginate(page=request.GET.get("page", 1), per_page=10)
+            context = {"tables":table,"filter":CaseFilter,}
+            return render(request, "tickets/allTickets.html",context)
+        else:
+            return redirect("profile")
+
