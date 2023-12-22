@@ -95,3 +95,28 @@ class UnResolvedClosedTickets(SingleTableView,View):
             return render(request, "tickets/allTickets.html",context)
         else:
             return redirect("profile")
+
+
+@method_decorator(login_required, name='dispatch')
+class TicketView(View):
+    def get(self, request, ticketID):
+        """_summary_
+    if user is super user open the ticket
+    if the user is not a super user but is staff check if the user is the assignee
+    if the user is the assignee open the ticket
+    if the user is staff but is not the assignee of the ticket redirect user back to profile page
+        """
+
+        if request.user.is_superuser:
+            ticket = get_object_or_404(ReportSwarmCase,pk=ticketID)
+            context = {"ticket":ticket}
+            return render(request, "tickets/singularTicket.html",context)
+        elif request.user.is_staff:
+            ticket = get_object_or_404(ReportSwarmCase,pk=ticketID)
+            if (request.user == ticket.assignee):
+                context = {"ticket":ticket}
+                return render(request, "tickets/singularTicket.html",context)
+            else:
+                return redirect("profile")
+        else:
+            return redirect("profile")
