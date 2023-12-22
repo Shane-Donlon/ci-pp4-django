@@ -3,6 +3,18 @@ let filterFormInputs = document.querySelectorAll(
   ".filterForm > *:not(label):not(button)"
 );
 
+const modal = document.querySelector("dialog");
+const modalOpenBtn = document.querySelector(".helpBtn");
+const modalCloseBtn = document.querySelector(".dialogCloseBtn");
+
+modalOpenBtn.addEventListener("click", (e) => {
+  modal.showModal();
+});
+
+modalCloseBtn.addEventListener("click", (e) => {
+  modal.close();
+});
+
 filterFormInputs.forEach((input) => {
   input.addEventListener("input", (e) => {
     /**
@@ -13,7 +25,7 @@ filterFormInputs.forEach((input) => {
   });
 });
 
-function delayedFn(cb, delay = 750) {
+function delayedFn(cb, delay = 1000) {
   let timeout;
 
   return (...args) => {
