@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404, redirect
 from .forms import ProfileForm
 from django.views import View
 from django.contrib.auth.models import User
@@ -11,10 +11,8 @@ from django.contrib.auth.decorators import login_required
 class ProfileFormView(View):
     
     def get(self, request):
-
         profile = get_object_or_404(Profile, user=request.user)
-        form = ProfileForm(instance=request.user)
- 
+        form = ProfileForm(instance=request.user.profile)
         context = {"profile": profile,
                    "form":form}
         return render(request, "sign_in_sign_out/sign_in_sign_out.html", context)
@@ -25,9 +23,9 @@ class ProfileFormView(View):
 
         if form.is_valid():
             form.save()
-            print("form saved")
-            return render(request, "sign_in_sign_out/sign_in_sign_out.html",)
+            # force another GET request after profile update
+            return redirect("profile")
         else:
-            print("form not valid")
+           
             context = {"form":form}
             return render(request, "sign_in_sign_out/sign_in_sign_out.html",context)
