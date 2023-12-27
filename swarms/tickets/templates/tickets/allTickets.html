@@ -6,36 +6,40 @@
 {% load django_tables2 %}
 {% load render_table from django_tables2 %}
 {% block content %}
-    {{ filteredData }}
-    <form action="" class="filterForm" id="filterForm">
-        <h2 aria-labelledby="filterForm">Click the below icon for more information</h2>
-        <dialog id="dialog">
-            <button autofocus class="dialogCloseBtn" aria-labelledby="dialog">Close</button>
-            <ul>
-                <li>
-                    <p aria-labelledby="dialog">The search form will automatically search when you type or change anything</p>
-                </li>
-                <li>
-                    <p aria-labelledby="dialog">
-                        The table will sort based on the heading you select <abbr title="Example">EG</abbr> Click "ID" to sort ascending or descending tickets by "ID"
-                    </p>
-                </li>
-            </ul>
-        </dialog>
-        <button type="button" aria-label="information" class="helpBtn">
-            <svg xmlns="http://www.w3.org/2000/svg"
-                 height="16"
-                 width="16"
-                 viewBox="0 0 512 512">
-                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
-                <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
-            </svg>
-        </button>
-        <hr>
-        {{ filter.form }}
-    </form>
-    {% render_table tables %}
-    <input type="text" class="randomINput">
+    <div class="container">
+        {% if filter.form %}
+            {% comment %} if the context has filtered data then load the search form{% endcomment %}
+            {{ filteredData }}
+            <form action="" class="filterForm" id="filterForm">
+                <h2 aria-labelledby="filterForm">Click the below icon for more information</h2>
+                <dialog id="dialog">
+                    <button autofocus class="dialogCloseBtn" aria-labelledby="dialog">Close</button>
+                    <ul>
+                        <li>
+                            <p aria-labelledby="dialog">The search form will automatically search when you type or change anything</p>
+                        </li>
+                        <li>
+                            <p aria-labelledby="dialog">
+                                The table will sort based on the heading you select <abbr title="Example">EG</abbr> Click "ID" to sort ascending or descending tickets by "ID"
+                            </p>
+                        </li>
+                    </ul>
+                </dialog>
+                <button type="button" aria-label="information" class="helpBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         height="16"
+                         width="16"
+                         viewBox="0 0 512 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                        <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                    </svg>
+                </button>
+                <hr>
+                {{ filter.form }}
+            </form>
+        {% endif %}
+        {% render_table tables %}
+    </div>
 {% endblock content %}
 {% block jsfiles %}
     <script src="{% static "tickets/tickets.js" %}"></script>
