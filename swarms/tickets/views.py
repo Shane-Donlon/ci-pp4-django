@@ -20,7 +20,7 @@ class ticketTable(tables.Table):
 class AllTicketView(SingleTableView,View):
     def get(self, request):
         """_summary_
-    if user is super user go to all tickets templates, else redirect back to profile page
+    if user is super user go to all tickets templates,
 
         """
         if request.user.is_superuser:
@@ -40,9 +40,10 @@ class AllTicketView(SingleTableView,View):
 class OpenTickets(SingleTableView,View):
     def get(self, request):
         """_summary_
-    if user is super user go to all tickets templates, else redirect back to profile page
+    if user is super user go to all tickets templates,  else get a list of tickets assigned to the login user status open
 
         """
+
         if request.user.is_superuser:
             openTickets =ReportSwarmCase.objects.filter(status="Open")
             CaseFilter = OpenTicket(request.GET, queryset=openTickets)
@@ -52,6 +53,12 @@ class OpenTickets(SingleTableView,View):
             RequestConfig(request).configure(table)
             table.paginate(page=request.GET.get("page", 1), per_page=10)
             context = {"tables":table,"filter":CaseFilter,}
+            return render(request, "tickets/allTickets.html",context)
+        elif request.user.is_staff:
+            openTickets =ReportSwarmCase.objects.filter(status="Open",assignee=request.user)
+            table = ticketTable(openTickets,template_name = "django_tables2/bootstrap5-responsive.html")
+            table.paginate(page=request.GET.get("page", 1), per_page=10)
+            context = {"tables":table,}
             return render(request, "tickets/allTickets.html",context)
         else:
             return redirect("profile")
@@ -72,7 +79,7 @@ class ResolvedTickets(SingleTableView,View):
             RequestConfig(request).configure(table)
             table.paginate(page=request.GET.get("page", 1), per_page=10)
             context = {"tables":table,"filter":CaseFilter,}
-            return render(request, "tickets/allTickets.html",context)
+            return render(request, "tickets/allTickets.html",context)           
         else:
             return redirect("profile")
 
