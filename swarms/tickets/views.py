@@ -1,20 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
-from django_tables2 import SingleTableView, tables, RequestConfig
+
 # Create your views here.
 
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from report_swarm.models import ReportSwarmCase
 from .filters import TicketFilter,OpenTicket
+from .tables import ticketTable
+from django_tables2 import SingleTableView,RequestConfig
 
-class ticketTable(tables.Table):
-    class Meta:
-        model = ReportSwarmCase
-        exclude = ["description","image"]
-        row_attrs = {
-            "data-assignee": lambda record: record.assignee
-        }
 
 @method_decorator(login_required, name='dispatch')
 class AllTicketView(SingleTableView,View):
