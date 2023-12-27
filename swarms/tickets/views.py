@@ -93,7 +93,6 @@ class UnResolvedClosedTickets(SingleTableView,View):
         """
         closedUnresolvedTickets =ReportSwarmCase.objects.filter(status="Closed_Unresolved")
         if request.user.is_superuser:
-
             CaseFilter = OpenTicket(request.GET, queryset=closedUnresolvedTickets)
             # if there is a filtered queryset we are remaking the variable data with the filtered data
             closedUnresolvedTickets = CaseFilter.qs
@@ -107,6 +106,7 @@ class UnResolvedClosedTickets(SingleTableView,View):
             table = ticketTable(closedUnresolvedTickets,template_name = "django_tables2/bootstrap5-responsive.html")
             table.paginate(page=request.GET.get("page", 1), per_page=10)
             context = {"tables":table,}
+            return render(request, "tickets/allTickets.html",context)  
         else:
             return redirect("profile")
 
