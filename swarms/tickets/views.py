@@ -51,6 +51,7 @@ class OpenTickets(SingleTableView,View):
         elif request.user.is_staff:
             openTickets = openTickets.filter(assignee=request.user)
             table = ticketTable(openTickets,template_name = "django_tables2/bootstrap5-responsive.html")
+            RequestConfig(request).configure(table)
             table.paginate(page=request.GET.get("page", 1), per_page=10)
             context = {"tables":table,}
             return render(request, "tickets/allTickets.html",context)
@@ -78,6 +79,7 @@ class ResolvedTickets(SingleTableView,View):
         elif request.user.is_staff:
             resolvedTickets = resolvedTickets.filter(assignee=request.user)
             table = ticketTable(resolvedTickets,template_name = "django_tables2/bootstrap5-responsive.html")
+            RequestConfig(request).configure(table)
             table.paginate(page=request.GET.get("page", 1), per_page=10)
             context = {"tables":table,}
             return render(request, "tickets/allTickets.html",context)  
@@ -104,6 +106,7 @@ class UnResolvedClosedTickets(SingleTableView,View):
         elif request.user.is_staff:
             closedUnresolvedTickets = closedUnresolvedTickets.filter(assignee=request.user)
             table = ticketTable(closedUnresolvedTickets,template_name = "django_tables2/bootstrap5-responsive.html")
+            RequestConfig(request).configure(table)
             table.paginate(page=request.GET.get("page", 1), per_page=10)
             context = {"tables":table,}
             return render(request, "tickets/allTickets.html",context)  
@@ -116,21 +119,12 @@ class TicketView(View):
     def get(self, request, ticketID):
         """_summary_
     if user is super user open the ticket
-    if the user is not a super user but is staff check if the user is the assignee
     if the user is the assignee open the ticket
-    if the user is staff but is not the assignee of the ticket redirect user back to profile page
+    if the user is logged in but is not the assignee of the ticket redirect user back to profile page
         """
-
-        if request.user.is_superuser:
-            ticket = get_object_or_404(ReportSwarmCase,pk=ticketID)
+        ticket = get_object_or_404(ReportSwarmCase,pk=ticketID)
+        if request.user.is_superuser or request.user == ticket.assignee:
             context = {"ticket":ticket}
             return render(request, "tickets/singularTicket.html",context)
-        elif request.user.is_staff:
-            ticket = get_object_or_404(ReportSwarmCase,pk=ticketID)
-            if (request.user == ticket.assignee):
-                context = {"ticket":ticket}
-                return render(request, "tickets/singularTicket.html",context)
-            else:
-                return redirect("profile")
         else:
-            return redirect("profile")
+            return redirect("openTickets")
