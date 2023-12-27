@@ -43,9 +43,8 @@ class OpenTickets(SingleTableView,View):
     if user is super user go to all tickets templates,  else get a list of tickets assigned to the login user status open
 
         """
-
+        openTickets =ReportSwarmCase.objects.filter(status="Open")
         if request.user.is_superuser:
-            openTickets =ReportSwarmCase.objects.filter(status="Open")
             CaseFilter = OpenTicket(request.GET, queryset=openTickets)
             # if there is a filtered queryset we are remaking the variable data with the filtered data
             openTickets = CaseFilter.qs
@@ -55,7 +54,7 @@ class OpenTickets(SingleTableView,View):
             context = {"tables":table,"filter":CaseFilter,}
             return render(request, "tickets/allTickets.html",context)
         elif request.user.is_staff:
-            openTickets =ReportSwarmCase.objects.filter(status="Open",assignee=request.user)
+            openTickets = openTickets.filter(assignee=request.user)
             table = ticketTable(openTickets,template_name = "django_tables2/bootstrap5-responsive.html")
             table.paginate(page=request.GET.get("page", 1), per_page=10)
             context = {"tables":table,}
