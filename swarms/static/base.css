@@ -69,8 +69,19 @@ header {
 }
 
 .beekeeper-expanding {
-  display: grid;
   cursor: pointer;
+}
+
+.beekeeper-ul {
+  display: grid;
+  gap: 0.5em;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.beekeeper-link {
+  /* submenu links set to block so that the link itself doesn't need to be clicked but the area can be clicked */
+  display: block;
 }
 
 .beekeeper-ul {
@@ -79,6 +90,7 @@ header {
   transition: 500ms ease;
   transform-origin: top;
   padding: 0;
+  margin-top: 0.125em;
 }
 
 .opened {
@@ -120,4 +132,46 @@ footer :not(.footer-h2) {
 ::selection {
   background-color: #ea9d34;
   color: white;
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .nav-wrapper {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .hidden-mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100svh;
+    width: 50svw;
+    transform: translateX(-1000px);
+    transition: transform 500ms ease-in-out;
+    background-color: white;
+  }
+
+  .nav > ul {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .menu-open {
+    transform: translateX(0px);
+    transition: transform 500ms ease-in-out;
+  }
+
+  .menu-icon {
+    display: initial;
+    --height: 50px;
+    height: var(--height);
+    width: var(--height);
+  }
 }
