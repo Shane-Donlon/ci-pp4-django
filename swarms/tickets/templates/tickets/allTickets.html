@@ -42,5 +42,19 @@
     </div>
 {% endblock content %}
 {% block jsfiles %}
+    {% if filter.form %}
+        {% comment %} if filter form exsist on page load the below script also {% endcomment %}
+        <script>
+    const modal = document.querySelector("dialog");
+    const modalOpenBtn = document.querySelector(".helpBtn");
+    const modalCloseBtn = document.querySelector(".dialogCloseBtn");
+    modalOpenBtn.addEventListener("click", (e) => {
+    modal.showModal();
+    });
+    modalCloseBtn.addEventListener("click", (e) => {
+    modal.close();
+    });
+        </script>
+    {% endif %}
     <script src="{% static "tickets/tickets.js" %}"></script>
 {% endblock jsfiles %}
