@@ -25,7 +25,13 @@
                         {% endif %}
                         <img src="{% static "images/logo.png" %}" alt="">
                     </a>
-                    <nav class="nav">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 448 512"
+                         class="menu-icon">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                        <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                    </svg>
+                    <nav class="nav hidden-mobile">
                         {% if user.is_authenticated %}
                             <ul class="nav-ul" role="list">
                                 <li class="nav-li">
@@ -74,7 +80,7 @@
             </main>
             <footer class="short-short-page-footer">
                 <a href="#" class="branding-link">
-                    <img src="{% static "images/logo.png" %}" alt="compnay logo honeybee">
+                    <img src="{% static "images/logo.png" %}" alt="company logo honeybee">
                 </a>
                 <div class="footer-content">
                     <h2 class="footer-h2">Thank you for saving our bees!</h2>
@@ -86,7 +92,20 @@
                     </h3>
                 </div>
             </footer>
-            <script src="{% static "base.js" %}"></script>
+            {% if user.is_authenticated %}
+                <script src="{% static "base.js" %}"></script>
+            {% else %}
+                <script src="{% static "base.js" %}"></script>
+                {% comment %} beekeeper menu doesn't exist after login and js file won't run {% endcomment %}
+                <script>
+                    let beekeeperMenu = document.querySelector(".beekeeper-expanding");
+                    let beekeeperUL = document.querySelector(".beekeeper-ul");
+                    beekeeperMenu.addEventListener("click", (e) => {
+                    beekeeperUL.classList.toggle("opened");
+                    });
+
+                </script>
+            {% endif %}
             {% block jsfiles %}
             {% endblock jsfiles %}
         </body>
