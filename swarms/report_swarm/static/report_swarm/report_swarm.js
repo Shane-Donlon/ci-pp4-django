@@ -13,6 +13,7 @@ let allBtns = document.querySelectorAll(".btn");
 // I could just index allBtns to the correct btn, but for readability of code I'll declare them independently
 let NextBtn2 = document.querySelector("#nextBtn2");
 let PrevBtn2 = document.querySelector("#prevBtn2");
+let resetBtn = document.querySelector(".reset-btn");
 let eircodeField = document.querySelector("#id_eircode");
 let progressCircles = document.querySelectorAll(".circle");
 let progressBar = document.querySelector("#progress");
@@ -155,6 +156,20 @@ PrevBtn2.addEventListener("click", (e) => {
   progressBar.value = 50;
   progressCircles[1].classList.remove("completed");
   progressCircles[1].classList.remove("active");
+  progressBar.value = 0;
+});
+
+resetBtn.addEventListener("click", (e) => {
+  let currentPanel = document.querySelector("#confirmationTab");
+  let lastPanel = document.querySelector("#personalDetailsTab");
+
+  currentPanel.setAttribute("hidden", "true");
+  lastPanel.removeAttribute("hidden");
+  progressCircles[0].classList.add("active");
+
+  progressCircles[1].classList.remove("completed");
+  progressCircles[2].classList.remove("completed");
+  progressCircles[2].classList.remove("active");
   progressBar.value = 0;
 });
 function checkEircode(eircode, eircodeSelector) {
