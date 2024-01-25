@@ -20,7 +20,7 @@ let PersonalDetailsFieldset = document.querySelector(
   ".personal-details-fieldset"
 );
 let honeyBeeDetailsFieldset = document.querySelector(".honeyBee-fieldset");
-
+let backBtn = document.querySelector("#prev");
 allInputs.forEach((input) => {
   /**  on page load disable all the input fields for the form, this will be toggled with an event listener
    *as an image is required in Step2 of the form, I am seeking confirmation that the user understands this before proceeding, 
@@ -100,12 +100,16 @@ NextBtn.addEventListener("click", (e) => {
     // set the 1st circle to green
     // set the 2nd circle to yellow
     // set progress bar value to 50%
-    PersonalDetailsFieldset.classList.add("hide");
-    honeyBeeDetailsFieldset.classList.remove("hide");
+
     progressCircles[0].classList.add("completed");
     progressBar.value = 50;
     progressCircles[0].classList.remove("active");
     progressCircles[1].classList.add("active");
+    let currentPanel = document.querySelector("#personalDetailsTab");
+    let nextPanel = document.querySelector("#honeyBeeDetailsTab");
+    currentPanel.setAttribute("hidden", "true");
+
+    nextPanel.removeAttribute("hidden");
   }
 });
 NextBtn2.addEventListener("click", (e) => {
@@ -115,20 +119,41 @@ NextBtn2.addEventListener("click", (e) => {
   );
 
   if (validateRequredInputPersonalDetails(inputs)) {
-    let nextField = document.querySelectorAll(".absolute-form-field")[2];
-    nextField.classList.remove("hide");
-    let currentField = document.querySelectorAll(".absolute-form-field")[1];
-    currentField.classList.add("hide");
+    let currentPanel = document.querySelector("#honeyBeeDetailsTab");
+    let nextPanel = document.querySelector("#confirmationTab");
+    currentPanel.setAttribute("hidden", "true");
+
+    nextPanel.removeAttribute("hidden");
+    progressCircles[1].classList.add("completed");
+    progressBar.value = 100;
+    progressCircles[1].classList.remove("active");
+    progressCircles[2].classList.add("active");
   }
+});
+
+backBtn.addEventListener("click", (e) => {
+  // this is step 3 of the form go back to step 2
+  let currentPanel = document.querySelector("#confirmationTab");
+  let lastPanel = document.querySelector("#honeyBeeDetailsTab");
+
+  currentPanel.setAttribute("hidden", "true");
+  lastPanel.removeAttribute("hidden");
+  progressCircles[1].classList.add("active");
+  progressBar.value = 50;
+  progressCircles[2].classList.remove("completed");
+  progressCircles[2].classList.remove("active");
 });
 
 PrevBtn2.addEventListener("click", (e) => {
   // this is step 2 of the form go back to step 1
-  PersonalDetailsFieldset.classList.remove("hide");
-  honeyBeeDetailsFieldset.classList.add("hide");
+  let currentPanel = document.querySelector("#honeyBeeDetailsTab");
+  let lastPanel = document.querySelector("#personalDetailsTab");
+
+  currentPanel.setAttribute("hidden", "true");
+  lastPanel.removeAttribute("hidden");
   progressCircles[0].classList.add("active");
   progressBar.value = 50;
-  progressCircles[0].classList.remove("completed");
+  progressCircles[1].classList.remove("completed");
   progressCircles[1].classList.remove("active");
   progressBar.value = 0;
 });
@@ -296,3 +321,20 @@ function validateRequredInputPersonalDetails(listOfInputs) {
 
   return correct;
 }
+
+allInputs.forEach((input, ind) => {
+  input.addEventListener("input", (e) => {
+    let confirmationArea = document.querySelectorAll(".label-value");
+    confirmationArea[ind].innerText = input.value;
+  });
+});
+
+let tabPanels = document.querySelectorAll(".tab-panel");
+
+tabPanels.forEach((tab, index) => {
+  if (!index) {
+    console.log(0);
+  } else {
+    tab.setAttribute("hidden", "");
+  }
+});
