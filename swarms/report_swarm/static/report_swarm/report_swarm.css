@@ -135,8 +135,10 @@ fieldset {
   border-image: linear-gradient(var(--angle), black, var(--bk-yellow)) 1;
   border-width: 2.5px;
   padding: 1em;
-  width: min-content;
+  max-width: 500px;
   animation: 20000ms gradientRotate linear infinite;
+  position: relative;
+  transition: transform 400ms ease;
 }
 
 .btn-container {
@@ -164,20 +166,15 @@ fieldset {
 form {
   position: relative;
   background-color: white;
-  margin-bottom: 50rem;
+  margin-bottom: 5rem;
 }
 
-.absolute-form-field {
+/* .absolute-form-field {
   position: absolute;
   inset: 0;
   max-width: 500px;
   margin-inline: auto;
-}
-
-fieldset {
-  position: relative;
-  transition: transform 400ms ease;
-}
+} */
 
 .imageRequiredSpan {
   position: relative;
@@ -200,11 +197,77 @@ fieldset {
 
 textarea {
   display: block;
+  box-sizing: border-box;
   width: 100%;
 }
 
-.btn:focus-visible {
-  border: 2px solid black;
+.btn:focus-visible,
+.btn:hover {
+  outline: 2px solid black;
+}
+
+.reset-btn {
+  background-color: black;
+  color: white;
+}
+
+.confirmation h2 {
+  text-align: center;
+  font-weight: 600;
+  padding: 0.5em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: clamp(1.5rem, 1.5rem + 1vw, 2rem);
+}
+
+.confirmation span {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.grid > * {
+  display: block;
+}
+
+.confirmation .hide {
+  display: none;
+}
+
+.tabs-ul {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tabs-ul > li {
+  list-style-type: none;
+  display: inline-flex;
+  align-content: center;
+}
+
+.tabs-ul > li > a {
+  text-decoration: none;
+  padding: 1rem 2rem;
+  color: black;
+  background-color: whitesmoke;
+}
+
+.label-value {
+  max-width: 100ch;
+}
+#personalDetailsTab {
+  margin-bottom: 90px;
+}
+#form-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-auto-flow: column;
 }
 
 @media (min-width: 600px) {
