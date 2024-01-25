@@ -2,125 +2,138 @@
 {% load static %}
 {% load widget_tweaks %}
 {% block cssfiles %}
-    <link rel="stylesheet" href="{% static "report_swarm/report_swarm.css" %}">
+    <link rel="stylesheet" href="{% static 'report_swarm/report_swarm.css' %}">
 {% endblock cssfiles %}
 {% block content %}
     <div class="content-wrapper">
-        <main id="#main">
-            <div class="check-box-wrapper">
-                <p>
-                    In order to complete this form you an <span class="imageRequiredSpan">image is required</span>
-                </p>
-                <label for="checkbox">Please confirm you have an image for upload in order to proceed</label>
-                <input type="checkbox" name="checkbox" id="checkbox">
+        <div class="check-box-wrapper">
+            <p>
+                In order to complete this form you an <span class="imageRequiredSpan">image is required</span>
+            </p>
+            <label for="checkbox">Please confirm you have an image for upload in order to proceed</label>
+            <input type="checkbox" name="checkbox" id="checkbox">
+        </div>
+        <div class="progress-container" role="presentation">
+            <progress id="progress" class="progress" value="0" max="100"></progress>
+            <div class="circle active">1</div>
+            <div class="circle">2</div>
+            <div class="circle">3</div>
+        </div>
+        <form method="post"
+              autocomplete="on"
+              class="swarm-form"
+              enctype="multipart/form-data">
+            {% csrf_token %}
+            {% if errors %}<p>{{ errors.message }}</p>{% endif %}
+            <h2 id="form-title">Reporting a Swarm Form</h2>
+            <div class="absolute-form-field tab-panel" id="personalDetailsTab">
+                <fieldset class="personal-details-fieldset "
+                          id="step1"
+                          aria-labelledby="personalDetailsTab">
+                    <legend>Personal Details</legend>
+                    <div class="form-group">
+                        {% render_field form.first_name.label_tag %}
+                        {% render_field form.first_name autocomplete="given-name" %}
+                        <p class="display-none"></p>
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.last_name.label_tag %}
+                        {% render_field form.last_name autocomplete="family-name" %}
+                        <p class="display-none"></p>
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.phone.label_tag %}
+                        {% render_field form.phone autocomplete="tel" pattern="[353]{3}[0-9]{9}" placeholder="353881234567" %}
+                        <p class="display-none"></p>
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.email.label_tag %}
+                        {% render_field form.email autocomplete="email" %}
+                        <p class="display-none"></p>
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.address1.label_tag %}
+                        {% render_field form.address1 autocomplete="address-line1" %}
+                        <p class="display-none"></p>
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.address2.label_tag %}
+                        {% render_field form.address2 autocomplete="address-line2" %}
+                        <p class="display-none"></p>
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.address3.label_tag %}
+                        {% render_field form.address3 autocomplete="address-line3" %}
+                        <p class="display-none"></p>
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.county.label_tag %}
+                        {% render_field form.county list="countyNames" %}
+                        <p class="display-none countiesErrors"></p>
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.eircode.label_tag %}
+                        {% render_field form.eircode autocomplete="postal-code" minlength="7" %}
+                        <p class="display-none"></p>
+                    </div>
+                    <div class="btn-container">
+                        <button class="btn" id="next" type="button">Next</button>
+                    </div>
+                </fieldset>
             </div>
-            <div class="progress-container" role="presentation">
-                <progress id="progress" class="progress" value="0" max="100"></progress>
-                <div class="circle active">1</div>
-                <div class="circle">2</div>
-                <div class="circle">3</div>
+            <div class="absolute-form-field  tab-panel" id="honeyBeeDetailsTab">
+                <fieldset class="honeyBee-fieldset"
+                          id="step2"
+                          aria-labelledby="honeyBeeDetailsTab">
+                    <legend>HoneyBee Details</legend>
+                    <div class="form-group">
+                        {% render_field form.location.label_tag %}
+                        {% render_field form.location %}
+                        <p class="display-none"></p>
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.description.label_tag %}
+                        {% render_field form.description %}
+                        <p class="display-none"></p>
+                    </div>
+                    <div class="form-group">
+                        {% render_field form.image.label_tag %}
+                        {% render_field form.image accept="image/*" %}
+                        <p class="display-none"></p>
+                    </div>
+                    <div class="btn-container">
+                        <button class="btn" id="prevBtn2" type="button">Prev</button>
+                        <button class="btn" id="nextBtn2" type="button">Next</button>
+                    </div>
+                </fieldset>
             </div>
-            <form method="post"
-                  autocomplete="on"
-                  class="swarm-form"
-                  enctype="multipart/form-data">
-                {% csrf_token %}
-                {% if errors %}<p>{{ errors }}</p>{% endif %}
-                <h2 id="form-title">Reporting a Swarm Form</h2>
-                <div class="absolute-form-field">
-                    <fieldset class="personal-details-fieldset " id="step1" aria-labelledby="tab-1">
-                        <legend>Personal Details</legend>
-                        <div class="form-group">
-                            {% render_field form.first_name.label_tag %}
-                            {% render_field form.first_name autocomplete="given-name" %}
-                            <p class="display-none"></p>
+            <div class="absolute-form-field confirmation tab-panel"
+                 id="confirmationTab">
+                <fieldset aria-labelledby="confirmationTab">
+                    <legend>Confirmation</legend>
+                    <h3>Please confirm that your details are correct before submitting the form</h3>
+                    <h3>
+                        You will be <span>unable</span> to change these details later
+                    </h3>
+                    {% for label in form %}
+                        <div class="grid">
+                            <p>{{ label.label }}</p>
+                            <p class="label-value"></p>
                         </div>
-                        <div class="form-group">
-                            {% render_field form.last_name.label_tag %}
-                            {% render_field form.last_name autocomplete="family-name" %}
-                            <p class="display-none"></p>
-                        </div>
-                        <div class="form-group">
-                            {% render_field form.phone.label_tag %}
-                            {% render_field form.phone autocomplete="tel" pattern="[353]{3}[0-9]{9}" placeholder="353881234567" %}
-                            <p class="display-none"></p>
-                        </div>
-                        <div class="form-group">
-                            {% render_field form.email.label_tag %}
-                            {% render_field form.email autocomplete="email" %}
-                            <p class="display-none"></p>
-                        </div>
-                        <div class="form-group">
-                            {% render_field form.address1.label_tag %}
-                            {% render_field form.address1 autocomplete="address-line1" %}
-                            <p class="display-none"></p>
-                        </div>
-                        <div class="form-group">
-                            {% render_field form.address2.label_tag %}
-                            {% render_field form.address2 autocomplete="address-line2" %}
-                            <p class="display-none"></p>
-                        </div>
-                        <div class="form-group">
-                            {% render_field form.address3.label_tag %}
-                            {% render_field form.address3 autocomplete="address-line3" %}
-                            <p class="display-none"></p>
-                        </div>
-                        <div class="form-group">
-                            {% render_field form.county.label_tag %}
-                            {% render_field form.county list="countyNames" %}
-                            <p class="display-none countiesErrors"></p>
-                        </div>
-                        <div class="form-group">
-                            {% render_field form.eircode.label_tag %}
-                            {% render_field form.eircode autocomplete="postal-code" minlength="7" %}
-                            <p class="display-none"></p>
-                        </div>
-                        <div class="btn-container">
-                            <button class="btn btn-disabled" id="prev" disabled type="button">Prev</button>
-                            <button class="btn" id="next" type="button">Next</button>
-                        </div>
-                    </fieldset>
-                </div>
-                <div class="absolute-form-field ">
-                    <fieldset class="honeyBee-fieldset hide"id="step2" aria-labelledby="tab-2">
-                        <legend>HoneyBee Details</legend>
-                        <div class="form-group">
-                            {% render_field form.location.label_tag %}
-                            {% render_field form.location %}
-                            <p class="display-none"></p>
-                        </div>
-                        <div class="form-group">
-                            {% render_field form.description.label_tag %}
-                            {% render_field form.description %}
-                            <p class="display-none"></p>
-                        </div>
-                        <div class="form-group">
-                            {% render_field form.image.label_tag %}
-                            {% render_field form.image accept="image/*" %}
-                            <p class="display-none"></p>
-                        </div>
-                        <div class="btn-container">
-                            <button class="btn" id="prevBtn2" type="button">Prev</button>
-                            <button class="btn" id="nextBtn2" type="button">Next</button>
-                        </div>
-                    </fieldset>
-                </div>
-                <div class="absolute-form-field hide">
-                    <fieldset>
-                        <h2>Confimation</h2>
-                        <div class="btn-container">
-                            <button type="reset">Reset</button>
-                            <button type="Submit">Submit</button>
-                        </div>
-                    </fieldset>
-                </div>
+                    {% endfor %}
+                    <div class="btn-container">
+                        <button class="btn reset-btn" type="reset">Reset All Data</button>
+                        <button class="btn " id="prev" type="button">Prev</button>
+                        <button type="Submit" class="btn">Submit</button>
+                    </div>
+                </fieldset>
             </div>
-        </form>
-    </main>
+        </div>
+    </form>
     <datalist id="countyNames">
         {% for county in counties %}<option value="{{ county }}"></option>{% endfor %}
     </datalist>
 {% endblock content %}
 {% block jsfiles %}
-    <script src="{% static "report_swarm/report_swarm.js" %}"></script>
+    <script src="{% static 'report_swarm/report_swarm.js' %}"></script>
 {% endblock jsfiles %}
