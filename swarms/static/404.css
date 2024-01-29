@@ -1,0 +1,36 @@
+body {
+  min-height: 100svh;
+}
+svg {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+.svg-wrapper {
+  height: 500px;
+  margin-inline: auto;
+  width: fit-content;
+}
+
+.error-h2 {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.errordiv a {
+  text-align: center;
+  text-decoration: none;
+  padding: 1em 2em;
+  color: white;
+  background-color: black;
+  border-radius: 100vmax;
+  font-size: 1.25rem;
+}
+
+.link-div {
+  width: max-content;
+  margin-inline: auto;
+  margin-bottom: 2em;
+}
