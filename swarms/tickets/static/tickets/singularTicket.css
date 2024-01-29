@@ -1,0 +1,114 @@
+fieldset {
+  max-width: 800px;
+  margin-inline: auto;
+  padding: 1em 2em;
+  border-radius: 10px;
+}
+main {
+  min-height: 75svh;
+}
+
+.form-div {
+  display: grid;
+  justify-items: start;
+}
+
+.form-div {
+  margin-top: 1em;
+}
+
+dialog[open] {
+  height: 100svh;
+  width: 100%;
+}
+
+dialog[open] > img {
+  display: block;
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+
+.image-preview {
+  height: 200px;
+  aspect-ratio: 1/1;
+}
+
+#description {
+  justify-self: stretch;
+}
+
+#edit {
+  accent-color: var(--bk-yellow);
+}
+
+.display-none {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1em;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  label {
+    margin-top: 0.125em;
+  }
+}
+
+.ticketId {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.message {
+  pointer-events: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 100px;
+  color: white;
+  transition: all 500ms linear;
+}
+
+.message > p {
+  transform: translateY(100vh);
+  transition: all 500ms ease;
+}
+
+.message :where(.valid) {
+  background-color: forestgreen;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  z-index: 3;
+
+  transition: all 500ms linear;
+}
+
+.message :where(.invalid) {
+  background-color: darkred;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  transition: translate 500ms linear;
+}
+
+.message > .valid {
+  transform: translateY(0);
+  transition: all 500ms ease;
+}
+
+.message > .invalid {
+  transform: translateY(0);
+  transition: all 500ms ease;
+}
