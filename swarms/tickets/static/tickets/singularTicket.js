@@ -40,29 +40,9 @@ let link = window.location.href;
 
 let saveBtnDescription = document.querySelector(".submit-description");
 saveBtnDescription.addEventListener("click", (e) => {
-  let newDiv = document.createElement("div");
-  let contentWrapper = document.querySelector(".content-wrapper");
   postTicket(generateTicketData()).then((message) => {
     let responseMessage = Object.values(message)[0];
-    if (responseMessage === "saved") {
-      // if ticket has been saved
-
-      newDiv.className = "message";
-      newDiv.innerHTML = `    <p class="valid">Your ticket has been successfully saved</p>`;
-      contentWrapper.appendChild(newDiv);
-
-      setTimeout(() => {
-        newDiv.remove();
-      }, 1500);
-    } else {
-      newDiv.className = "message";
-      newDiv.innerHTML = `<p class="invalid">Your ticket has not been saved</p>`;
-
-      contentWrapper.appendChild(newDiv);
-      setTimeout(() => {
-        newDiv.remove();
-      }, 1500);
-    }
+    displayMessage(responseMessage);
   });
 });
 
@@ -114,4 +94,28 @@ function generateTicketData() {
 
   let bodyJson = JSON.stringify({ ticket: ticketbody });
   return bodyJson;
+}
+
+function displayMessage(responseMessage) {
+  let newDiv = document.createElement("div");
+  let contentWrapper = document.querySelector(".content-wrapper");
+  if (responseMessage === "saved") {
+    // if ticket has been saved
+
+    newDiv.className = "message";
+    newDiv.innerHTML = `    <p class="valid">Your ticket has been successfully saved</p>`;
+    contentWrapper.appendChild(newDiv);
+
+    setTimeout(() => {
+      newDiv.remove();
+    }, 1500);
+  } else {
+    newDiv.className = "message";
+    newDiv.innerHTML = `<p class="invalid">Your ticket has not been saved</p>`;
+
+    contentWrapper.appendChild(newDiv);
+    setTimeout(() => {
+      newDiv.remove();
+    }, 1500);
+  }
 }
