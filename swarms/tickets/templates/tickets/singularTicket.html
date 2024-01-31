@@ -12,7 +12,7 @@
             <label for="allData">Unlock all fields</label>
             <input type="checkbox" name="checkboxAllFields" id="checkboxAllFields">
         {% endif %}
-        <fieldset>
+        <fieldset class="user-details-fieldset">
             <legend>User Details</legend>
             <div class="grid">
                 <div class="form-div">
@@ -104,7 +104,10 @@
                     {% endif %}
                     <label for="description">Description</label>
                     <textarea name="description" id="description" cols="30" rows="10" disabled>{{ticket.description}}</textarea>
-                    <button class="submit-description display-none">Save</button>
+                    <div class="btn-div">
+                        {% if user.is_superuser %}<button class="delete-ppi-btn display-none control-btn">Delete PPI</button>{% endif %}
+                        <button class="submit-description display-none control-btn">Save</button>
+                    </div>
                 </div>
                 <div class="form-div">
                     {% comment %} Add assignee here, should be a select list of the current user and the super users will need to update page context {% endcomment %}
@@ -115,30 +118,11 @@
         {% csrf_token %}
     {% endblock content %}
     {% block jsfiles %}
+    <script src="{% static 'tickets/singularTicket.js' %}"></script>
         {% if user.is_superuser %}
-            <script>
-            let allFields = document.querySelectorAll(".form-div :not(label)");
-            let submitBtnAdmin = document.querySelector(".submit-description")
-        let checkboxAllFields = document.querySelector("#checkboxAllFields");
-        checkboxAllFields.addEventListener("change", (e) => {
-   
-          
-            if (checkboxAllFields.checked) {
-              allFields.forEach((field)=> {
-                if (field.hasAttribute("disabled")) {
-                  field.removeAttribute("disabled");
-                  submitBtnAdmin.classList.remove("display-none");
-                }
-              });
-            } else {
-              allFields.forEach((field) => {
-                field.setAttribute("disabled", "");
-                submitBtnAdmin.classList.add("display-none");
-              });
-            }
-          });
-          
-            </script>
+            <script src="{% static "tickets/singularTicketAdmin.js" %}"></script>
         {% endif %}
-        <script src="{% static 'tickets/singularTicket.js' %}"></script>
+
     {% endblock jsfiles %}
+ 
+   
