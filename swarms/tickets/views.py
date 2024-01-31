@@ -2,7 +2,7 @@ import json
 
 from django.contrib.auth.decorators import login_required
 from django.forms.models import model_to_dict
-from django.http import Http404, JsonResponse, HttpResponse
+from django.http import Http404, JsonResponse, HttpResponse,HttpResponseForbidden 
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.decorators import method_decorator
 from django.contrib.auth.models import User
@@ -190,3 +190,14 @@ class TicketView(View):
             return HttpResponse(message, content_type='text/plain')
 
 
+    def delete(self, request, ticketID):
+        if request.user.is_superuser:
+            ticket = get_object_or_404(ReportSwarmCase, pk=ticketID)
+            ticket.delete()
+            print("delete")
+            message = "delete"
+            message = JsonResponse({"message":message})
+            return HttpResponse(message, content_type='text/plain')
+        
+        else:
+            HttpResponseForbidden()
