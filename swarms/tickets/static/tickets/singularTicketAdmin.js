@@ -22,13 +22,14 @@ checkboxAllFields.addEventListener("change", (e) => {
 });
 
 deleteBtn.addEventListener("click", (e) => {
-  deleteInfo();
   displayConfirmation();
 });
 
 function deleteInfo() {
-  let allLabels = document.querySelectorAll(".user-details-fieldset label");
-  allLabels.forEach((label) => {
+  let userDetailsLabels = document.querySelectorAll(
+    ".user-details-fieldset label"
+  );
+  userDetailsLabels.forEach((label) => {
     if (label.innerText.toLowerCase() != "county") {
       label.nextElementSibling.value = "";
     }
@@ -39,10 +40,12 @@ const displayConfirmation = () => {
   let response = confirm(
     "You will delete all user personal info. This cannot be undone"
   );
+
+  if (response) {
+    deleteInfo();
+    postTicket(generateTicketData()).then((message) => {
+      let responseMessage = Object.values(message)[0];
+      displayMessage(responseMessage);
+    });
+  }
 };
-if (response) {
-  postTicket(generateTicketData()).then((message) => {
-    let responseMessage = Object.values(message)[0];
-    displayMessage(responseMessage);
-  });
-}
