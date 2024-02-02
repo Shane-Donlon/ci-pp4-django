@@ -67,7 +67,14 @@
                 </div>
                 <div class="form-div">
                     <label for="assignee">Assignee:</label>
-                    <input type="text" value="{{ ticket.assignee }}" disabled id="assignee">
+                    {% comment %} should this be a select? Hmmm {% endcomment %}
+                    <select name="assignee"  disabled id="assignee">
+                        <option value="{{ ticket.assignee }}">{{ ticket.assignee }}</option>
+                        <option value="{{ currentUser }}">Me</option>
+                        {% if superUser %}
+                            {% for user in superUser %}<option value="{{ user }}">{{ user }}</option>{% endfor %}
+                        {% endif %}
+                    </select>
                 </div>
             </div>
             <div class="grid">
@@ -105,8 +112,11 @@
                     <label for="description">Description</label>
                     <textarea name="description" id="description" cols="30" rows="10" disabled>{{ticket.description}}</textarea>
                     <div class="btn-div">
-                        {% if user.is_superuser %}<button class="delete-ppi-btn display-none control-btn">Delete PPI</button>{% endif %}
                         <button class="submit-description display-none control-btn">Save</button>
+                        {% if user.is_superuser %}
+                            <button class="delete-ppi-btn display-none control-btn">Delete PPI</button>
+                            <button class="delete-ticket-btn display-none control-btn">Delete Ticket</button>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="form-div">
@@ -118,11 +128,15 @@
         {% csrf_token %}
     {% endblock content %}
     {% block jsfiles %}
-    <script src="{% static 'tickets/singularTicket.js' %}"></script>
+        <script src="{% static 'tickets/singularTicket.js' %}"></script>
         {% if user.is_superuser %}
             <script src="{% static "tickets/singularTicketAdmin.js" %}"></script>
+            <script type="text/javascript">
+                function redirect() {
+                    alert('Ticket has been deleted');
+                    window.location.replace("{% url 'allTickets' %}");
+                }
+                   
+            </script>
         {% endif %}
-
     {% endblock jsfiles %}
- 
-   

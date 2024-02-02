@@ -13,9 +13,11 @@ from django.core.serializers import serialize
 from .filters import OpenTicket, TicketFilter
 from .tables import ticketTable
 from django.contrib import messages
+from django.db.models import Q
 
 # Create your views here.
 
+UNASSIGNED_USER = 3
 
 @method_decorator(login_required, name='dispatch')
 class AllTicketView(SingleTableView, View):
@@ -58,7 +60,8 @@ class OpenTickets(SingleTableView, View):
             context = {"tables": table, "filter": CaseFilter, }
             return render(request, "tickets/allTickets.html", context)
         elif request.user.is_staff:
-            openTickets = openTickets.filter(assignee=request.user)
+            # assignee 3 === unassigned
+            openTickets = openTickets.filter(Q(assignee=request.user)|Q(assignee=3))
             table = ticketTable(
                 openTickets, template_name="django_tables2/bootstrap5-responsive.html")
             RequestConfig(request).configure(table)
@@ -143,7 +146,9 @@ class TicketView(View):
     if the user is logged in but is not the assignee raise 404
         """
         ticket = get_object_or_404(ReportSwarmCase, pk=ticketID)
-        if request.user.is_superuser or request.user == ticket.assignee:
+   
+        if  request.user.is_superuser or request.user == ticket.assignee or ticket.assignee.username == "unassigned":
+            
             if request.headers.get("X-Requested-With") == "XMLHttpRequest":
                 ticket = ReportSwarmCase.objects.filter(pk=ticketID)
                 ticket = serialize("json", ticket)
@@ -151,7 +156,10 @@ class TicketView(View):
 
                 return JsonResponse({"ticket":ticket})
             else:
-                context = {"ticket": ticket}
+                superUser = User.objects.filter(is_superuser=True)
+                currentUser = request.user
+                context = {"ticket": ticket,
+                           "superUser":superUser,"currentUser":currentUser}
                 return render(request, "tickets/singularTicket.html", context)
         else:
             raise Http404
@@ -194,7 +202,6 @@ class TicketView(View):
         if request.user.is_superuser:
             ticket = get_object_or_404(ReportSwarmCase, pk=ticketID)
             ticket.delete()
-            print("delete")
             message = "delete"
             message = JsonResponse({"message":message})
             return HttpResponse(message, content_type='text/plain')
