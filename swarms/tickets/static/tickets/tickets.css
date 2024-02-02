@@ -342,19 +342,6 @@
   border: 0;
 }
 /* end bootstrap table classes, from bootstrap css files */
-.short-page-body {
-  /* Why? The sign in form page is too small grid pushes it to full screen */
-  /* Gap acts as margins */
-  gap: 1em;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-}
-
-form {
-  width: max-content;
-  margin-inline: auto;
-}
 
 /* paginatino class in django tables */
 .pagination {
@@ -386,4 +373,29 @@ form {
 dialog[open] {
   margin: auto;
   padding: 2em;
+}
+main {
+  min-height: 75svh;
+}
+
+form {
+  width: max-content;
+  margin-inline: auto;
+}
+
+.filter-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  display: block;
+}
+
+@media (min-width: 750px) {
+  label {
+    display: inline-block;
+  }
 }
