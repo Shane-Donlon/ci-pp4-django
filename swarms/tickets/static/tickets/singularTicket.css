@@ -118,3 +118,7 @@ dialog[open] > img {
   display: flex;
   justify-content: space-between;
 }
+
+#checkboxAllFields {
+  accent-color: var(--bk-yellow);
+}
