@@ -1,7 +1,7 @@
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("dialog + button");
 const closeButton = document.querySelector("dialog button");
-
+const link = window.location.href;
 showButton.addEventListener("click", () => {
   dialog.showModal();
 });
@@ -36,8 +36,6 @@ if (ticketStatus.value === "Open") {
   });
 }
 
-let link = window.location.href;
-
 let saveBtnDescription = document.querySelector(".submit-description");
 saveBtnDescription.addEventListener("click", (e) => {
   postTicket(generateTicketData()).then((message) => {
@@ -57,7 +55,8 @@ async function makeRequest(url, requestType, body) {
     "X-Requested-With": "XMLHttpRequest",
     "Content-type": "application/json",
   };
-  if (requestType === "post") {
+  if (requestType.toLowerCase() != "get") {
+    // != get covers post and delete requests
     let csrfValue = document.querySelector("[name=csrfmiddlewaretoken").value;
     headersObj["X-CSRFToken"] = csrfValue;
   }
