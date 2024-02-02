@@ -169,3 +169,4 @@ ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"
 ACCOUNT_EMAIL_VERIFICATION = "optional"
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
