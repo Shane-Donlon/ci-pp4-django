@@ -9,9 +9,11 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-import dj_database_url
 import os
 from pathlib import Path
+
+import dj_database_url
+
 if os.path.isfile('env.py'):
     import env
 
@@ -51,13 +53,18 @@ INSTALLED_APPS = [
     'cloudinary',
     'unauthenticated',
     "sign_in_sign_out",
-    'ReportSwarm',
+    'report_swarm',
+    'tickets',
+    'django_tables2',
+    'django_filters',
 ]
 
 
 SITE_ID = 1
-# LOGIN_REDIRECT_URL = "index"
-# LOGOUT_REDIRECT_URL = "index"
+LOGIN_REDIRECT_URL = "openTickets"
+ACCOUNT_SIGNUP_REDIRECT_URL = "profile"
+LOGOUT_REDIRECT_URL = "index"
+
 # change
 
 
@@ -86,6 +93,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "django.template.context_processors.request",
             ],
         },
     },
@@ -97,16 +105,16 @@ WSGI_APPLICATION = 'swarms.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-}
-# uncomment this when running tests
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
+#     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 # }
+# uncomment this when running tests
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -155,8 +163,9 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AUTH_USER_MODEL = "sign_in_sign_out.MyUser"
-ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_EMAIL_VERIFICATION = "optional"
+MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
