@@ -35,7 +35,7 @@ form input {
 }
 
 form input[type="checkbox"] {
-  accent-color: orange;
+  accent-color: #ea9d34;
   margin-right: auto;
   width: fit-content;
 }
@@ -44,7 +44,7 @@ form button[type="submit"] {
   font-size: 1.5rem;
   padding: 0.25em 1.5em;
   border-radius: 100vmax;
-  background-color: #ea9d34;
+  background-color: #8b4313;
   color: white;
   text-transform: capitalize;
 }
