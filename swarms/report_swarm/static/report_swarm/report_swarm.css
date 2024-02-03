@@ -82,6 +82,7 @@ fieldset,
 }
 
 .btn {
+  --bk-yellow: #8b4313;
   background-color: var(--bk-yellow);
   color: #fff;
   font-weight: 600;
