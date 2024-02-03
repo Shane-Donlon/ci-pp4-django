@@ -9,8 +9,8 @@
         <meta name="keywords"
               content="bee removal ireland,bee swarm removal,Rehoming bees,bee removal,bee nest removal,bee nest removal near me,bee movers near me, Swarm of bees,  how to get rid of bees in chimney,how to get rid of bees in roof, bee rescue removal,honeybee ireland, how to get rid of bees nest in roof tiles, bee collection service, bee home,how to get rid of bees in roof space, bee collector,Local beekeeper, swarm.ie, swarms ie" />
         <meta name="author" content="Swarms.ie" />
-        <link rel="stylesheet" href="{% static "reset.css" %}">
-        <link rel="stylesheet" href="{% static "base.css" %}">
+        <link rel="stylesheet" href="{% static 'reset.css' %}">
+        <link rel="stylesheet" href="{% static 'base.css' %}">
         {% block cssfiles %}
         {% endblock cssfiles %}
         <title>Swarms.ie | Honeybee Swarm Removals</title>
@@ -23,7 +23,7 @@
                     {% else %}
                         <a href={% url "index" %} class="branding-link">
                         {% endif %}
-                        <img src="{% static "images/logo.png" %}" alt="">
+                        <img src="{% static "images/logo.png" %}" alt="Image of company logo honeybee drawing">
                     </a>
                     <svg xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 448 512"
@@ -92,11 +92,9 @@
                     </h3>
                 </div>
             </footer>
-            {% if user.is_authenticated %}
-                <script src="{% static "base.js" %}"></script>
-            {% else %}
-                <script src="{% static "base.js" %}"></script>
-                {% comment %} beekeeper menu doesn't exist after login and js file won't run {% endcomment %}
+            <script src="{% static 'base.js' %}"></script>
+            {% comment %} beekeeper menu doesn't exist after login and js file won't run {% endcomment %}
+            {% if not user.is_authenticated %}
                 <script>
                     let beekeeperMenu = document.querySelector(".beekeeper-expanding");
                     let beekeeperUL = document.querySelector(".beekeeper-ul");
