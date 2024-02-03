@@ -106,7 +106,7 @@ header {
 
 footer {
   background-color: #3b3838;
-  color: #ea9d34;
+  color: var(--bk-yellow);
   display: grid;
   align-items: center;
   grid-template-columns: min-content 1fr;
@@ -130,8 +130,8 @@ footer :not(.footer-h2) {
 }
 
 ::selection {
-  background-color: #ea9d34;
-  color: white;
+  background-color: var(--bk-yellow);
+  color: black;
 }
 
 .menu-icon {
