@@ -379,4 +379,4 @@ submitBtn.addEventListener("click", (e) => {
 });
 
 let imgInput = document.querySelector("#id_image");
-imgInput.setAttribute("capture", "");
+imgInput.setAttribute("capture", "user");
