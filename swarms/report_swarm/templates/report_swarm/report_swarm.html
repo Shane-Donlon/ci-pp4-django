@@ -33,12 +33,12 @@
                     <legend>Personal Details</legend>
                     <div class="form-group">
                         {% render_field form.first_name.label_tag %}
-                        {% render_field form.first_name autocomplete="given-name" %}
+                        {% render_field form.first_name autocomplete="given-name" placeholder="John" %}
                         <p class="display-none"></p>
                     </div>
                     <div class="form-group">
                         {% render_field form.last_name.label_tag %}
-                        {% render_field form.last_name autocomplete="family-name" %}
+                        {% render_field form.last_name autocomplete="family-name" placeholder="Doe" %}
                         <p class="display-none"></p>
                     </div>
                     <div class="form-group">
@@ -48,27 +48,27 @@
                     </div>
                     <div class="form-group">
                         {% render_field form.email.label_tag %}
-                        {% render_field form.email autocomplete="email" %}
+                        {% render_field form.email autocomplete="email" placeholder="john.doe@jdmail.com" %}
                         <p class="display-none"></p>
                     </div>
                     <div class="form-group">
                         {% render_field form.address.label_tag %}
-                        {% render_field form.address autocomplete="address-line1" %}
+                        {% render_field form.address autocomplete="address-line4" placeholder="17 Hazelwood Park" %}
                         <p class="display-none"></p>
                     </div>
                     <div class="form-group">
                         {% render_field form.town.label_tag %}
-                        {% render_field form.town autocomplete="address-line3" %}
+                        {% render_field form.town autocomplete="address-line2" placeholder="FourmileHouse" %}
                         <p class="display-none"></p>
                     </div>
                     <div class="form-group">
                         {% render_field form.county.label_tag %}
-                        {% render_field form.county list="countyNames" %}
+                        {% render_field form.county list="countyNames" placeholder="Roscommon" %}
                         <p class="display-none countiesErrors"></p>
                     </div>
                     <div class="form-group">
                         {% render_field form.eircode.label_tag %}
-                        {% render_field form.eircode autocomplete="postal-code" minlength="7" %}
+                        {% render_field form.eircode autocomplete="postal-code" minlength="7" placeholder="1231234" %}
                         <p class="display-none"></p>
                     </div>
                     <div class="btn-container">
@@ -88,7 +88,7 @@
                     </div>
                     <div class="form-group">
                         {% render_field form.description.label_tag %}
-                        {% render_field form.description %}
+                        {% render_field form.description placeholder="I have a swarm of bees that are outside, on a roof, should be able to reach with a ladder, please help" %}
                         <p class="display-none"></p>
                     </div>
                     <div class="form-group">
@@ -119,7 +119,7 @@
                     <div class="btn-container">
                         <button class="btn reset-btn" type="reset">Reset All Data</button>
                         <button class="btn " id="prev" type="button">Prev</button>
-                        <button type="Submit" class="btn">Submit</button>
+                        <button type="Submit" class="btn submit-btn">Submit</button>
                     </div>
                 </fieldset>
             </div>
