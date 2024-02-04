@@ -53,12 +53,12 @@
                     </div>
                     <div class="form-group">
                         {% render_field form.address.label_tag %}
-                        {% render_field form.address autocomplete="address-line4" placeholder="17 Hazelwood Park" %}
+                        {% render_field form.address autocomplete="street-address" placeholder="17 Hazelwood Park" %}
                         <p class="display-none"></p>
                     </div>
                     <div class="form-group">
                         {% render_field form.town.label_tag %}
-                        {% render_field form.town autocomplete="address-line2" placeholder="FourmileHouse" %}
+                        {% render_field form.town autocomplete="address-level2" placeholder="FourmileHouse" %}
                         <p class="display-none"></p>
                     </div>
                     <div class="form-group">
