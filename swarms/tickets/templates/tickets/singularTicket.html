@@ -117,9 +117,6 @@
                         {% endif %}
                     </div>
                 </div>
-                <div class="form-div">
-                    {% comment %} Add assignee here, should be a select list of the current user and the super users will need to update page context {% endcomment %}
-                </div>
             </fieldset>
         </div>
         {% comment %} token used for JS POST request {% endcomment %}
@@ -127,11 +124,7 @@
         <datalist id="users">
             {% for user in superUser %}<option value="{{ user }}">{{ user }}</option>{% endfor %}
             {% if user.is_superuser %}
-            
-            {% for user in allStaff  %}
-            <option value="{{user}}">{{user}}</option>
-            
-            {% endfor %}
+                {% for user in allStaff %}<option value="{{ user }}">{{ user }}</option>{% endfor %}
             {% endif %}
             <option value="{{ currentUser }}">Me</option>
         </datalist>
