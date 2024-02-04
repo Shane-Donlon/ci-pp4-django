@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block cssfiles %}
+    <link rel="stylesheet" href="{% static 'report_swarm/report_swarm.css' %}">
+{% endblock cssfiles %}
+{% block content %}
+    <div class="content-wrapper thanks-content ta-cetner">
+        <div class="grid-child">
+            <h1 class="thanks-h1">Thank you for submitting your request</h1>
+            <p>
+                Your request number for this is <span class="ticket-id-span">{{ ticket.id }}</span>
+            </p>
+            <p>
+                Due to data protection you will be unable to update this ticket yourself, but please contact us if you have questsions
+            </p>
+            <div class="contact-info ta-cetner">
+                <h2>Contact Information</h2>
+                <div class="grid-info">
+                    <h3>Phone:</h3>
+                    <a href="tel:353881234567">353881234567</a>
+                </div>
+                <div class="grid-info">
+                    <h3>Email:</h3>
+                    <a href="mailto:ticket@test.ie">ticket@swarms.ie</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+{% block jsfiles %}
+{% endblock jsfiles %}
