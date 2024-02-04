@@ -374,7 +374,6 @@ submitBtn.addEventListener("click", (e) => {
   newDiv.innerHTML = innerDiv;
 
   document.body.append(newDiv);
-  // window.scrollTo(0, 0);
   document.body.style.overflow = "hidden";
   form.submit();
 });
