@@ -377,3 +377,6 @@ submitBtn.addEventListener("click", (e) => {
   document.body.style.overflow = "hidden";
   form.submit();
 });
+
+let imgInput = document.querySelector("#id_image");
+imgInput.setAttribute("capture", "environment");
