@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
-
+from report_swarm.models import ReportSwarmCase
 from .forms import ReportSwarmForm
 
 counties = ["Antrim", "Armagh", "Carlow", "Cavan", "Clare", "Cork", "Derry", "Donegal", "Down", "Dublin", "Fermanagh", "Galway", "Kerry", "Kildare", "Kilkenny", "Laois",
@@ -19,7 +19,12 @@ class ReportSwarmView(View):
 
         if form.is_valid():
             form.save()
-            return render(request, "report_swarm/thanks.html", )
+            # get the last ticket logged by the user using phone number as unique identifier
+            # phone used as multiple people could have the same postal code / eircode
+            ticket = ReportSwarmCase.objects.filter(phone=request.POST["phone"])
+            ticket = ticket.last()
+            context = {"ticket": ticket }
+            return render(request, "report_swarm/thanks.html",context )
         else:
             context = {"form": ReportSwarmForm(
                 request.POST), "counties": counties, "errors": form.errors}
