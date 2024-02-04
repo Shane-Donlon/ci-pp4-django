@@ -68,13 +68,12 @@
                 <div class="form-div">
                     <label for="assignee">Assignee:</label>
                     {% comment %} should this be a select? Hmmm {% endcomment %}
-                    <select name="assignee"  disabled id="assignee">
-                        <option value="{{ ticket.assignee }}">{{ ticket.assignee }}</option>
-                        <option value="{{ currentUser }}">Me</option>
-                        {% if superUser %}
-                            {% for user in superUser %}<option value="{{ user }}">{{ user }}</option>{% endfor %}
-                        {% endif %}
-                    </select>
+                    <input type="search"
+                           name="assignee"
+                           id="assignee"
+                           list="users"
+                           value="{{ ticket.assignee }}"
+                           disabled>
                 </div>
             </div>
             <div class="grid">
@@ -84,7 +83,6 @@
                 </div>
                 <div class="form-div">
                     <label for="image">Image</label>
-                    {% comment %} image should be an image modal that takes up the whole screen {% endcomment %}
                     <img src="{{ ticket.image.url }}"
                          alt="Picutre of honeybee swarm at users house location"
                          class="image-preview">
@@ -126,6 +124,17 @@
         </div>
         {% comment %} token used for JS POST request {% endcomment %}
         {% csrf_token %}
+        <datalist id="users">
+            {% for user in superUser %}<option value="{{ user }}">{{ user }}</option>{% endfor %}
+            {% if user.is_superuser %}
+            
+            {% for user in allStaff  %}
+            <option value="{{user}}">{{user}}</option>
+            
+            {% endfor %}
+            {% endif %}
+            <option value="{{ currentUser }}">Me</option>
+        </datalist>
     {% endblock content %}
     {% block jsfiles %}
         <script src="{% static 'tickets/singularTicket.js' %}"></script>
