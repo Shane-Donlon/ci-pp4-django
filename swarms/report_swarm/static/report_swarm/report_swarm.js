@@ -270,14 +270,16 @@ function validateCounty(countyValue) {
 }
 
 function generalValidation(event, textValue, input, timeOutInMs) {
+  if (event.target.id === "id_phone" && event.target.value.length >= 1) {
+    event.target.setCustomValidity(
+      "Please enter phone number in 353121234567 format"
+    );
+  }
+
   if (!textValue && input.hasAttribute("required")) {
     event.target.nextElementSibling.classList.remove("display-none");
     event.target.nextElementSibling.classList.add("errors");
-    if (event.target.id === "id_phone" && event.target.value.length >= 1) {
-      event.target.setCustomValidity(
-        "Please enter phone number in 353121234567 format"
-      );
-    }
+
     event.target.nextElementSibling.innerText = `${event.target.labels[0].innerText} is required`;
     setTimeout(() => {
       event.target.nextElementSibling.innerText = "";
