@@ -138,6 +138,15 @@ footer :not(.footer-h2) {
   display: none;
 }
 
+.forbidden-h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+main {
+  min-height: 75svh;
+}
+
 @media (max-width: 600px) {
   .nav-wrapper {
     width: 100%;
