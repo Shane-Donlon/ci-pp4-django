@@ -38,7 +38,7 @@ class AllTicketView(SingleTableView, View):
             context = {"tables": table, "filter": CaseFilter, }
             return render(request, "tickets/allTickets.html", context)
         else:
-            return redirect("profile")
+            return HttpResponseForbidden()
 
 
 @method_decorator(login_required, name='dispatch')
@@ -60,7 +60,7 @@ class OpenTickets(SingleTableView, View):
             allStaff = User.objects.filter(is_active = True)
             context = {"tables": table, "filter": CaseFilter, "allStaff":allStaff}
             return render(request, "tickets/allTickets.html", context)
-        elif request.user.is_staff:
+        elif request.user.is_active:
             # assignee 3 === unassigned
             openTickets = openTickets.filter(Q(assignee=request.user)|Q(assignee=3))
             table = ticketTable(
@@ -93,7 +93,7 @@ class ResolvedTickets(SingleTableView, View):
             table.paginate(page=request.GET.get("page", 1), per_page=10)
             context = {"tables": table, "filter": CaseFilter, }
             return render(request, "tickets/allTickets.html", context)
-        elif request.user.is_staff:
+        elif request.user.is_active:
             resolvedTickets = resolvedTickets.filter(assignee=request.user)
             table = ticketTable(
                 resolvedTickets, template_name="django_tables2/bootstrap5-responsive.html")
@@ -125,7 +125,7 @@ class UnResolvedClosedTickets(SingleTableView, View):
             table.paginate(page=request.GET.get("page", 1), per_page=10)
             context = {"tables": table, "filter": CaseFilter, }
             return render(request, "tickets/allTickets.html", context)
-        elif request.user.is_staff:
+        elif request.user.is_active:
             closedUnresolvedTickets = closedUnresolvedTickets.filter(
                 assignee=request.user)
             table = ticketTable(
