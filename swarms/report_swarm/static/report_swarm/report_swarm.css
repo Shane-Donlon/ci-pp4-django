@@ -170,13 +170,10 @@ form {
   margin-bottom: 5rem;
 }
 
-/* .absolute-form-field {
-  position: absolute;
-  inset: 0;
-  max-width: 500px;
-  margin-inline: auto;
-} */
-
+fieldset label {
+  display: block;
+  width: fit-content;
+}
 .imageRequiredSpan {
   position: relative;
   font-weight: 600;
