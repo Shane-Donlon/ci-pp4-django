@@ -271,6 +271,58 @@ textarea {
   grid-auto-flow: column;
 }
 
+.grid-info {
+  display: flex;
+  justify-content: center;
+}
+
+.ta-cetner {
+  text-align: center;
+}
+
+.thanks-content {
+  min-height: 75vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.thanks-content h1 {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.thanks-content a {
+  color: black;
+}
+
+.ticket-id-span {
+  font-weight: 600;
+}
+
+.loader-bg {
+  position: fixed;
+  inset: 0;
+  height: 100svh;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.loader-div {
+  width: 120px;
+  height: 20px;
+  border-radius: 20px;
+  background: linear-gradient(orange 0 0) 0/0% no-repeat lightblue;
+  animation: l2 2s infinite steps(10);
+}
+@keyframes l2 {
+  100% {
+    background-size: 110%;
+  }
+}
+
 @media (min-width: 600px) {
   .personal-details-fieldset {
     display: grid;
