@@ -22,6 +22,7 @@ let PersonalDetailsFieldset = document.querySelector(
 );
 let honeyBeeDetailsFieldset = document.querySelector(".honeyBee-fieldset");
 let backBtn = document.querySelector("#prev");
+const submitBtn = document.querySelector(".submit-btn");
 allInputs.forEach((input) => {
   /**  on page load disable all the input fields for the form, this will be toggled with an event listener
    *as an image is required in Step2 of the form, I am seeking confirmation that the user understands this before proceeding, 
@@ -272,7 +273,11 @@ function generalValidation(event, textValue, input, timeOutInMs) {
   if (!textValue && input.hasAttribute("required")) {
     event.target.nextElementSibling.classList.remove("display-none");
     event.target.nextElementSibling.classList.add("errors");
-
+    if (event.target.id === "id_phone" && event.target.value.length >= 1) {
+      event.target.setCustomValidity(
+        "Please enter phone number in 353121234567 format"
+      );
+    }
     event.target.nextElementSibling.innerText = `${event.target.labels[0].innerText} is required`;
     setTimeout(() => {
       event.target.nextElementSibling.innerText = "";
@@ -300,8 +305,14 @@ function validateRequredInputPersonalDetails(listOfInputs) {
   listOfInputs.forEach((input) => {
     if (!input.validity.valid) {
       valid.push(false);
+      if (input.id === "id_phone" && input.value.length >= 1) {
+        input.setCustomValidity(
+          "Please enter phone number in 353121234567 format"
+        );
+      }
       input.nextElementSibling.classList.remove("display-none");
       input.nextElementSibling.classList.add("errors");
+
       input.nextElementSibling.innerText = `${input.validationMessage}`;
       setTimeout(() => {
         input.nextElementSibling.innerText = "";
@@ -348,8 +359,22 @@ let tabPanels = document.querySelectorAll(".tab-panel");
 
 tabPanels.forEach((tab, index) => {
   if (!index) {
-    console.log(0);
+    // console.log(0);
   } else {
     tab.setAttribute("hidden", "");
   }
+});
+
+submitBtn.addEventListener("click", (e) => {
+  let form = document.querySelector("form");
+  e.preventDefault();
+  const newDiv = document.createElement("div");
+  const innerDiv = `<div class="loader-div"></div>`;
+  newDiv.className = "loader-bg";
+  newDiv.innerHTML = innerDiv;
+
+  document.body.append(newDiv);
+  // window.scrollTo(0, 0);
+  document.body.style.overflow = "hidden";
+  form.submit();
 });
