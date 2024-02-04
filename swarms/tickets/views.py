@@ -57,7 +57,8 @@ class OpenTickets(SingleTableView, View):
                 openTickets, template_name="django_tables2/bootstrap5-responsive.html")
             RequestConfig(request).configure(table)
             table.paginate(page=request.GET.get("page", 1), per_page=10)
-            context = {"tables": table, "filter": CaseFilter, }
+            allStaff = User.objects.filter(is_active = True)
+            context = {"tables": table, "filter": CaseFilter, "allStaff":allStaff}
             return render(request, "tickets/allTickets.html", context)
         elif request.user.is_staff:
             # assignee 3 === unassigned
