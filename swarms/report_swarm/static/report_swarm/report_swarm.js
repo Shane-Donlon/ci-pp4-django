@@ -379,4 +379,23 @@ submitBtn.addEventListener("click", (e) => {
 });
 
 let imgInput = document.querySelector("#id_image");
-imgInput.setAttribute("capture", "user");
+function addImgAttributes() {
+  /**
+So on phone I can't upload an image without the capture attribute
+but on desktop if I add the capture attribute the file selection allows for all files.
+
+accept="image/*;capture=camera"
+
+   */
+
+  if (!detectOrientation()) {
+    imgInput.setAttribute("accept", "image/*");
+  } else {
+    imgInput.setAttribute("accept", "image/*;capture=camera");
+  }
+}
+function detectOrientation() {
+  const answer = window.orientation > 1;
+  return answer;
+}
+addImgAttributes();
