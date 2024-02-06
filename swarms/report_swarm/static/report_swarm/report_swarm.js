@@ -79,7 +79,8 @@ Then if the current input is invalid raise the standard HTML validation error in
 then wait for 3 seconds and remove the error message.
 
  */
-    let textValue = input.value.trim().length;
+
+    let textValue = event.target.value.trim().length;
     generalValidation(event, textValue, input, 3000);
   });
 });
@@ -273,7 +274,7 @@ function generalValidation(event, textValue, input, timeOutInMs) {
     event.target.nextElementSibling.classList.remove("display-none");
     event.target.nextElementSibling.classList.add("errors");
     if (event.target.id === "id_phone") {
-      event.target.setCustomValidity(phoneError);
+      event.target.setCustomValidity(`${phoneError}`);
     }
     event.target.nextElementSibling.innerText = `${event.target.labels[0].innerText} is required`;
     setTimeout(() => {
@@ -287,10 +288,11 @@ function generalValidation(event, textValue, input, timeOutInMs) {
   ) {
     event.target.nextElementSibling.classList.remove("display-none");
     event.target.nextElementSibling.classList.add("errors");
-    if (event.target.id === "id_phone" && !event.target.validity.valid) {
-      event.target.setCustomValidity(phoneError);
+    if (event.target.id === "id_phone") {
+      event.target.setCustomValidity(`${phoneError}`);
     }
     event.target.nextElementSibling.innerText = `${event.target.validationMessage}`;
+    event.target.setCustomValidity("");
     setTimeout(() => {
       event.target.nextElementSibling.innerText = "";
       event.target.nextElementSibling.classList.remove("errors");
@@ -305,13 +307,15 @@ function validateRequredInputPersonalDetails(listOfInputs) {
   listOfInputs.forEach((input) => {
     if (!input.validity.valid) {
       valid.push(false);
-      if (input.id === "id_phone" && input.value.length >= 1) {
-        input.setCustomValidity(phoneError);
+
+      if (input.id === "id_phone") {
+        input.setCustomValidity(`${phoneError}`);
       }
       input.nextElementSibling.classList.remove("display-none");
       input.nextElementSibling.classList.add("errors");
 
       input.nextElementSibling.innerText = `${input.validationMessage}`;
+      input.setCustomValidity("");
       setTimeout(() => {
         input.nextElementSibling.innerText = "";
         input.nextElementSibling.classList.remove("errors");
