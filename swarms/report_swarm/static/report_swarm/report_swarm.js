@@ -167,7 +167,7 @@ resetBtn.addEventListener("click", (e) => {
   currentPanel.setAttribute("hidden", "true");
   lastPanel.removeAttribute("hidden");
   progressCircles[0].classList.add("active");
-
+  progressCircles[0].classList.remove("completed");
   progressCircles[1].classList.remove("completed");
   progressCircles[2].classList.remove("completed");
   progressCircles[2].classList.remove("active");
