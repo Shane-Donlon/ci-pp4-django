@@ -271,8 +271,9 @@ function generalValidation(event, textValue, input, timeOutInMs) {
     event.target.nextElementSibling.classList.remove("display-none");
     event.target.nextElementSibling.classList.add("errors");
     if (event.target.id === "id_phone") {
-      event.target.setCustomValidity("error 1");
-      //      "Please enter phone number in 353121234567 format"
+      event.target.setCustomValidity(
+        "Please enter phone number in 353121234567 format"
+      );
     }
     event.target.nextElementSibling.innerText = `${event.target.labels[0].innerText} is required`;
     setTimeout(() => {
@@ -287,8 +288,9 @@ function generalValidation(event, textValue, input, timeOutInMs) {
     event.target.nextElementSibling.classList.remove("display-none");
     event.target.nextElementSibling.classList.add("errors");
     if (event.target.id === "id_phone" && !event.target.validity.valid) {
-      event.target.setCustomValidity("error 2");
-      //      "Please enter phone number in 353121234567 format"
+      event.target.setCustomValidity(
+        "Please enter phone number in 353121234567 format"
+      );
     }
     event.target.nextElementSibling.innerText = `${event.target.validationMessage}`;
     setTimeout(() => {
