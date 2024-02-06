@@ -287,6 +287,11 @@ function generalValidation(event, textValue, input, timeOutInMs) {
   ) {
     event.target.nextElementSibling.classList.remove("display-none");
     event.target.nextElementSibling.classList.add("errors");
+    if (event.target.id === "id_phone") {
+      event.target.setCustomValidity(
+        "Please enter phone number in 353121234567 format"
+      );
+    }
     event.target.nextElementSibling.innerText = `${event.target.validationMessage}`;
     setTimeout(() => {
       event.target.nextElementSibling.innerText = "";
@@ -379,9 +384,7 @@ let imgInput = document.querySelector("#id_image");
 function addImgAttributes() {
   /**
 So on phone I can't upload an image without the capture attribute
-but on desktop if I add the capture attribute the file selection allows for all files.
-
-accept="image/*;capture=camera"
+but on desktop if I add the capture attribute the file selection allows for all files."
 
    */
 
