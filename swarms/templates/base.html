@@ -17,6 +17,7 @@
     </head>
     <body class="short-page-body">
         <header class="short-page-header">
+            <a href="#main" class="visually-hidden">skip to content</a>
             <div class="nav-wrapper">
                 {% if user.is_authenticated %}
                     <a href={% url "openTickets" %} class="branding-link">
@@ -74,7 +75,7 @@
                     </nav>
                 </div>
             </header>
-            <main class="short-short-page-main">
+            <main class="short-short-page-main" id="main">
                 {% block content %}
                 {% endblock content %}
             </main>
