@@ -18,6 +18,8 @@ let eircodeField = document.querySelector("#id_eircode");
 let progressCircles = document.querySelectorAll(".circle");
 let progressBar = document.querySelector("#progress");
 
+let phoneError = "Please enter phone number in 353121234567 format";
+
 let backBtn = document.querySelector("#prev");
 const submitBtn = document.querySelector(".submit-btn");
 allInputs.forEach((input) => {
@@ -271,9 +273,7 @@ function generalValidation(event, textValue, input, timeOutInMs) {
     event.target.nextElementSibling.classList.remove("display-none");
     event.target.nextElementSibling.classList.add("errors");
     if (event.target.id === "id_phone") {
-      event.target.setCustomValidity(
-        "Please enter phone number in 353121234567 format"
-      );
+      event.target.setCustomValidity(phoneError);
     }
     event.target.nextElementSibling.innerText = `${event.target.labels[0].innerText} is required`;
     setTimeout(() => {
@@ -288,9 +288,7 @@ function generalValidation(event, textValue, input, timeOutInMs) {
     event.target.nextElementSibling.classList.remove("display-none");
     event.target.nextElementSibling.classList.add("errors");
     if (event.target.id === "id_phone" && !event.target.validity.valid) {
-      event.target.setCustomValidity(
-        "Please enter phone number in 353121234567 format"
-      );
+      event.target.setCustomValidity(phoneError);
     }
     event.target.nextElementSibling.innerText = `${event.target.validationMessage}`;
     setTimeout(() => {
@@ -308,9 +306,7 @@ function validateRequredInputPersonalDetails(listOfInputs) {
     if (!input.validity.valid) {
       valid.push(false);
       if (input.id === "id_phone" && input.value.length >= 1) {
-        input.setCustomValidity(
-          "Please enter phone number in 353121234567 format"
-        );
+        input.setCustomValidity(phoneError);
       }
       input.nextElementSibling.classList.remove("display-none");
       input.nextElementSibling.classList.add("errors");
