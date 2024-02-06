@@ -361,7 +361,7 @@ let tabPanels = document.querySelectorAll(".tab-panel");
 
 tabPanels.forEach((tab, index) => {
   if (!index) {
-    // console.log(0);
+    return;
   } else {
     tab.setAttribute("hidden", "");
   }
