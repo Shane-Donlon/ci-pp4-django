@@ -17,10 +17,7 @@ let resetBtn = document.querySelector(".reset-btn");
 let eircodeField = document.querySelector("#id_eircode");
 let progressCircles = document.querySelectorAll(".circle");
 let progressBar = document.querySelector("#progress");
-let PersonalDetailsFieldset = document.querySelector(
-  ".personal-details-fieldset"
-);
-let honeyBeeDetailsFieldset = document.querySelector(".honeyBee-fieldset");
+
 let backBtn = document.querySelector("#prev");
 const submitBtn = document.querySelector(".submit-btn");
 allInputs.forEach((input) => {
