@@ -1,5 +1,3 @@
-console.log("unath.js working");
-
 // Chris Coiler Code https://css-tricks.com/how-to-animate-the-details-element-using-waapi/
 class Accordion {
   constructor(el) {
