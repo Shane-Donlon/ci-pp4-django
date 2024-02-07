@@ -8,6 +8,10 @@ main {
   min-height: 75svh;
 }
 
+footer {
+  margin-top: 2em;
+}
+
 .form-div {
   display: grid;
   justify-items: start;
