@@ -1,3 +1,19 @@
+.no-tickets-h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1em;
+}
+footer {
+  margin-top: 2em;
+}
+
+hr {
+  margin-block: 0.125em 0.5em;
+}
+
+table {
+  margin-top: 2em;
+}
 /* start bootstrap table classes, from bootstrap css files */
 .table {
   width: 100%;
