@@ -107,10 +107,12 @@
                  id="confirmationTab">
                 <fieldset aria-labelledby="confirmationTab">
                     <legend>Confirmation</legend>
-                    <h3>Please confirm that your details are correct before submitting the form</h3>
-                    <h3>
-                        You will be <span>unable</span> to change these details later
-                    </h3>
+                    <div class="first-child-div">
+                        <h3>Please confirm that your details are correct before submitting the form</h3>
+                        <h3>
+                            You will be <span>unable</span> to change these details later
+                        </h3>
+                    </div>
                     {% for label in form %}
                         <div class="grid">
                             <p>{{ label.label }}</p>
