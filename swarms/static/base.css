@@ -23,15 +23,15 @@ header {
   background-color: white;
 }
 
+.box-shadow-show {
+  box-shadow: 0.5px 0.5px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
 .nav-wrapper {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   flex: 1;
-
-  /* background-repeat: no-repeat;
-  background-position: bottom left;
-  background-size: cover; */
 }
 
 .branding-link {
