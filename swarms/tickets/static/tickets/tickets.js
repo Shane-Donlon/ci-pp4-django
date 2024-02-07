@@ -41,4 +41,17 @@ window.addEventListener("DOMContentLoaded", (e) => {
       main.append(h2);
     }
   }
+
+  if (document.body.contains(document.querySelector("#id_assignee"))) {
+    // due to field loading for admins only for now adding if statement to not break file
+    let assigneeField = document.querySelector("#id_assignee");
+
+    /**
+On page load if the first field in the assignee is selected show "------"
+else (ie the filter has been used) show "clear filter"
+   */
+    if (!assigneeField.children[0].hasAttribute("selected")) {
+      assigneeField.children[0].innerText = "Clear Filter";
+    }
+  }
 });
