@@ -196,3 +196,14 @@ fieldset {
     transform: scaleY(-1) rotate(-135deg);
   }
 }
+
+@media (prefers-reduced-motion) {
+  .loader {
+    --height: 50%;
+    height: var(--height);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 80px solid var(--bk-yellow);
+    animation: l20-1 5s infinite linear forwards, l20-2 5s forwards linear;
+  }
+}
