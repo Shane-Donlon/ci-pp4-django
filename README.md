@@ -17,6 +17,15 @@ Then "Won't haves"
 link to site:
 [Link to live site](https://ci-sd-pp4-swarms-ie-54c976de26c1.herokuapp.com/).
 
+# About
+
+This site is a ticket management system for a company called Swarms.ie
+Swarms is a honeybee removal charity business, that connects people with beekeepers to remove colonies and swarms from their property.
+
+## The "problem" / issue to fix
+
+The purpose of this site is to make the process of connecting people to beekeepers more efficient for the Swarms.ie owner as currently this is a manual effort task through spreadsheets and phone calls / text messages.
+
 ### bugs
 
 #### resolved bugs
@@ -39,7 +48,7 @@ link to site:
     <td>Using regex on phone to confirm if number is correct, if at any point an error appeared I would set the custom error to be more descriptive than pattern does not match, once I corrected the error on change and next would still set the error and could not move onto the next section of the form
     event.target.setCustomValidity("Please enter phone number in 353121234567 format");</td>
     <td> event.target.setCustomValidity("");</td>
-    <td> As I'm setting the error to true by using a non-empty sting I need to set this back to false using an empty string after the error appears </td>
+    <td> As I'm setting the error to true by using a non-empty string I need to set this back to false using an empty string after the error appears </td>
 
   </tr>
   <tr>
