@@ -36,7 +36,10 @@ The website was created to be eye-catching and user-friendly. The emphasis is on
 
 The website is designed to be accessible by all, with features like:
 
-- Skip to content link
+- Skip to Content link
+
+  -When tabbing through the site the user will be preseneted with a skip to content link which bypasses the header section and is linked to <main>
+
 - Colours chosen
   - #ea9d34 (yellow) colour chosen had contrast issues on a white background, this was updated to #8b4313 (brown) to provide a higher contrast for users.
 - Form
