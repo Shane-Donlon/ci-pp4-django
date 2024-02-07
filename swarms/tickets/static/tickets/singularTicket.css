@@ -117,8 +117,13 @@ dialog[open] > img {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-top: 1em;
 }
 
 #checkboxAllFields {
   accent-color: var(--bk-yellow);
+}
+
+textarea {
+  resize: none;
 }
