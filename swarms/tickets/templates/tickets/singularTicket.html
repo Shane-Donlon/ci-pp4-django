@@ -9,7 +9,7 @@
             Ticket: <span>{{ ticket.id }}</span>
         </h2>
         {% if user.is_superuser %}
-            <label for="allData">Unlock all fields</label>
+            <label for="checkboxAllFields">Unlock all fields</label>
             <input type="checkbox" name="checkboxAllFields" id="checkboxAllFields">
         {% endif %}
         <fieldset class="user-details-fieldset">
@@ -82,10 +82,8 @@
                     <input type="text" value="{{ ticket.location }}" disabled id="location">
                 </div>
                 <div class="form-div">
-                    <label for="image">Image</label>
-                    <img src="{{ ticket.image.url }}"
-                         alt="Picutre of honeybee swarm at users house location"
-                         class="image-preview">
+                    <label for="image-preview">Image</label>
+                    <input type="image" src="{{ ticket.image.url }}" alt="" id="image-preview">
                     <dialog>
                         <button autofocus>Close</button>
                         <img src="{{ ticket.image.url }}"
