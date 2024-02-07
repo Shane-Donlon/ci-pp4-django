@@ -142,7 +142,12 @@ fieldset {
   transition: transform 400ms ease;
 }
 
+fieldset .grid {
+  margin-block: 0.125em;
+}
+
 .btn-container {
+  margin-top: 1em;
   display: flex;
   align-items: center;
 }
@@ -218,8 +223,12 @@ textarea {
   font-size: clamp(1.5rem, 1.5rem + 1vw, 2rem);
 }
 
+fieldset > .first-child-div {
+  margin-block: 1em;
+}
+
 .confirmation span {
-  text-decoration: underline;
+  color: red;
   font-weight: 700;
 }
 
@@ -229,6 +238,10 @@ textarea {
 
 .confirmation .hide {
   display: none;
+}
+
+.confirmation {
+  padding-bottom: 0.5em;
 }
 
 .tabs-ul {
@@ -318,6 +331,12 @@ textarea {
   100% {
     background-size: 110%;
   }
+}
+
+.check-box-wrapper > label {
+  color: red;
+  font-weight: 600;
+  font-size: 1.125rem;
 }
 
 @media (min-width: 600px) {
