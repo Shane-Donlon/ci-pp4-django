@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG") == "True"
 
 ALLOWED_HOSTS = ["ci-sd-pp4-swarms-ie-54c976de26c1.herokuapp.com", "127.0.0.1"]
 
@@ -34,6 +34,11 @@ ALLOWED_HOSTS = ["ci-sd-pp4-swarms-ie-54c976de26c1.herokuapp.com", "127.0.0.1"]
 
 INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
+    'django_tables2',
+    'unauthenticated',
+    "sign_in_sign_out",
+    'report_swarm',
+    'tickets',
     'widget_tweaks',
     'phonenumber_field',
     'django.contrib.admin',
@@ -45,15 +50,11 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'django_filters',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
-    'unauthenticated',
-    "sign_in_sign_out",
-    'report_swarm',
-    'tickets',
-    'django_tables2',
-    'django_filters',
+
 ]
 
 
@@ -101,8 +102,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'swarms.wsgi.application'
 
 
-
-
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
@@ -133,11 +132,15 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    "/var/www/static/",
+]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+
 
 
 MEDIA_URL = '/media/'
@@ -151,3 +154,5 @@ ACCOUNT_AUTHENTICATION_METHOD = "username_email"
 ACCOUNT_EMAIL_VERIFICATION = "optional"
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+WHITENOISE_KEEP_ONLY_HASHED_FILES = True
