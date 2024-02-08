@@ -195,6 +195,7 @@
     <td>Y</td>
     <td></td>
   </tr>
+  
    <tr>
     <td>Sign-up</td>
     <td>End-User / Customer</td>
@@ -1575,6 +1576,14 @@
     <td>Staff</td>
     <td>UnResolved tickets cannot be edited by staff</td>
     <td>form disabled hover "not allowed"</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Staff</td>
+    <td>Unable to open ticket not assigned to current user or unassinged</td>
+    <td>Error 404</td>
     <td>Y</td>
     <td></td>
 </tr>
