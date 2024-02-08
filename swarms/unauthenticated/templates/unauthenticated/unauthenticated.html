@@ -54,7 +54,7 @@ stroke-dasharray: 0 0 15.03 15.03;
                 <h2>
                     Found a swarm? <span class="findKeeper">We will find you a keeper</span>
                 </h2>
-                <a href="{% url 'report_swarm' %}">Report a swarm</a>
+                <a href="{% url 'report_swarm' %}" aria-label="report a swarm">Report a swarm</a>
             </div>
             <div class="col2">
                 <img src="{% static 'unauthenticated/images/honey_bee.png' %}"
@@ -109,7 +109,7 @@ stroke-dasharray: 0 0 15.03 15.03;
                     Unless you know a beekeeper, its can be a bit of a nightmare. It can be even worse in a town or city.
                 </p>
                 <div class="learn-more-about-us">
-                    <a href="{% url 'about' %}" class="learn-more-btn">Learn More</a>
+                    <a href="{% url 'about' %}" class="learn-more-btn" aria-label="about">Learn More</a>
                 </div>
             </div>
         </div>
