@@ -738,6 +738,23 @@
 <tr>
     <td>Report a swarm page</td>
     <td>End-User / Customer</td>
+    <td>Phone image field can access gallery</td>
+    <td>With users permission they can upload a phone from phone</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Desktop / laptop image field only shows images file types as accepted</td>
+    <td>Upload image check bottom right for filetypes (only image types accepted)</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
     <td>Form submitted successfully</td>
     <td>Thank you page loads with contact info and ticket number</td>
     <td>Y</td>
