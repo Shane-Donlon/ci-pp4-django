@@ -868,6 +868,14 @@
     <td>Tickets</td>
     <td>Admin</td>
     <td>Ticket page</td>
+    <td>Save, Delete PPI and Delete ticket buttons disabled</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
     <td>mouse hover while disabled is "not allowed"</td>
     <td>Y</td>
     <td></td>
@@ -892,10 +900,19 @@
     <td>Tickets</td>
     <td>Admin</td>
     <td>Ticket page</td>
-    <td>Delete PPI button shows confirm window</td>
+    <td>Unlock all fields label on click tickets/un-tickets checkbox</td>
     <td>Y</td>
-    <td>On confirm delete Personal Private Information / cancel does nothing</td>
+    <td>Enables and disables all fields also</td>
 </tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Unlock all fields checkbox on click tickets/un-tickets checkbox</td>
+    <td>Y</td>
+    <td>Save, Delete PPI and Delete ticket buttons disabled / enabled</td>
+</tr>
+
 <tr>
     <td>Tickets</td>
     <td>Admin</td>
@@ -1415,7 +1432,7 @@
 </tr>
 <tr>
     <td>Tickets</td>
-    <td>Admin</td>
+    <td>Staff</td>
     <td>Ticket page</td>
     <td>Can edit assignee (valid name)</td>
     <td>Y</td>
@@ -1423,11 +1440,51 @@
 </tr>
 <tr>
     <td>Tickets</td>
-    <td>Admin</td>
+    <td>Staff</td>
     <td>Ticket page</td>
     <td>Can edit assignee (invalid name)</td>
     <td>Y</td>
     <td>On failed save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Staff</td>
+    <td>Ticket page</td>
+    <td>All fields disabled</td>
+    <td>Y</td>
+    <td>On hover mouse icon is "not allowed"</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Staff</td>
+    <td>label for "click here to edit the description checks / un-ticks the checkbox</td>
+    <td>label for "click here to edit the description checks / un-ticks the checkbox</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Staff</td>
+    <td>checkbox tick / untick enabled and disables the form</td>
+    <td>checkbox tick / untick enabled and disables the form</td>
+    <td>Y</td>
+    <td>staff can only edit the Status Assignee and description inputs</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Staff</td>
+    <td>Resolved tickets cannot be edited by staff</td>
+    <td>form disabled hover "not allowed"</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Staff</td>
+    <td>UnResolved tickets cannot be edited by staff</td>
+    <td>form disabled hover "not allowed"</td>
+    <td>Y</td>
+    <td></td>
 </tr>
 </tbody>
 </table>
