@@ -124,19 +124,19 @@
             {% if user.is_superuser %}
                 {% for user in allStaff %}<option value="{{ user }}">{{ user }}</option>{% endfor %}
             {% endif %}
-            <option value="{{ currentUser }}">Me</option>
+            <option value="{{ currentUser }}">{{ currentUser }}</option>
         </datalist>
-    {% endblock content %}
-    {% block jsfiles %}
-        <script src="{% static 'tickets/singularTicket.js' %}"></script>
-        {% if user.is_superuser %}
-            <script src="{% static "tickets/singularTicketAdmin.js" %}"></script>
-            <script type="text/javascript">
+    </div>
+{% endblock content %}
+{% block jsfiles %}
+    <script src="{% static 'tickets/singularTicket.js' %}"></script>
+    {% if user.is_superuser %}
+        <script src="{% static 'tickets/singularTicketAdmin.js' %}"></script>
+        <script type="text/javascript">
                 function redirect() {
                     alert('Ticket has been deleted');
                     window.location.replace("{% url 'allTickets' %}");
-                }
-                   
-            </script>
-        {% endif %}
-    {% endblock jsfiles %}
+                } 
+        </script>
+    {% endif %}
+{% endblock jsfiles %}
