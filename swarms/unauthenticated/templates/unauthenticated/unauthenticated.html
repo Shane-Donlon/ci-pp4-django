@@ -122,8 +122,8 @@ stroke-dasharray: 0 0 15.03 15.03;
         <div class="faq-grid">
             {% for question in faq %}
                 <details class="faq-details">
-                    <div class="faq-content">{{ question.details }}</div>
                     <summary class="faq-summary">{{ question.summary }}</summary>
+                    <div class="faq-content">{{ question.details }}</div>
                 </details>
             {% endfor %}
         </div>
