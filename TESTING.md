@@ -391,7 +391,7 @@
     <td>Y</td>
     <td></td>
   </tr>
-    <tr>
+<tr>
      <td>Report a swarm page</td>
     <td>End-User / Customer</td>
     <td>Box shadow applies after 50px scroll from top to nav bar</td>
@@ -399,16 +399,279 @@
     <td>Y</td>
     <td></td>
   </tr>
+  <tr>
+     <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>on page load </td>
+    <td>form is disabled</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+    <tr>
+     <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Form hover </td>
+    <td>mouse icon is "not allowed"</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+<tr>
+     <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Label click </td>
+    <td>checkbox ticks and un-ticks</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Label click </td>
+    <td>Form "enables" / disables</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Input Checkbox click </td>
+    <td>Form "enables" / disables</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>From enabled </td>
+    <td>mouse icon is NOT "not allowed"</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>click next on empty form </td>
+    <td>All fields throw errors for 3 seconds</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Empty First name field </td>
+    <td>Throws error "Please fill out this field." for 3 seconds</td>
+    <td>Y</td>
+    <td>This testing is all fields filled correct but the field tested</td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Empty last name field </td>
+    <td>Throws error "Please fill out this field." for 3 seconds</td>
+    <td>Y</td>
+    <td>This testing is all fields filled correct but the field tested</td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Empty phone field </td>
+    <td>Throws error "Please enter phone number in 353121234567 format" for 3 seconds</td>
+    <td>Y</td>
+    <td>This testing is all fields filled correct but the field tested</td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td> phone field contains non numeric and next is clicked / tabbed off field (ie on change is fired) </td>
+    <td>Throws error "Please enter phone number in 353121234567 format" for 3 seconds</td>
+    <td>Y</td>
+    <td>Django does not have phone field built in, so using text field to render</td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td> phone field does not start with 353 and next is clicked / tabbed off field (ie on change is fired) </td>
+    <td>Throws error "Phone: is required" for 3 seconds or on next clicked error "Please enter phone number in 353121234567 format" </td>
+    <td>Y</td>
+    <td>Using Regex, and custom errors</td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td> phone field is a blank string and next is clicked / tabbed off field (ie on change is fired) </td>
+    <td>Throws error "Please enter phone number in 353121234567 format" for 3 seconds</td>
+    <td>Y</td>
+    <td>Using Regex, and custom errors</td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Empty email field </td>
+    <td>Throws error "Please fill out this field." for 3 seconds</td>
+    <td>Y</td>
+    <td>This testing is all fields filled correct but the field tested</td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Empty address field </td>
+    <td>Throws error "Please fill out this field." for 3 seconds</td>
+    <td>Y</td>
+    <td>This testing is all fields filled correct but the field tested</td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Empty town field </td>
+    <td>Throws error "Please fill out this field." for 3 seconds</td>
+    <td>Y</td>
+    <td>This testing is all fields filled correct but the field tested</td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Empty county field </td>
+    <td>Throws error "Please select a valid county from the list." for 3 seconds</td>
+    <td>Y</td>
+    <td>This testing is all fields filled correct but the field tested</td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Empty eircode field </td>
+    <td>Throws error "Please fill out this field." for 3 seconds</td>
+    <td>Y</td>
+    <td>This testing is all fields filled correct but the field tested</td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Eircode incorrect length (IE Not empty string, but less than 7 characters)</td>
+    <td>Throws error "Please lengthen this text to 7 characters or more (you are currently using eg 3 characters)." for 3 seconds</td>
+    <td>Y</td>
+    <td>Where the input was "SDF" error throws 3 characters "SFSF" would throw "4 characters" </td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Empty County field </td>
+    <td>Throws error "Please select an item in the list." for 3 seconds</td>
+    <td>Y</td>
+    <td>This testing is all fields filled correct but the field tested</td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>County field input does not equal an item in the county datalist </td>
+    <td>Throws error "Please select an item in the list." for 3 seconds</td>
+    <td>Y</td>
+    <td>EG: ABC123 is filled into the field</td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>County field filters as user types </td>
+     <td>County field filters as user types </td>
+    <td>Y</td>
+    <td>EG: "S" / "s" shows all county options containing "s"</td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Empty description field </td>
+    <td>Throws error "Please fill out this field." for 3 seconds</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Form part 1 to 2</td>
+    <td>All fields successful, click next form moves to step 2</td>
+    <td>Y</td>
+
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Form part 2 to 3</td>
+    <td>All fields successful, click next form moves to step 3</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Form part Rest all data button click</td>
+    <td>Resets all fields to empty values and moves form back to step 1</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>next button click form 1 to 2</td>
+    <td>progress bar updates to 50% and turns part 1 green and part 2 orange for active</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>prev button click form 2 to 1</td>
+    <td>progress bar updates to 0% and turns part 1 orange and part 2 turns grey for inactive</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>prev button click form 3 to 2</td>
+    <td>progress bar updates to 50% and turns part 2 orange and part 3 turns grey for inactive</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>next button click form 2 to 3</td>
+    <td>progress bar updates to 100% and turns part 2 green and part 3 orange for active</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Reset all data button click</td>
+    <td>Progress bar resets back to initial state</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Form submitted successfully</td>
+    <td>Thank you page loads with contact info and ticket number</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+
 </tbody>
 </table>
 
 <!-- new row -->
 
-  <tr>
+ <tr>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
-  </tr>
+</tr>
