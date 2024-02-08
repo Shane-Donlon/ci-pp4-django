@@ -217,7 +217,7 @@
     <td>Y</td>
     <td></td>
   </tr>
-          <tr>
+    <tr>
     <td>Sign-up</td>
     <td>End-User / Customer</td>
     <td>Box shadow applies after 50px scroll from top to nav bar</td>
@@ -225,7 +225,46 @@
     <td>Y</td>
     <td></td>
   </tr>
-
+    <tr>
+    <td>Sign-up form</td>
+    <td>Beekeeper</td>
+    <td>Email field no email address</td>
+    <td>Error informing of mistake</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+    <tr>
+    <td>Sign-up form</td>
+    <td>Beekeeper</td>
+    <td>submit form no username</td>
+    <td>Error informing of mistake</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+      <tr>
+    <td>Sign-up form</td>
+    <td>Beekeeper</td>
+    <td>submit form no password</td>
+    <td>Error informing of mistake</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+<tr>
+    <td>Sign-up form</td>
+    <td>Beekeeper</td>
+    <td>submit form no repeat password</td>
+    <td>Error informing of mistake</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+<tr>
+    <td>Sign-up form</td>
+    <td>Beekeeper</td>
+    <td>click sign-in link</td>
+    <td>redirect to sign in page</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
 <!-- Sign-in -->
    <tr>
     <td>Sign-in</td>
