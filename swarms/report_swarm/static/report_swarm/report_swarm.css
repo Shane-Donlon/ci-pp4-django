@@ -328,6 +328,43 @@ fieldset > .first-child-div {
   background: linear-gradient(orange 0 0) 0/0% no-repeat lightblue;
   animation: l2 2s infinite steps(10);
 }
+
+.loader-div {
+  width: 48px;
+  height: 48px;
+  border: 10px solid #fff;
+  border-radius: 50%;
+  position: relative;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+}
+.loader-div::before {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  inset: -10px;
+  border-radius: 50%;
+  border: 10px solid #ff3d00;
+  animation: prixClipFix 2s infinite linear;
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+}
 @keyframes l2 {
   100% {
     background-size: 110%;
@@ -366,11 +403,14 @@ fieldset > .first-child-div {
     transform: scale(1);
   }
 
-  .loader-div {
-    width: 120px;
-    height: 20px;
-    border-radius: 20px;
-    background: linear-gradient(orange 0 0) 0/0% no-repeat lightblue;
+  .loader-div::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    inset: -10px;
+    border-radius: 50%;
+    border: 10px solid #ff3d00;
+    animation: prixClipFix 20s infinite linear;
   }
 }
 
