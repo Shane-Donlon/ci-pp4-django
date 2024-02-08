@@ -775,7 +775,364 @@
     <td>Y</td>
     <td></td>
 </tr>
+<!-- Admin -->
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>navigation is updated for logged in users</td>
+    <td>Open Tickets, Resolved Tickets, Unresolved Tickets, My profile, logout</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Logout click</td>
+    <td>Automatically logs user out and shows loading screen</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Dialog modal works on click and close</td>
+    <td>Dialog opens and closes accordingly</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Open Tickets</td>
+    <td>Shows open tickets if tickets are available in table</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Assignee Filter filters automatically</td>
+    <td>On change filters and shows table</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Assignee Filter filters automatically 0 tickets assigned</td>
+    <td>On change filters and shows "There are no tickets to show"</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>First name filters after typing</td>
+    <td>On change filters and shows table</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>First name filters after typing</td>
+    <td>On change filters and shows "There are no tickets to show"</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Open Tickets</td>
+    <td>Shows "There are no tickets to show" if 0 tickets exist</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Open Tickets</td>
+    <td>On ticket number click opens ticket page</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Ticket loads form disabled</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>mouse hover while disabled is "not allowed"</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Unlock all fields label on click tickets/un-tickets checkbox</td>
+    <td>Y</td>
+    <td>Enables and disables all fields also</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Unlock all fields checkbox on click tickets/un-tickets checkbox</td>
+    <td>Y</td>
+    <td>Enables and disables all fields also</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Delete PPI button shows confirm window</td>
+    <td>Y</td>
+    <td>On confirm delete Personal Private Information / cancel does nothing</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Delete PPI button shows confirm window success message</td>
+    <td>Y</td>
+    <td>First name surname number email address town and eircode are removed county is not personally identifiable without names etc..</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Delete PPI button shows confirm window fail message</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Delete Ticket button shows confirm window</td>
+    <td>Y</td>
+    <td>On confirm delete Ticket Information / cancel does nothing</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Delete Ticket success redirects back to open tickets</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Save button success message</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Status update success message</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
 
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Can edit first name</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Can edit last name</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Can edit number </td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Can edit email </td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Can edit address </td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Can edit town </td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Can edit eircode </td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Can edit status to Open</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Can edit status to Resolved</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Can edit status to Unable to Resolve</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Can edit assignee (valid name)</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Can edit assignee (invalid name)</td>
+    <td>Y</td>
+    <td>On failed save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Full screen image modal opens</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Full screen image modal closes</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Update description</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Save button fail message</td>
+    <td>Y</td>
+    <td>On failed save a message is shown (EG Assignee does not exist)</td>
+</tr>
+
+<!-- staff -->
+<tr>
+    <td>Tickets</td>
+    <td>Staff</td>
+    <td>navigation is updated for logged in users</td>
+    <td>Open Tickets, Resolved Tickets, Unresolved Tickets, My profile, logout</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>staff</td>
+    <td>Open Tickets</td>
+    <td>Shows "There are no tickets to show" if 0 tickets exist</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Staff</td>
+    <td>Logout click</td>
+    <td>Automatically logs user out and shows loading screen</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Staff</td>
+    <td>Ticket page</td>
+    <td>Save button success message</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Staff</td>
+    <td>Ticket page</td>
+    <td>Save button fail message</td>
+    <td>Y</td>
+    <td>On failed save a message is shown (EG Assignee does not exist)</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Can edit assignee (valid name)</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page</td>
+    <td>Can edit assignee (invalid name)</td>
+    <td>Y</td>
+    <td>On failed save a message is shown</td>
+</tr>
 </tbody>
 </table>
 
