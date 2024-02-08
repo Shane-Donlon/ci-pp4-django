@@ -4,7 +4,7 @@ from report_swarm.models import ReportSwarmCase
 
 
 class ticketTable(tables.Table):
-    id = LinkColumn('ticketView',
+    id = LinkColumn('ticket_view',
                     text=lambda record: record.id,
                     args=[A('pk')], attrs={
                         "a": {"style": "color: #0055f2;"}})
