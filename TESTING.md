@@ -471,10 +471,27 @@
 <tr>
     <td>Report a swarm page</td>
     <td>End-User / Customer</td>
+    <td>First name autocomplete using chrome</td>
+    <td>First name prefills from user form data</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
     <td>Empty last name field </td>
     <td>Throws error "Please fill out this field." for 3 seconds</td>
     <td>Y</td>
     <td>This testing is all fields filled correct but the field tested</td>
+</tr>
+
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Last name autocomplete using chrome</td>
+    <td>Last name prefills from user form data</td>
+    <td>Y</td>
+    <td></td>
 </tr>
 <tr>
     <td>Report a swarm page</td>
@@ -492,6 +509,7 @@
     <td>Y</td>
     <td>Django does not have phone field built in, so using text field to render</td>
 </tr>
+
 <tr>
     <td>Report a swarm page</td>
     <td>End-User / Customer</td>
@@ -511,10 +529,26 @@
 <tr>
     <td>Report a swarm page</td>
     <td>End-User / Customer</td>
+    <td>Phone autocomplete using chrome</td>
+    <td>Phone prefills from user form data</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
     <td>Empty email field </td>
     <td>Throws error "Please fill out this field." for 3 seconds</td>
     <td>Y</td>
     <td>This testing is all fields filled correct but the field tested</td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Email autocomplete using chrome</td>
+    <td>Email prefills from user form data</td>
+    <td>Y</td>
+    <td></td>
 </tr>
 <tr>
     <td>Report a swarm page</td>
@@ -527,6 +561,14 @@
 <tr>
     <td>Report a swarm page</td>
     <td>End-User / Customer</td>
+    <td>Address autocomplete using chrome</td>
+    <td>Address prefills from user form data</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
     <td>Empty town field </td>
     <td>Throws error "Please fill out this field." for 3 seconds</td>
     <td>Y</td>
@@ -535,10 +577,26 @@
 <tr>
     <td>Report a swarm page</td>
     <td>End-User / Customer</td>
+    <td>Town autocomplete using chrome</td>
+    <td>Town prefills from user form data</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
     <td>Empty county field </td>
     <td>Throws error "Please select a valid county from the list." for 3 seconds</td>
     <td>Y</td>
     <td>This testing is all fields filled correct but the field tested</td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>County autocomplete using chrome</td>
+    <td>County prefills from user form data</td>
+    <td>Y</td>
+    <td></td>
 </tr>
 <tr>
     <td>Report a swarm page</td>
@@ -555,6 +613,22 @@
     <td>Throws error "Please lengthen this text to 7 characters or more (you are currently using eg 3 characters)." for 3 seconds</td>
     <td>Y</td>
     <td>Where the input was "SDF" error throws 3 characters "SFSF" would throw "4 characters" </td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Eircode fomatting on "next" click</td>
+    <td>Eircode formats to 3 characters space and 4 characters after clicking next</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Eircode autocomplete using chrome</td>
+    <td>Eircode prefills from user form data</td>
+    <td>Y</td>
+    <td></td>
 </tr>
 <tr>
     <td>Report a swarm page</td>
@@ -579,6 +653,14 @@
      <td>County field filters as user types </td>
     <td>Y</td>
     <td>EG: "S" / "s" shows all county options containing "s"</td>
+</tr>
+<tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>County autocomplete using chrome</td>
+    <td>County prefills from user form data</td>
+    <td>Y</td>
+    <td></td>
 </tr>
 <tr>
     <td>Report a swarm page</td>
