@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 {% block cssfiles %}
-    <link rel="stylesheet" href="{% static "unauthenticated/unauthenticated.css" %}">
+    <link rel="stylesheet"
+          href="{% static 'unauthenticated/unauthenticated.css' %}">
 {% endblock cssfiles %}
 {% block content %}
     <div class="svg-wrapper" role="presentation">
@@ -53,10 +54,12 @@ stroke-dasharray: 0 0 15.03 15.03;
                 <h2>
                     Found a swarm? <span class="findKeeper">We will find you a keeper</span>
                 </h2>
-                <a href="{% url "reportSwarm" %}">Report a swarm</a>
+                <a href="{% url 'report_swarm' %}">Report a swarm</a>
             </div>
             <div class="col2">
-                <img src="{% static "unauthenticated/images/honey_bee.png" %}" alt="Illustration of Honeybee" class="img-Honeybee img">
+                <img src="{% static 'unauthenticated/images/honey_bee.png' %}"
+                     alt="Illustration of Honeybee"
+                     class="img-Honeybee img">
             </div>
         </div>
     </section>
@@ -94,7 +97,8 @@ stroke-dasharray: 0 0 15.03 15.03;
     </section>
     <section class="about-us-section about-us-grid">
         <div class="img-div">
-            <img src="{% static "unauthenticated/images/swarms1.jpg" %}" alt="Beekeeper moving Honeybees">
+            <img src="{% static 'unauthenticated/images/swarms1.jpg' %}"
+                 alt="Beekeeper moving Honeybees">
         </div>
         <div class="about-us-text-wrapper">
             <div class="about-us-card">
@@ -105,7 +109,7 @@ stroke-dasharray: 0 0 15.03 15.03;
                     Unless you know a beekeeper, its can be a bit of a nightmare. It can be even worse in a town or city.
                 </p>
                 <div class="learn-more-about-us">
-                    <a href="{% url "about" %}" class="learn-more-btn">Learn More</a>
+                    <a href="{% url 'about' %}" class="learn-more-btn">Learn More</a>
                 </div>
             </div>
         </div>
@@ -140,10 +144,10 @@ stroke-dasharray: 0 0 15.03 15.03;
             </div>
         </div>
         <div class="beekeeper-img-wrapper">
-            <img src="{% static "unauthenticated/images/swarms2.jpg" %}" alt="" class="img">
+            <img src="{% static 'unauthenticated/images/swarms2.jpg' %}" alt="Beekeeper moving Honeybees" class="img">
         </div>
     </section>
 {% endblock content %}
 {% block jsfiles %}
-    <script src="{% static "unauthenticated/unauthenticated.js" %}"></script>
+    <script src="{% static 'unauthenticated/unauthenticated.js' %}"></script>
 {% endblock jsfiles %}
