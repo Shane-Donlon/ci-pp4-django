@@ -17,8 +17,9 @@ admin.site.unregister(User)
 @admin.register(User)
 class MyUserAdmin(UserAdmin):
     """_summary_
-sets the email address as the editable link in Admin (Unregister user is important here)
-UserAdmin keeps all the standard items in the Change User screen
+    sets the email address as the editable link in Admin
+    (Unregister user is important here)
+    UserAdmin keeps all the standard items in the Change User screen
     """
 
     list_display = ['email', 'first_name', 'last_name',
