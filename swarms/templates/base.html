@@ -20,11 +20,12 @@
             <a href="#main" class="visually-hidden">skip to content</a>
             <div class="nav-wrapper">
                 {% if user.is_authenticated %}
-                    <a href={% url "openTickets" %} class="branding-link">
+                    <a href="{% url 'open_tickets' %}" class="branding-link">
                     {% else %}
-                        <a href={% url "index" %} class="branding-link">
+                        <a href="{% url 'index' %}" class="branding-link">
                         {% endif %}
-                        <img src="{% static "images/logo.png" %}" alt="Image of company logo honeybee drawing">
+                        <img src="{% static 'images/logo.png' %}"
+                             alt="Image of company logo honeybee drawing">
                     </a>
                     <svg xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 448 512"
@@ -36,17 +37,17 @@
                         {% if user.is_authenticated %}
                             <ul class="nav-ul" role="list">
                                 <li class="nav-li">
-                                    <a href='{% url "openTickets" %}'
+                                    <a href='{% url "open_tickets" %}'
                                        class="Open Tickets"
                                        aria-label="Open Tickets">Open Tickets</a>
                                 </li>
                                 <li class="nav-li">
-                                    <a href='{% url "resolvedTickets" %}'
+                                    <a href='{% url "resolved_tickets" %}'
                                        class="nav-link"
                                        aria-label="Resolved Tickets">Resolved Tickets</a>
                                 </li>
                                 <li class="nav-li">
-                                    <a href='{% url "unresolvedTickets" %}'
+                                    <a href='{% url "unresolved_tickets" %}'
                                        class="nav-link"
                                        aria-label="Unresolved Tickets">Unresolved Tickets</a>
                                 </li>
