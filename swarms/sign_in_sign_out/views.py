@@ -16,7 +16,8 @@ class ProfileFormView(View):
         form = ProfileForm(instance=request.user.profile)
         context = {"profile": profile,
                    "form": form}
-        return render(request, "sign_in_sign_out/sign_in_sign_out.html", context)
+        return render(request,
+                      "sign_in_sign_out/sign_in_sign_out.html", context)
 
     def post(self, request, *args, **kwargs):
 
@@ -29,4 +30,5 @@ class ProfileFormView(View):
         else:
 
             context = {"form": form}
-            return render(request, "sign_in_sign_out/sign_in_sign_out.html", context)
+            return render(request,
+                          "sign_in_sign_out/sign_in_sign_out.html", context)
