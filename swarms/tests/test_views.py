@@ -6,7 +6,8 @@ from django.urls import resolve, reverse
 
 class TestUrls(SimpleTestCase):
     """_summary_
-        Testing that the home page loads, and that the view is working as expected,
+        Testing that the home page loads, and that the view is working
+        as expected,
         if correct template is used the correct View has been called
     """
     def test_home_url_resolves(self):
