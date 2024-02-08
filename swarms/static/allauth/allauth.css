@@ -99,7 +99,7 @@ fieldset {
 .loader {
   --height: 50%;
   height: var(--height);
-  aspect-ratio: 1;
+  aspect-ratio: 1/1;
   border-radius: 50%;
   border: 80px solid var(--bk-yellow);
   animation: l20-1 0.8s infinite linear alternate, l20-2 1.6s infinite linear;
@@ -201,7 +201,7 @@ fieldset {
   .loader {
     --height: 50%;
     height: var(--height);
-    aspect-ratio: 1;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     border: 80px solid var(--bk-yellow);
     animation: l20-1 5s infinite linear forwards, l20-2 5s forwards linear;
