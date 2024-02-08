@@ -36,37 +36,51 @@
                         {% if user.is_authenticated %}
                             <ul class="nav-ul" role="list">
                                 <li class="nav-li">
-                                    <a href="{% url "openTickets" %}" class="Open Tickets">Open Tickets</a>
+                                    <a href='{% url "openTickets" %}'
+                                       class="Open Tickets"
+                                       aria-label="Open Tickets">Open Tickets</a>
                                 </li>
                                 <li class="nav-li">
-                                    <a href="{% url "resolvedTickets" %}" class="nav-link">Resolved Tickets</a>
+                                    <a href='{% url "resolvedTickets" %}'
+                                       class="nav-link"
+                                       aria-label="Resolved Tickets">Resolved Tickets</a>
                                 </li>
                                 <li class="nav-li">
-                                    <a href="{% url "unresolvedTickets" %}" class="nav-link">Unresolved Tickets</a>
+                                    <a href='{% url "unresolvedTickets" %}'
+                                       class="nav-link"
+                                       aria-label="Unresolved Tickets">Unresolved Tickets</a>
                                 </li>
                                 <li class="nav-li">
-                                    <a href="{% url "profile" %}" class="nav-link">My profile</a>
+                                    <a href='{% url "profile" %}' class="nav-link" aria-label="My profile">My profile</a>
                                 </li>
                                 <li class="nav-li">
-                                    <a href="{% url "account_logout" %}" class="nav-link">Logout</a>
+                                    <a href='{% url "account_logout" %}'
+                                       class="nav-link"
+                                       aria-label="Logout">Logout</a>
                                 </li>
                             </ul>
                         {% else %}
                             <ul class="nav-ul" role="list">
                                 <li class="nav-li">
-                                    <a href="{% url "reportSwarm" %}" class="nav-link">Report a Swarm</a>
+                                    <a href='{% url "report_swarm" %}'
+                                       class="nav-link"
+                                       aria-label="Report a Swarm">Report a Swarm</a>
                                 </li>
                                 <li class="nav-li">
-                                    <a href="{% url "about" %}" class="nav-link">About</a>
+                                    <a href='{% url "about" %}' class="nav-link" aria-label="About">About</a>
                                 </li>
                                 <li class="nav-li beekeeper-expanding">
                                     Beekeeper
                                     <ul class="beekeeper-ul" role="list">
-                                        <li class="beekeeper-li ">
-                                            <a href="{% url "account_login" %}" class="beekeeper-link nav-link">Login</a>
+                                        <li class="beekeeper-li">
+                                            <a href='{% url "account_login" %}'
+                                               class="beekeeper-link nav-link"
+                                               aria-label="Login">Login</a>
                                         </li>
                                         <li class="beekeeper-li">
-                                            <a href="{% url "account_signup" %}" class="beekeeper-link nav-link">Sign-up</a>
+                                            <a href='{% url "account_signup" %}'
+                                               class="beekeeper-link nav-link"
+                                               aria-label="Sign-up">Sign-up</a>
                                         </li>
                                     </ul>
                                 </li>
