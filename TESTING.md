@@ -257,6 +257,22 @@
     <td>Y</td>
     <td></td>
   </tr>
+    <tr>
+    <td>Sign-up form</td>
+    <td>Beekeeper</td>
+    <td>password doesn't meet criteria</td>
+    <td>Error informing of mistake</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+      <tr>
+    <td>Sign-up form</td>
+    <td>Beekeeper</td>
+    <td>repeat password doesn't meet criteria</td>
+    <td>Error informing of mistake</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
 <tr>
     <td>Sign-up form</td>
     <td>Beekeeper</td>
@@ -265,6 +281,7 @@
     <td>Y</td>
     <td></td>
   </tr>
+
 <!-- Sign-in -->
    <tr>
     <td>Sign-in</td>
