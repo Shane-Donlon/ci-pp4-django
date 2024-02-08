@@ -1,6 +1,5 @@
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
-from django.core.validators import MinLengthValidator
 from django.db import models
 from django.shortcuts import get_object_or_404
 
@@ -28,7 +27,3 @@ class ReportSwarmCase(models.Model):
                               default="Open", max_length=100)
     assignee = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="user", default=1)
-
-    # UPDATE DEFAULT ASSIGNEE
-
-#  default = User.objects.filter(is_superuser=True)[0].id,
