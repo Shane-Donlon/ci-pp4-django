@@ -7,7 +7,8 @@ class ticketTable(tables.Table):
     id = LinkColumn('ticket_view',
                     text=lambda record: record.id,
                     args=[A('pk')], attrs={
-                        "a": {"style": "color: #0055f2;"}})
+                        "a": {"style": "color: #0055f2;",
+                              "aria-label": "open ticket"}})
 
     class Meta:
         model = ReportSwarmCase
