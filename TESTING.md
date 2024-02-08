@@ -21,6 +21,14 @@
       <tr>
     <td>Home / index</td>
     <td>End-User / Customer</td>
+    <td>Hamburger menu on mobile</td>
+    <td>menu is offscreen</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+      <tr>
+    <td>Home / index</td>
+    <td>End-User / Customer</td>
     <td>Click Login link</td>
     <td>Redirects to login page</td>
     <td>Y</td>
@@ -109,6 +117,16 @@
   </tr>
   
   <!-- About -->
+  
+<tr>
+    <td>About</td>
+    <td>End-User / Customer</td>
+    <td>Hamburger menu on mobile</td>
+    <td>menu is offscreen</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+
  <tr>
     <td>About</td>
     <td>End-User / Customer</td>
@@ -168,6 +186,15 @@
   </tr>
 
   <!-- Sign-up -->
+
+<tr>
+    <td>Sign-up</td>
+    <td>End-User / Customer</td>
+    <td>Hamburger menu on mobile</td>
+    <td>menu is offscreen</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
    <tr>
     <td>Sign-up</td>
     <td>End-User / Customer</td>
@@ -291,6 +318,23 @@
     <td></td>
   </tr>
 <!-- Sign-in -->
+  <tr>
+    <td>Sign-up</td>
+    <td>Beekeeper</td>
+    <td>Hamburger menu on mobile</td>
+    <td>menu is offscreen</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+     <tr>
+    <td>Sign-up</td>
+    <td>Beekeeper</td>
+    <td>Hamburger menu on mobile opens and closes the menu links</td>
+    <td>menu is offscreen</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+   <tr>
    <tr>
     <td>Sign-in</td>
     <td>End-User / Customer</td>
@@ -357,6 +401,22 @@
     <td></td>
   </tr>
   <!-- Report A Swarm page -->
+  <tr>
+    <td>Report A Swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Hamburger menu on mobile</td>
+    <td>menu is offscreen</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+     <tr>
+  <td>Report A Swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Hamburger menu on mobile opens and closes the menu links</td>
+    <td>menu is offscreen</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
    <tr>
     <td>Report a swarm page</td>
     <td>End-User / Customer</td>
@@ -776,7 +836,23 @@
     <td></td>
 </tr>
 <!-- Admin -->
+ <tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Hamburger menu on mobile</td>
+    <td>menu is offscreen</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
 <tr>
+   <tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Hamburger menu on mobile opens and closes the menu links</td>
+    <td>menu is offscreen</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
     <td>Tickets</td>
     <td>Admin</td>
     <td>navigation is updated for logged in users</td>
@@ -1390,6 +1466,22 @@
 </tr>
 
 <!-- staff -->
+ <tr>
+    <td>Tickets</td>
+    <td>Staff</td>
+    <td>Hamburger menu on mobile</td>
+    <td>menu is offscreen</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>Tickets</td>
+    <td>Staff</td>
+    <td>Hamburger menu on mobile opens and closes the menu links</td>
+    <td>menu is offscreen</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
 <tr>
     <td>Tickets</td>
     <td>Staff</td>
