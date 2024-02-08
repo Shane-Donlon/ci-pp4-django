@@ -282,6 +282,14 @@
     <td></td>
   </tr>
 
+<tr>
+    <td>Sign-up</td>
+    <td>Beekeeper</td>
+    <td>Successful signed up</td>
+    <td>Redirects to profile page</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
 <!-- Sign-in -->
    <tr>
     <td>Sign-in</td>
@@ -299,7 +307,7 @@
     <td>Y</td>
     <td></td>
   </tr>
-        <tr>
+<tr>
     <td>Sign-in</td>
     <td>End-User / Customer</td>
     <td>Click Sign-up link</td>
@@ -340,7 +348,14 @@
     <td>Y</td>
     <td></td>
   </tr>
-
+<tr>
+    <td>Sign-in</td>
+    <td>Beekeeper</td>
+    <td>Successful signed in</td>
+    <td>Redirects to open tickets page</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
   <!-- Report A Swarm page -->
    <tr>
     <td>Report a swarm page</td>
