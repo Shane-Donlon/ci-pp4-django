@@ -284,6 +284,65 @@
     <td>Y</td>
     <td></td>
   </tr>
+
+  <!-- Report A Swarm page -->
+   <tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Click Beekeeper Icon</td>
+    <td>Login / sign-up menu unfolds</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+      <tr>
+    <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Click Login link</td>
+    <td>Redirects to login page</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+        <tr>
+     <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Click Sign-up link</td>
+    <td>Redirects to sign-up page</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+  <tr>
+      <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Report a Swarm link (nav)</td>
+    <td>Redirect to Report a swarm page</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+  <tr>
+       <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Click About link (nav)</td>
+    <td>Redirect to about</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+  <tr>
+    <tr>
+      <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Click company icon</td>
+    <td>Redirect to index page</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+    <tr>
+     <td>Report a swarm page</td>
+    <td>End-User / Customer</td>
+    <td>Box shadow applies after 50px scroll from top to nav bar</td>
+    <td>Box shadow applies after 50px scroll from top to nav bar</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
 </tbody>
 </table>
 
