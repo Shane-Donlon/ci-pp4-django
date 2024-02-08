@@ -2,7 +2,9 @@ import json
 
 from django.contrib.auth.decorators import login_required
 from django.forms.models import model_to_dict
-from django.http import Http404, JsonResponse, HttpResponse,HttpResponseForbidden 
+from django.http import Http404, JsonResponse, HttpResponse
+from django.http import HttpResponseForbidden
+
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.decorators import method_decorator
 from django.contrib.auth.models import User
@@ -19,20 +21,21 @@ from django.db.models import Q
 
 UNASSIGNED_USER = 3
 
+
 @method_decorator(login_required, name='dispatch')
 class AllTicketView(SingleTableView, View):
     def get(self, request):
         """_summary_
-    if user is super user go to all tickets templates,
+         if user is super user go to all tickets templates,
 
         """
         if request.user.is_superuser:
             allTickets = ReportSwarmCase.objects.all()
             CaseFilter = TicketFilter(request.GET, queryset=allTickets)
-            # if there is a filtered queryset we are remaking the variable data with the filtered data
             allTickets = CaseFilter.qs
             table = ticketTable(
-                allTickets, template_name="django_tables2/bootstrap5-responsive.html")
+                allTickets,
+                template_name="django_tables2/bootstrap5-responsive.html")
             RequestConfig(request).configure(table)
             table.paginate(page=request.GET.get("page", 1), per_page=10)
             context = {"tables": table, "filter": CaseFilter, }
@@ -45,26 +48,32 @@ class AllTicketView(SingleTableView, View):
 class OpenTickets(SingleTableView, View):
     def get(self, request):
         """_summary_
-    if user is super user go to all tickets templates,  else get a list of tickets assigned to the login user status open
+        if user is super user go to all tickets templates,
+        else get a list of tickets assigned to the login user status open
 
         """
-        openTickets = ReportSwarmCase.objects.filter(status="Open" )
+        openTickets = ReportSwarmCase.objects.filter(status="Open")
         if request.user.is_superuser:
             CaseFilter = OpenTicket(request.GET, queryset=openTickets)
-            # if there is a filtered queryset we are remaking the variable data with the filtered data
+            # if there is a filtered queryset we
+            # are remaking the variable data with the filtered data
             openTickets = CaseFilter.qs
             table = ticketTable(
-                openTickets, template_name="django_tables2/bootstrap5-responsive.html")
+                openTickets,
+                template_name="django_tables2/bootstrap5-responsive.html")
             RequestConfig(request).configure(table)
             table.paginate(page=request.GET.get("page", 1), per_page=10)
-            allStaff = User.objects.filter(is_active = True)
-            context = {"tables": table, "filter": CaseFilter, "allStaff":allStaff}
+            allStaff = User.objects.filter(is_active=True)
+            context = {"tables": table, "filter": CaseFilter,
+                       "allStaff": allStaff}
             return render(request, "tickets/allTickets.html", context)
         elif request.user.is_active:
             # assignee 3 === unassigned
-            openTickets = openTickets.filter(Q(assignee=request.user)|Q(assignee=3))
+            openTickets = openTickets.filter(Q(assignee=request.user)
+                                             | Q(assignee=3))
             table = ticketTable(
-                openTickets, template_name="django_tables2/bootstrap5-responsive.html")
+                openTickets,
+                template_name="django_tables2/bootstrap5-responsive.html")
             RequestConfig(request).configure(table)
             table.paginate(page=request.GET.get("page", 1), per_page=10)
             context = {"tables": table, }
@@ -77,7 +86,8 @@ class OpenTickets(SingleTableView, View):
 class ResolvedTickets(SingleTableView, View):
     def get(self, request):
         """_summary_
-    if user is super user go to all tickets templates, else redirect back to profile page
+        if user is super user go to all tickets templates,
+        else redirect back to profile page
 
         """
         resolvedTickets = ReportSwarmCase.objects.filter(
@@ -85,10 +95,10 @@ class ResolvedTickets(SingleTableView, View):
         if request.user.is_superuser:
 
             CaseFilter = OpenTicket(request.GET, queryset=resolvedTickets)
-            # if there is a filtered queryset we are remaking the variable data with the filtered data
             resolvedTickets = CaseFilter.qs
             table = ticketTable(
-                resolvedTickets, template_name="django_tables2/bootstrap5-responsive.html")
+                resolvedTickets,
+                template_name="django_tables2/bootstrap5-responsive.html")
             RequestConfig(request).configure(table)
             table.paginate(page=request.GET.get("page", 1), per_page=10)
             context = {"tables": table, "filter": CaseFilter, }
@@ -96,7 +106,8 @@ class ResolvedTickets(SingleTableView, View):
         elif request.user.is_active:
             resolvedTickets = resolvedTickets.filter(assignee=request.user)
             table = ticketTable(
-                resolvedTickets, template_name="django_tables2/bootstrap5-responsive.html")
+                resolvedTickets,
+                template_name="django_tables2/bootstrap5-responsive.html")
             RequestConfig(request).configure(table)
             table.paginate(page=request.GET.get("page", 1), per_page=10)
             context = {"tables": table, }
@@ -109,7 +120,8 @@ class ResolvedTickets(SingleTableView, View):
 class UnResolvedClosedTickets(SingleTableView, View):
     def get(self, request):
         """_summary_
-    if user is super user go to all tickets templates, else redirect back to profile page
+        if user is super user go to all tickets templates,
+        else redirect back to profile page
 
         """
         closedUnresolvedTickets = ReportSwarmCase.objects.filter(
@@ -117,10 +129,10 @@ class UnResolvedClosedTickets(SingleTableView, View):
         if request.user.is_superuser:
             CaseFilter = OpenTicket(
                 request.GET, queryset=closedUnresolvedTickets)
-            # if there is a filtered queryset we are remaking the variable data with the filtered data
             closedUnresolvedTickets = CaseFilter.qs
             table = ticketTable(
-                closedUnresolvedTickets, template_name="django_tables2/bootstrap5-responsive.html")
+                closedUnresolvedTickets,
+                template_name="django_tables2/bootstrap5-responsive.html")
             RequestConfig(request).configure(table)
             table.paginate(page=request.GET.get("page", 1), per_page=10)
             context = {"tables": table, "filter": CaseFilter, }
@@ -129,7 +141,8 @@ class UnResolvedClosedTickets(SingleTableView, View):
             closedUnresolvedTickets = closedUnresolvedTickets.filter(
                 assignee=request.user)
             table = ticketTable(
-                closedUnresolvedTickets, template_name="django_tables2/bootstrap5-responsive.html")
+                closedUnresolvedTickets,
+                template_name="django_tables2/bootstrap5-responsive.html")
             RequestConfig(request).configure(table)
             table.paginate(page=request.GET.get("page", 1), per_page=10)
             context = {"tables": table, }
@@ -142,32 +155,33 @@ class UnResolvedClosedTickets(SingleTableView, View):
 class TicketView(View):
     def get(self, request, ticketID):
         """_summary_
-    if user is super user open the ticket
-    if the user is the assignee open the ticket
-    if the user is logged in but is not the assignee raise 404
+        if user is super user open the ticket
+        if the user is the assignee open the ticket
+        if the user is logged in but is not the assignee raise 404
         """
         ticket = get_object_or_404(ReportSwarmCase, pk=ticketID)
-   
-        if  request.user.is_superuser or request.user == ticket.assignee or ticket.assignee.username == "unassigned":
-            
+
+        if (request.user.is_superuser or request.user == ticket.assignee or
+                ticket.assignee.username == "unassigned"):
+
             if request.headers.get("X-Requested-With") == "XMLHttpRequest":
                 ticket = ReportSwarmCase.objects.filter(pk=ticketID)
                 ticket = serialize("json", ticket)
                 ticket = json.loads(ticket)
 
-                return JsonResponse({"ticket":ticket})
+                return JsonResponse({"ticket": ticket})
             else:
                 superUser = User.objects.filter(is_superuser=True)
                 currentUser = request.user
                 context = {"ticket": ticket,
-                           "superUser":superUser,"currentUser":currentUser}
+                           "superUser": superUser, "currentUser": currentUser}
                 return render(request, "tickets/singularTicket.html", context)
         else:
             raise Http404
 
     def post(self, request, ticketID):
         ticket = get_object_or_404(ReportSwarmCase, pk=ticketID)
-        postTicket =  json.loads(request.body)
+        postTicket = json.loads(request.body)
         postTicket = postTicket["ticket"]
 
         try:
@@ -182,30 +196,24 @@ class TicketView(View):
             ticket.eircode = postTicket["eircode"]
             ticket.location = postTicket["location"]
             ticket.description = postTicket["description"]
-            ticket.assignee =   assignee
+            ticket.assignee = assignee
             ticket.status = postTicket["status"]
-      
-
             ticket.save()
-
             message = "saved"
-            message = JsonResponse({"message":message})
-    
+            message = JsonResponse({"message": message})
             return HttpResponse(message, content_type='text/plain')
-        except:
+        except User.DoesNotExist:
             message = "invalid"
-
-            message = JsonResponse({"message":message})
+            message = JsonResponse({"message": message})
             return HttpResponse(message, content_type='text/plain')
-
 
     def delete(self, request, ticketID):
         if request.user.is_superuser:
             ticket = get_object_or_404(ReportSwarmCase, pk=ticketID)
             ticket.delete()
             message = "delete"
-            message = JsonResponse({"message":message})
+            message = JsonResponse({"message": message})
             return HttpResponse(message, content_type='text/plain')
-        
+
         else:
             HttpResponseForbidden()
