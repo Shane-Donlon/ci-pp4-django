@@ -1728,3 +1728,124 @@ HTML Errors are from Django Tables 2 package unable to fix
 #### JavaScript
 
 ![image of valid JavaScript code validator login page](documentation/assets/js-validator-logout.jpg)
+
+### Python code
+
+#### report_swarm
+
+#### admin.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### apps.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### forms.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### models.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### urls.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### views.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+### sign_in_sign_out
+
+#### admin.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### apps.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### forms.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### models.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### signals.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### urls.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### views.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+### tickets
+
+#### apps.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### filters.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### tables.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### urls.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### views.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+### unauthenticated
+
+#### admin.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### apps.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### models.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### urls.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### views.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+### swarms
+
+#### asgi.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### wsgi.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### urls.py
+
+![image of valid python code validator](documentation/assets/python-code-validator.jpg)
+
+#### settings.py
+
+this is due to long names following documentation for all auth
+![image of invalid python code validator](documentation/assets/settings.py.jpg)
