@@ -147,6 +147,10 @@ main {
   min-height: 75svh;
 }
 
+:disabled {
+  cursor: not-allowed;
+}
+
 @media (max-width: 600px) {
   .nav-wrapper {
     width: 100%;
