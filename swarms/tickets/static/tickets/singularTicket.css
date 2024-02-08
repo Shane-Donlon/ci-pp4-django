@@ -32,9 +32,14 @@ dialog[open] > img {
   aspect-ratio: 1/1;
 }
 
-.image-preview {
+#image-preview {
   height: 200px;
   aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+img {
+  object-fit: cover;
 }
 
 #description {
