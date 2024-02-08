@@ -71,6 +71,14 @@ If the user has a preference set for reduced motion, the animations are slowed d
     </li>
     <li>To undo this open the site in a new tab.</li>
   </ol>
+
+- link names for accessibility:
+  - unfortunately the index page (home page link) is not descriptive, as it is only a "/" I am unsure how to resolve this.
+
+### testing
+
+[Link to testing documentation](https://github.com/Shane-Donlon/ci-pp4-django/blob/main/TESTING.md).
+
 ### bugs
 
 #### resolved bugs
