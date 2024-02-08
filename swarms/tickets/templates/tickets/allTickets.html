@@ -1,9 +1,9 @@
 {% extends "base.html" %}
+{% load django_tables2 %}
 {% load static %}
 {% block cssfiles %}
     <link rel="stylesheet" href="{% static 'tickets/tickets.css' %}">
 {% endblock cssfiles %}
-{% load django_tables2 %}
 {% load render_table from django_tables2 %}
 {% block content %}
     <div class="content-wrapper">
@@ -45,15 +45,15 @@
     {% if filter.form %}
         {% comment %} if filter form exsist on page load the below script also {% endcomment %}
         <script>
-    const modal = document.querySelector("dialog");
-    const modalOpenBtn = document.querySelector(".helpBtn");
-    const modalCloseBtn = document.querySelector(".dialogCloseBtn");
-    modalOpenBtn.addEventListener("click", (e) => {
-    modal.showModal();
-    });
-    modalCloseBtn.addEventListener("click", (e) => {
-    modal.close();
-    });
+        const modal = document.querySelector("dialog");
+        const modalOpenBtn = document.querySelector(".helpBtn");
+        const modalCloseBtn = document.querySelector(".dialogCloseBtn");
+        modalOpenBtn.addEventListener("click", (e) => {
+        modal.showModal();
+        });
+        modalCloseBtn.addEventListener("click", (e) => {
+        modal.close();
+        });
         </script>
     {% endif %}
     <script src="{% static 'tickets/tickets.js' %}"></script>
