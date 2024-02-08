@@ -1076,6 +1076,154 @@
     <td>On failed save a message is shown (EG Assignee does not exist)</td>
 </tr>
 
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Save button success message</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Status update success message</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Can edit first name</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Can edit last name</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Can edit number </td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Can edit email </td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Can edit address </td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Can edit town </td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Can edit eircode </td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Can edit status to Open</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Can edit status to Resolved</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Can edit status to Unable to Resolve</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Can edit assignee (valid name)</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Can edit assignee (invalid name)</td>
+    <td>Y</td>
+    <td>On failed save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Full screen image modal opens</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Full screen image modal closes</td>
+    <td>Y</td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Update description</td>
+    <td>Y</td>
+    <td>On successful save a message is shown</td>
+</tr>
+<tr>
+    <td>Tickets</td>
+    <td>Admin</td>
+    <td>Ticket page Resolved</td>
+    <td>Save button fail message</td>
+    <td>Y</td>
+    <td>On failed save a message is shown (EG Assignee does not exist)</td>
+</tr>
+
 <!-- staff -->
 <tr>
     <td>Tickets</td>
