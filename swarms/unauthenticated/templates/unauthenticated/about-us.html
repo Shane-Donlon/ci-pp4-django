@@ -1,15 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
 {% block cssfiles %}
-    <link rel="stylesheet" href="{% static "unauthenticated/unauthenticated.css" %}">
+    <link rel="stylesheet"
+          href="{% static 'unauthenticated/unauthenticated.css' %}">
 {% endblock cssfiles %}
 {% block content %}
     <div class="about-us-page-body-grid">
         <div class="about-us-page-img img-grid-top-image"  role="presentation">
-            <img src="{% static "unauthenticated/images/swarms4.jpg" %}" alt="HoneyBee Smoke container smoking to move honeyBees">
+            <img src="{% static 'unauthenticated/images/swarms4.jpg' %}"
+                 alt="HoneyBee Smoke container smoking to move honeyBees">
         </div>
         <div class="about-us-page-img img-grid-bottom-image" role="presentation">
-            <img src="{% static "unauthenticated/images/swarms3.jpg" %}" alt="beekeeper taking bees out of hive">
+            <img src="{% static 'unauthenticated/images/swarms3.jpg' %}"
+                 alt="beekeeper taking bees out of hive">
         </div>
         <div class="about-us-page-grid-row">
             <section class="about-intro">
