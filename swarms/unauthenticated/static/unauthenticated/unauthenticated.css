@@ -241,6 +241,7 @@
 }
 
 .faq-summary {
+  --bk-yellow: #8b4313;
   background-color: var(--bk-yellow);
   color: white;
   padding: 1.5em 2em;
