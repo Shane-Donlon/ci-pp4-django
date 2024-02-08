@@ -1592,11 +1592,139 @@
 
 <!-- new row -->
 
- <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-</tr>
+## Code Validation
+
+### Index page
+
+#### HTML
+
+![image of valid HTML code validator index page](documentation/assets/html-validator-index.jpg)
+
+#### CSS
+
+![image of valid CSS code validator index page](documentation/assets/css-validator-index.jpg)
+
+#### JavaScript
+
+![image of valid JavaScript code validator index page](documentation/assets/js-validator-index.jpg)
+
+### Report a Swarm page
+
+#### HTML
+
+![image of valid HTML code validator report a swarm page](documentation/assets/html-validator-report.jpg)
+
+#### CSS
+
+![image of CSS code validator report a swarm page](documentation/assets/css-validator-report.jpg)
+![image of CSS can i use support page for @ property](documentation/assets/css-can-i-use.jpg)
+
+#### JavaScript
+
+![image of valid JavaScript code validator report a swarm page](documentation/assets/js-validator-report.jpg)
+
+### About page
+
+#### HTML
+
+![image of valid HTML code validator about page](documentation/assets/html-validator-about.jpg)
+
+#### CSS
+
+![image of valid CSS code validator about page](documentation/assets/css-validator-about.jpg)
+
+#### JavaScript
+
+![image of valid JavaScript code validator about page](documentation/assets/js-validator-about.jpg)
+
+### login page
+
+#### HTML
+
+![image of valid HTML code validator login page](documentation/assets/html-validator-login.jpg)
+
+#### CSS
+
+![image of valid CSS code validator login page](documentation/assets/css-validator-login.jpg)
+
+#### JavaScript
+
+![image of valid JavaScript code validator login page](documentation/assets/js-validator-about.jpg)
+
+### sign-up page
+
+#### HTML
+
+HTML Errors are from the all auth templates unable to correct
+
+![image of valid HTML code validator login page](documentation/assets/html-validator-signup.jpg)
+
+#### CSS
+
+![image of valid CSS code validator login page](documentation/assets/css-validator-login.jpg)
+
+#### JavaScript
+
+![image of valid JavaScript code validator login page](documentation/assets/js-validator-about.jpg)
+
+### open tickets page
+
+#### HTML
+
+HTML Errors are from Django Tables 2 package unable to fix
+
+![image of valid HTML code validator login page](documentation/assets/html-validator-open.jpg)
+
+#### CSS
+
+![image of valid CSS code validator login page](documentation/assets/css-validator-login.jpg)
+
+#### JavaScript
+
+![image of valid JavaScript code validator login page](documentation/assets/js-validator-open.jpg)
+
+### resolved tickets page
+
+#### HTML
+
+HTML Errors are from Django Tables 2 package unable to fix
+
+![image of valid HTML code validator login page](documentation/assets/html-validator-open.jpg)
+
+#### CSS
+
+![image of valid CSS code validator login page](documentation/assets/css-validator-login.jpg)
+
+#### JavaScript
+
+![image of valid JavaScript code validator login page](documentation/assets/js-validator-open.jpg)
+
+### unresolved tickets page
+
+#### HTML
+
+HTML Errors are from Django Tables 2 package unable to fix
+
+![image of valid HTML code validator login page](documentation/assets/html-validator-open.jpg)
+
+#### CSS
+
+![image of valid CSS code validator login page](documentation/assets/css-validator-login.jpg)
+
+#### JavaScript
+
+![image of valid JavaScript code validator login page](documentation/assets/js-validator-open.jpg)
+
+### logout page
+
+#### HTML
+
+![image of valid HTML code validator login page](documentation/assets/html-validator-logout.jpg)
+
+#### CSS
+
+![image of valid CSS code validator login page](documentation/assets/css-validator-login.jpg)
+
+#### JavaScript
+
+![image of valid JavaScript code validator login page](documentation/assets/js-validator-logout.jpg)
