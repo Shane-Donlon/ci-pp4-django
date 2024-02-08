@@ -9,10 +9,9 @@ if os.path.isfile('env.py'):
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG") == "True"
 
 ALLOWED_HOSTS = ["ci-sd-pp4-swarms-ie-54c976de26c1.herokuapp.com", "127.0.0.1"]
