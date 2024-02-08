@@ -321,13 +321,6 @@ fieldset > .first-child-div {
   align-items: center;
   background-color: white;
 }
-.loader-div {
-  width: 120px;
-  height: 20px;
-  border-radius: 20px;
-  background: linear-gradient(orange 0 0) 0/0% no-repeat lightblue;
-  animation: l2 2s infinite steps(10);
-}
 
 .loader-div {
   width: 48px;
