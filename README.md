@@ -208,4 +208,4 @@ Andy Bell (CSS Reset File)
 ### Agile Methodologies
 
 ![project board](documentation/assets/project-board-swarms.jpg)
-![user stories](documentation/assets/user-stories-swarms.jpg)
+![user stories](documentation/assets/user-stories-swarms.jpgcd..)
