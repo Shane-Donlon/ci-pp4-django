@@ -1,6 +1,16 @@
 link to site:
 [Link to live site](https://ci-sd-pp4-swarms-ie-54c976de26c1.herokuapp.com/).
 
+![Website showcase](documentation/assets/website-showcase.jpg)
+
+Important notice:
+If you are NOT logged into this site: please look at this from the perspective of a customer
+If you are loggged in as a SUPERUSER please look at this from the perspective of an admin / business owner
+If you are logged in (and NOT as a SUPERUSER ) please look at this from the perspective of a staff memeber
+
+also to note the "Beekeeper" (Login / Sign-up) menu ONLY exists for the purposes of testing.
+In a real-life scenario this would be "hidden" and up to the business owner to circulate!
+
 # About:
 
 This site is a ticket management system for a company called Swarms.ie
@@ -132,7 +142,7 @@ If the user has a preference set for reduced motion, the animations are slowed d
   - [django-widget-tweaks](https://django-tables2.readthedocs.io/en/latest/): used to modify the HTML of the rendered forms.
   - [whitenoise](https://whitenoise.readthedocs.io/en/latest/): used to serve the static files
   - [miro](https://miro.com/app/): used to draw diagrams
-  - [bootstrap css](https://getbootstrap.com/): used to table responsiveness
+  - [bootstrap css](https://getbootstrap.com/): used for table responsiveness
 
 ### Process flow for tickets
 
@@ -185,4 +195,4 @@ Louis Hoebregts [link to blog article](https://css-tricks.com/how-to-animate-the
 
 Kevin Powell [link to codepen](https://codepen.io/kevinpowell/pen/xxyybmj)
 
-RedEyedCoderClub [link to youtube video ](https://www.youtube.com/watch?v=S2gkqC1fmbA&ab_channel=RedEyedCoderClub)
+Red Eyed Coder Club [link to youtube video ](https://www.youtube.com/watch?v=S2gkqC1fmbA&ab_channel=RedEyedCoderClub)
