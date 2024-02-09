@@ -132,6 +132,7 @@ If the user has a preference set for reduced motion, the animations are slowed d
   - [django-widget-tweaks](https://django-tables2.readthedocs.io/en/latest/): used to modify the HTML of the rendered forms.
   - [whitenoise](https://whitenoise.readthedocs.io/en/latest/): used to serve the static files
   - [miro](https://miro.com/app/): used to draw diagrams
+  - [bootstrap css](https://getbootstrap.com/): used to table responsiveness
 
 ### Process flow for tickets
 
@@ -156,7 +157,6 @@ If the user has a preference set for reduced motion, the animations are slowed d
 
 ### index
 
-desktop-design-index.jpg
 ![desktop design index page](documentation/assets/desktop-design-index.jpg)
 ![desktop design index page counters](documentation/assets/desktop-design-index-count.jpg)
 
@@ -167,3 +167,13 @@ desktop-design-index.jpg
 ### sections
 
 ![desktop design sections](documentation/assets/desktop-design-sections.jpg)
+
+### wireframes desktop
+
+![desktop design sections](documentation/wireframes/swarms-desktop.pdf)
+![mobile design sections](documentation/wireframes/swarms-mobile.pdf)
+
+### Known issues
+
+Tables - especially with tables the design of this site was desktop orientated.
+While the site is fully responsive and tables are responsive using bootstrap CSS the best experience for tables is via a desktop / tablet
