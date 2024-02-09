@@ -79,6 +79,10 @@ If the user has a preference set for reduced motion, the animations are slowed d
 
 [Link to testing documentation](https://github.com/Shane-Donlon/ci-pp4-django/blob/main/TESTING.md).
 
+### features
+
+[Link to features documentation](https://github.com/Shane-Donlon/ci-pp4-django/blob/main/FEATURES.md).
+
 ### bugs
 
 #### resolved bugs
@@ -100,7 +104,7 @@ If the user has a preference set for reduced motion, the animations are slowed d
     <td>JavaScript</td>
     <td>Using regex on phone to confirm if number is correct, if at any point an error appeared I would set the custom error to be more descriptive than pattern does not match, once I corrected the error on change and next would still set the error and could not move onto the next section of the form
     event.target.setCustomValidity("Please enter phone number in 353121234567 format");</td>
-    <td> event.target.setCustomValidity("");</td>
+    <td> event.target.setCustomValidity(""); </td>
     <td> As I'm setting the error to true by using a non-empty string I need to set this back to false using an empty string after the error appears </td>
 
   </tr>
