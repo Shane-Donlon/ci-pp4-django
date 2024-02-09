@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% block cssfiles %}
-<link rel="stylesheet" href="{% static '404.css' %}">
+    <link rel="stylesheet" href="{% static '404.css' %}">
 {% endblock cssfiles %}
 {% block content %}
     <div class="errordiv">
         <h2 class="error-h2">The page you are looking for cannot be found</h2>
         {% if user.is_authenticated %}
             <div class="link-div">
-                <a href="{% url "openTickets" %}">Back to home</a>
+                <a href="{% url 'open_tickets' %}" aria-label="open tickets">Back to home</a>
             </div>
         {% else %}
             <div class="link-div">
-                <a href="{% url "index" %}">Back to home</a>
+                <a href="{% url 'index' %}" aria-label="home">Back to home</a>
             </div>
         {% endif %}
     </div>
