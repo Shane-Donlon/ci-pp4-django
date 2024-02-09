@@ -365,7 +365,7 @@ fieldset > .first-child-div {
 }
 
 .check-box-wrapper > label {
-  color: rgba(255, 0, 0, 0.329);
+  color: rgb(179, 5, 5);
   font-weight: 600;
   font-size: 1.125rem;
 }
