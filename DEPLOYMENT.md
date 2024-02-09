@@ -1,9 +1,9 @@
 # Deployment
 
-- The app was deployed to [Heroku](https://www.heroku.com/).
-- The database was deployed to [ElephantSQL](https://www.elephantsql.com/).
+- The app was deployed to [Heroku](https:/www.heroku.com/).
+- The database was deployed to [ElephantSQL](https:/www.elephantsql.com/).
 
-- The app can be reached by the [link](https://ci-sd-pp4-swarms-ie-54c976de26c1.herokuapp.com/).
+- The app can be reached by the [link](https:/ci-sd-pp4-swarms-ie-54c976de26c1.herokuapp.com/).
 
 ## Local deployment
 
@@ -17,14 +17,14 @@ Create a local copy of the GitHub repository by following one of the two process
 
 - Download ZIP file:
 
-  1. Go to the [GitHub Repo page](https://github.com/Shane-Donlon/ci-pp4-django).
+  1. Go to the [GitHub Repo page](https:/github.com/Shane-Donlon/ci-pp4-django).
   1. Click the Code button and download the ZIP file containing the project.
   1. Extract the ZIP file to a location on your PC.
 
 - Clone the repository:
   1. Open a folder on your computer with the terminal.
   1. Run the following command
-  - `git clone https://github.com/Shane-Donlon/ci-pp4-django.git`
+  - `git clone https:/github.com/Shane-Donlon/ci-pp4-django.git`
 
 1. Install the dependencies:
 
@@ -66,39 +66,39 @@ Create a local copy of the GitHub repository by following one of the two process
 - Set debug to False locally + delete DISABLE_COLLECTSTATIC from config vars in Heroku dashboard.
 - Commit and push the changes to GitHub.
 
-1. Go to [ElephantSQL](https://www.elephantsql.com/) and create a new account.
+1. Go to [ElephantSQL](https:/www.elephantsql.com/) and create a new account.
 
 2. Create a new instance of the database.
 
-   - ![ElephantSQL. Create a new instance](documentation/assets//sql-create-new.jpg)
+   - ![ElephantSQL. Create a new instance](documentation/assets/sql-create-new.jpg)
 
 3. Select a name for your database and select the free plan.
 
-   - ![ElephantSQL. Select a name for your database](documentation/assets//sql-tiny-turtle.jpg)
+   - ![ElephantSQL. Select a name for your database](documentation/assets/sql-tiny-turtle.jpg)
 
 4. Click "Select Region"
 
-   - ![ElephantSQL. Select a region](documentation/assets//sql-region-plan.jpg)
+   - ![ElephantSQL. Select a region](documentation/assets/sql-region-plan.jpg)
 
 5. Select a region close to you.
 
-   - ![ElephantSQL. Select a region](documentation/assets//sql-region.jpg)
+   - ![ElephantSQL. Select a region](documentation/assets/sql-region.jpg)
 
 6. Click "Review"
 
-   - ![ElephantSQL. Review](documentation/assets//review.jpg)
+   - ![ElephantSQL. Review](documentation/assets/review.jpg)
 
 7. Click "Create Instance"
 
-   - ![ElephantSQL. Create Instance](documentation/assets//sql-create-insance.jpg)
+   - ![ElephantSQL. Create Instance](documentation/assets/sql-create-insance.jpg)
 
 8. Click on the name of your database to open the dashboard.
 
-   - ![ElephantSQL. Open dashboard](documentation/assets//sql-instance-enter-name-here.jpg)
+   - ![ElephantSQL. Open dashboard](documentation/assets/sql-instance-enter-name-here.jpg)
 
 9. You will see the dashboard of your database. You will need the URL of your database to connect it to your Django project.
 
-   - ![ElephantSQL. DB](documentation/assets//sql-copy-url.jpg)
+   - ![ElephantSQL. DB](documentation/assets/sql-copy-url.jpg)
 
 ## Heroku Deployment
 
@@ -109,10 +109,10 @@ Create a local copy of the GitHub repository by following one of the two process
 - Go to [www.heroku.com](www.heroku.com)
 - Log in or create a Heroku account.
 - Create a new app with any unique name <name app>.
-  ![Heroku. Create New App](documentation/assets//heroku-new.jpg)
+  ![Heroku. Create New App](documentation/assets/heroku-new.jpg)
 
 * Create a Procfile in your local workplace:
-  ![Procfile](documentation/assets//procfile.jpg)
+  ![Procfile](documentation/assets/procfile.jpg)
   This file will will contain the following:
 
   ```python
@@ -120,11 +120,11 @@ Create a local copy of the GitHub repository by following one of the two process
   ```
 
   - Commit and push the changes to GitHub.
-    ![Procfile contents](documentation/assets//procfile-contents.jpg)
+    ![Procfile contents](documentation/assets/procfile-contents.jpg)
 
 * Go to the settings app in Heroku and go to Config Vars.
-  ![heroku settings](documentation/assets//heroku-settings.jpg)
-  ![heroku settings config vars](documentation/assets//heroku-settings-config.jpg)
+  ![heroku settings](documentation/assets/heroku-settings.jpg)
+  ![heroku settings config vars](documentation/assets/heroku-settings-config.jpg)
 
 | Key                   | Value |
 | --------------------- | ----- |
@@ -133,19 +133,22 @@ Create a local copy of the GitHub repository by following one of the two process
 | SECRET_KEY            | ...   |
 | CLOUDINARY_URL        | ...   |
 
-- Copy the value of DATABASE_URL and input it into the .env file and generate a secret key (you may use [Djecrety](https://djecrety.ir/) for secret key generation).
+- Copy the value of DATABASE_URL and input it into the .env file and generate a secret key (you may use [Djecrety](https:/djecrety.ir/) for secret key generation).
 
 * Migrate changes.
 * Set debug to False in settings.py
 * Commit and push the changes to GitHub.
 * Connect your repository to Heroku.
-  ![heroku connected](documentation/assets//heroku-connect.jpg)
+  ![heroku connected](documentation/assets/heroku-connect.jpg)
 * Deploy the app to Heroku by clicking "Deploy Branch" button. If you want to enable auto-deployment, click "Enable Automatic Deployment".
-  ![heroku deploy branch](documentation/assets//heroku-deploy-branch.jpg)
+  ![heroku deploy branch](documentation/assets/heroku-deploy-branch.jpg)
   The deployment process will start.
-  ![heroku deploy branch](documentation/assets//heroku-deploy-process.jpg)
+  ![heroku deploy branch](documentation/assets/heroku-deploy-process.jpg)
 
 * You will see a confirmation screen appear at the bottom of the screen
-  ![heroku deploy success](documentation/assets//heroku-deploy-success.jpg)
+  ![heroku deploy success](documentation/assets/heroku-deploy-success.jpg)
 
 **Final Deployment**
+
+- Set debug to False locally + delete DISABLE_COLLECTSTATIC from config vars in Heroku dashboard.
+- Commit and push the changes to GitHub.
