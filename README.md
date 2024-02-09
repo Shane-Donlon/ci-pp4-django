@@ -191,6 +191,8 @@ If the user has a preference set for reduced motion, the animations are slowed d
 Tables - especially with tables the design of this site was desktop orientated.
 While the site is fully responsive and tables are responsive using bootstrap CSS the best experience for tables is via a desktop / tablet
 
+Active link not on pages : I am aware that for active pages there is not identified, this is due to reusing templates
+
 ### Credits
 
 Louis Hoebregts [link to blog article](https://css-tricks.com/how-to-animate-the-details-element-using-waapi/)
