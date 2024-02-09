@@ -106,23 +106,45 @@ If the user has a preference set for reduced motion, the animations are slowed d
     event.target.setCustomValidity("Please enter phone number in 353121234567 format");</td>
     <td> event.target.setCustomValidity(""); </td>
     <td> As I'm setting the error to true by using a non-empty string I need to set this back to false using an empty string after the error appears </td>
-
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-   
   </tr>
 </tbody>
 </table>
+
+## Technologies used
+
+- ### Languages:
+
+  - [Python 3.8.5](https://www.python.org/downloads/release/python-385/): the primary language used to develop the server-side of the website.
+  - [JS](https://www.javascript.com/): the primary language used to develop interactive components of the website.
+  - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): the markup language used to create the website.
+  - [CSS](https://developer.mozilla.org/en-US/docs/Web/css): the styling language used to style the website.
+
+- ### Frameworks and libraries:
+
+  - [Django](https://www.djangoproject.com/): python framework used to create all the logic.
+
+- ### Databases:
+
+  - [SQLite](https://www.sqlite.org/): was used as a development database.
+  - [PostgreSQL](https://www.postgresql.org/): the database used to store all the data.
+
+- ### Other tools:
+  - [Git](https://git-scm.com/): the version control system used to manage the code.
+  - [Pip3](https://pypi.org/project/pip/): the package manager used to install the dependencies.
+  - [Gunicorn](https://gunicorn.org/): the webserver used to run the website.
+  - [Spycopg2](https://www.python.org/dev/peps/pep-0249/): the database driver used to connect to the database.
+  - [Django-allauth](https://django-allauth.readthedocs.io/en/latest/): the authentication library used to create the user accounts.
+    - [ElephantSQL](https://www.elephantsql.com/): the cloud database used to store all the data.
+    - [GitHub](https://github.com/): used to host the website's source code.
+    * [VSCode](https://code.visualstudio.com/): the IDE used to develop the website.
+    * [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
+    * [Font Awesome](https://fontawesome.com/): was used to create the icons used in the website.
+    - [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
+    - [W3C CSS validator](https://jigsaw.w3.org/css-validator/): was used to validate CSS code for the website.
+    - [JShint](https://jshint.com/): was used to validate JS code for the website.
+    - [PEP8](https://pep8.org/): was used to validate Python code for the website.
+    - [Cloudinary](https://cloudinary.com/): used to store images uploaded to site.
+    - [django-filter](https://django-filter.readthedocs.io/en/stable/): used to filter querysets.
+    - [django-tables2](https://django-tables2.readthedocs.io/en/latest/): used to provide responsive tables.
+    - [django-widget-tweaks](https://django-tables2.readthedocs.io/en/latest/): used to modify the HTML of the rendered forms.
+    - [whitenoise](https://whitenoise.readthedocs.io/en/latest/): used to serve the static files
