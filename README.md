@@ -139,3 +139,13 @@ If the user has a preference set for reduced motion, the animations are slowed d
 ### Entity-Relationship Diagram
 
 ![entity relational diagram](documentation/assets/erd-swarms.jpg)
+
+## lighthouse reports
+
+### Index page
+
+![lighthouse report index](documentation/assets/light-house-index.jpg)
+
+### About page
+
+![lighthouse report about page](documentation/assets/light-house-about.jpg)
