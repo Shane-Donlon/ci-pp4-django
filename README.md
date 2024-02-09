@@ -5,6 +5,8 @@ link to site:
 
 This site is a ticket management system for a company called Swarms.ie
 Swarms is a honeybee removal charity business, that connects people with beekeepers to remove colonies and swarms from their property.
+![current issues slides](documentation/assets/current-issues.jpg)
+![goals slides](documentation/assets/goals.jpg)
 
 ## The "problem" / issue to fix
 
@@ -149,3 +151,19 @@ If the user has a preference set for reduced motion, the animations are slowed d
 ### About page
 
 ![lighthouse report about page](documentation/assets/light-house-about.jpg)
+
+## design
+
+### index
+
+desktop-design-index.jpg
+![desktop design index page](documentation/assets/desktop-design-index.jpg)
+![desktop design index page counters](documentation/assets/desktop-design-index-count.jpg)
+
+### about us
+
+![desktop design about us section](documentation/assets/desktop-design-about-us.jpg)
+
+### sections
+
+![desktop design sections](documentation/assets/desktop-design-sections.jpg)
