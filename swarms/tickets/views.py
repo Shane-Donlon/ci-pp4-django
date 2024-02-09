@@ -177,7 +177,7 @@ class TicketView(View):
                            "superUser": superUser, "currentUser": currentUser}
                 return render(request, "tickets/singularTicket.html", context)
         else:
-            raise Http404
+            raise Http404()
 
     def post(self, request, ticketID):
         ticket = get_object_or_404(ReportSwarmCase, pk=ticketID)
