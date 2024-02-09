@@ -130,3 +130,8 @@ Web application has the following pages:
 
 - footer
   ![image of tickets page](documentation/assets/ticket-tickets-all-devices.jpg)
+
+## logout page
+
+- javascript automatically logs user out after, all staff see is a loading screen while this loads.
+  ![image of laoding screen](documentation/assets/logout-page.jpg)
