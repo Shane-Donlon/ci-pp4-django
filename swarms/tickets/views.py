@@ -202,7 +202,7 @@ class TicketView(View):
             message = "saved"
             message = JsonResponse({"message": message})
             return HttpResponse(message, content_type='text/plain')
-        except User.DoesNotExist:
+        except IndexError:
             message = "invalid"
             message = JsonResponse({"message": message})
             return HttpResponse(message, content_type='text/plain')
