@@ -229,7 +229,7 @@ fieldset > .first-child-div {
 }
 
 .confirmation span {
-  color: red;
+  color: rgba(255, 0, 0, 0.479);
   font-weight: 700;
 }
 
