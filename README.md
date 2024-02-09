@@ -202,3 +202,10 @@ Kevin Powell [link to codepen](https://codepen.io/kevinpowell/pen/xxyybmj)
 Red Eyed Coder Club [link to youtube video ](https://www.youtube.com/watch?v=S2gkqC1fmbA&ab_channel=RedEyedCoderClub)
 
 swarms business!
+
+Andy Bell (CSS Reset File)
+
+### Agile Methodologies
+
+![project board](documentation/assets/project-board-swarms.jpg)
+![user stories](documentation/assets/user-stories-swarms.jpg)

@@ -12,5 +12,5 @@ cloudinary_python.txt
 Scripts
 Lib
 *.cfg
-.gitignore
-
+*.gitignore
+*.vscode
