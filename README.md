@@ -11,6 +11,8 @@ If you are logged in (and NOT as a SUPERUSER ) please look at this from the pers
 also to note the "Beekeeper" (Login / Sign-up) menu ONLY exists for the purposes of testing.
 In a real-life scenario this would be "hidden" and up to the business owner to circulate!
 
+Also please note company approval for use of assets was granted
+
 # About:
 
 This site is a ticket management system for a company called Swarms.ie
@@ -196,3 +198,5 @@ Louis Hoebregts [link to blog article](https://css-tricks.com/how-to-animate-the
 Kevin Powell [link to codepen](https://codepen.io/kevinpowell/pen/xxyybmj)
 
 Red Eyed Coder Club [link to youtube video ](https://www.youtube.com/watch?v=S2gkqC1fmbA&ab_channel=RedEyedCoderClub)
+
+swarms business!
