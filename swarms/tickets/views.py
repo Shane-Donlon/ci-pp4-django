@@ -2,7 +2,7 @@ import json
 
 from django.contrib.auth.decorators import login_required
 from django.forms.models import model_to_dict
-from django.http import Http404, JsonResponse, HttpResponse
+from django.http import HttpResponseNotFound, JsonResponse, HttpResponse
 from django.http import HttpResponseForbidden
 
 from django.shortcuts import get_object_or_404, redirect, render
@@ -177,7 +177,7 @@ class TicketView(View):
                            "superUser": superUser, "currentUser": currentUser}
                 return render(request, "tickets/singularTicket.html", context)
         else:
-            raise Http404()
+            raise HttpResponseNotFound()
 
     def post(self, request, ticketID):
         ticket = get_object_or_404(ReportSwarmCase, pk=ticketID)
