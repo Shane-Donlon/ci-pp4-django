@@ -1,19 +1,3 @@
-Overall Plan Of Action:
-Deploy early
-
-Priority List:
-Users will be the general public users for this site, and will house all the unauthenticated views.
-User stories will be the first priority to get the public facing site up and running.
-
-Moving on form user stories to the Ticket model next
-
-Bee Keeper stories so that staff can update the tickets
-Admin stories so that the admins can update the tickets.
-
-Once all MVPs have been completed move onto the "Should haves"
-Then "could haves"
-Then "Won't haves"
-
 link to site:
 [Link to live site](https://ci-sd-pp4-swarms-ie-54c976de26c1.herokuapp.com/).
 
@@ -71,9 +55,6 @@ If the user has a preference set for reduced motion, the animations are slowed d
     </li>
     <li>To undo this open the site in a new tab.</li>
   </ol>
-
-- link names for accessibility:
-  - unfortunately the index page (home page link) is not descriptive, as it is only a "/" I am unsure how to resolve this.
 
 ### testing
 
@@ -134,17 +115,27 @@ If the user has a preference set for reduced motion, the animations are slowed d
   - [Gunicorn](https://gunicorn.org/): the webserver used to run the website.
   - [Spycopg2](https://www.python.org/dev/peps/pep-0249/): the database driver used to connect to the database.
   - [Django-allauth](https://django-allauth.readthedocs.io/en/latest/): the authentication library used to create the user accounts.
-    - [ElephantSQL](https://www.elephantsql.com/): the cloud database used to store all the data.
-    - [GitHub](https://github.com/): used to host the website's source code.
-    * [VSCode](https://code.visualstudio.com/): the IDE used to develop the website.
-    * [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
-    * [Font Awesome](https://fontawesome.com/): was used to create the icons used in the website.
-    - [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
-    - [W3C CSS validator](https://jigsaw.w3.org/css-validator/): was used to validate CSS code for the website.
-    - [JShint](https://jshint.com/): was used to validate JS code for the website.
-    - [PEP8](https://pep8.org/): was used to validate Python code for the website.
-    - [Cloudinary](https://cloudinary.com/): used to store images uploaded to site.
-    - [django-filter](https://django-filter.readthedocs.io/en/stable/): used to filter querysets.
-    - [django-tables2](https://django-tables2.readthedocs.io/en/latest/): used to provide responsive tables.
-    - [django-widget-tweaks](https://django-tables2.readthedocs.io/en/latest/): used to modify the HTML of the rendered forms.
-    - [whitenoise](https://whitenoise.readthedocs.io/en/latest/): used to serve the static files
+  - [ElephantSQL](https://www.elephantsql.com/): the cloud database used to store all the data.
+  - [GitHub](https://github.com/): used to host the website's source code.
+  * [VSCode](https://code.visualstudio.com/): the IDE used to develop the website.
+  * [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
+  * [Font Awesome](https://fontawesome.com/): was used to create the icons used in the website.
+  - [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
+  - [W3C CSS validator](https://jigsaw.w3.org/css-validator/): was used to validate CSS code for the website.
+  - [JShint](https://jshint.com/): was used to validate JS code for the website.
+  - [PEP8](https://pep8.org/): was used to validate Python code for the website.
+  - [Cloudinary](https://cloudinary.com/): used to store images uploaded to site.
+  - [django-filter](https://django-filter.readthedocs.io/en/stable/): used to filter querysets.
+  - [django-tables2](https://django-tables2.readthedocs.io/en/latest/): used to provide responsive tables.
+  - [django-widget-tweaks](https://django-tables2.readthedocs.io/en/latest/): used to modify the HTML of the rendered forms.
+  - [whitenoise](https://whitenoise.readthedocs.io/en/latest/): used to serve the static files
+  - [miro](https://miro.com/app/): used to draw diagrams
+
+### Process flow for tickets
+
+![process flow for tickets part 1](documentation/assets/ticket-process-top.jpg)
+![process flow for tickets part 2](documentation/assets/ticket-process-bottom.jpg)
+
+### Entity-Relationship Diagram
+
+![entity relational diagram](documentation/assets/erd-swarms.jpg)
