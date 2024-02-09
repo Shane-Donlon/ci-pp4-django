@@ -151,6 +151,30 @@ main {
   cursor: not-allowed;
 }
 
+nav a {
+  position: relative;
+}
+
+nav a::before {
+  --height: 5px;
+  content: "";
+  position: absolute;
+  bottom: calc(var(--height) * -1);
+  left: -2px;
+  right: -2px;
+  transform: scaleX(0);
+  background-color: var(--bk-yellow);
+  height: var(--height);
+  border-radius: 10px;
+  transform-origin: left center;
+  transition: 500ms ease;
+}
+
+nav a:hover::before {
+  transform: scaleX(1);
+  transition: 500ms ease;
+}
+
 @media (max-width: 600px) {
   .nav-wrapper {
     width: 100%;
@@ -186,5 +210,25 @@ main {
     --height: 50px;
     height: var(--height);
     width: var(--height);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  nav a::before {
+    --height: 5px;
+    content: "";
+    position: absolute;
+    bottom: calc(var(--height) * -1);
+    left: -2px;
+    right: -2px;
+    transform: scaleX(0);
+    background-color: var(--bk-yellow);
+    height: var(--height);
+    border-radius: 10px;
+    transform-origin: left center;
+  }
+
+  nav a:hover::before {
+    transform: scaleX(1);
   }
 }
