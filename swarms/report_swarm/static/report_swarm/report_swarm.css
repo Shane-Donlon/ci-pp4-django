@@ -229,7 +229,7 @@ fieldset > .first-child-div {
 }
 
 .confirmation span {
-  color: rgba(255, 0, 0, 0.479);
+  color: red;
   font-weight: 700;
 }
 
@@ -365,7 +365,7 @@ fieldset > .first-child-div {
 }
 
 .check-box-wrapper > label {
-  color: red;
+  color: rgba(255, 0, 0, 0.329);
   font-weight: 600;
   font-size: 1.125rem;
 }
