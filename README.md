@@ -170,8 +170,9 @@ If the user has a preference set for reduced motion, the animations are slowed d
 
 ### wireframes desktop
 
-![desktop design sections](documentation/wireframes/swarms-desktop.pdf)
-![mobile design sections](documentation/wireframes/swarms-mobile.pdf)
+[desktop design sections](documentation/wireframes/swarms-desktop.pdf)
+
+[mobile design sections](documentation/wireframes/swarms-mobile.pdf)
 
 ### Known issues
 
