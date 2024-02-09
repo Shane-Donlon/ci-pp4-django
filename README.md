@@ -181,5 +181,8 @@ While the site is fully responsive and tables are responsive using bootstrap CSS
 
 ### Credits
 
-Chris Coiler [link to blog article](https://css-tricks.com/how-to-animate-the-details-element-using-waapi/)
+Louis Hoebregts [link to blog article](https://css-tricks.com/how-to-animate-the-details-element-using-waapi/)
+
 Kevin Powell [link to codepen](https://codepen.io/kevinpowell/pen/xxyybmj)
+
+RedEyedCoderClub [link to youtube video ](https://www.youtube.com/watch?v=S2gkqC1fmbA&ab_channel=RedEyedCoderClub)
