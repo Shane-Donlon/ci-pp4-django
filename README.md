@@ -97,7 +97,7 @@ If the user has a preference set for reduced motion, the animations are slowed d
 
 - ### Languages:
 
-  - [Python 3.8.5](https://www.python.org/downloads/release/python-385/): the primary language used to develop the server-side of the website.
+  - [Python 3.11](https://www.python.org/downloads/release/python-3110/): the primary language used to develop the server-side of the website.
   - [JS](https://www.javascript.com/): the primary language used to develop interactive components of the website.
   - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): the markup language used to create the website.
   - [CSS](https://developer.mozilla.org/en-US/docs/Web/css): the styling language used to style the website.
@@ -178,3 +178,8 @@ If the user has a preference set for reduced motion, the animations are slowed d
 
 Tables - especially with tables the design of this site was desktop orientated.
 While the site is fully responsive and tables are responsive using bootstrap CSS the best experience for tables is via a desktop / tablet
+
+### Credits
+
+Chris Coiler [link to blog article](https://css-tricks.com/how-to-animate-the-details-element-using-waapi/)
+Kevin Powell [link to codepen](https://codepen.io/kevinpowell/pen/xxyybmj)
