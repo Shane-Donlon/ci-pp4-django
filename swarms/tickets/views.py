@@ -177,7 +177,7 @@ class TicketView(View):
                            "superUser": superUser, "currentUser": currentUser}
                 return render(request, "tickets/singularTicket.html", context)
         else:
-            raise HttpResponseNotFound()
+            return HttpResponseNotFound()
 
     def post(self, request, ticketID):
         ticket = get_object_or_404(ReportSwarmCase, pk=ticketID)
@@ -216,4 +216,4 @@ class TicketView(View):
             return HttpResponse(message, content_type='text/plain')
 
         else:
-            HttpResponseForbidden()
+            return HttpResponseForbidden()
