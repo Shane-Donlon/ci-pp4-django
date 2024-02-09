@@ -6,6 +6,7 @@ from django.views import View
 
 from .forms import ProfileForm
 from .models import Profile
+from report_swarm.views import counties
 
 
 @method_decorator(login_required, name='dispatch')
@@ -15,7 +16,8 @@ class ProfileFormView(View):
         profile = get_object_or_404(Profile, user=request.user)
         form = ProfileForm(instance=request.user.profile)
         context = {"profile": profile,
-                   "form": form}
+                   "form": form,
+                   "counties": counties}
         return render(request,
                       "sign_in_sign_out/sign_in_sign_out.html", context)
 

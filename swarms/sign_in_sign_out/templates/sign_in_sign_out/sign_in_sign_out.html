@@ -1,11 +1,51 @@
 {% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block cssfiles %}
+    <link rel="stylesheet"
+          href="{% static 'sign_in_sign_out/sign_in_sign_out.css' %}">
+{% endblock cssfiles %}
 {% block content %}
-    {{ profile.user }}
-    {{ profile.first_name }}
-    {{ profile.last_name }}
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">Submit</button>
-    </form>
+    <div class="content-wrapper">
+        <h1>Welcome to your profile page</h1>
+        <h2>Please ensure you keep this up to date</h2>
+        <div class="grid">
+            <p>Username:</p>
+            <p>{{ profile.user }}</p>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {% render_field form.first_name.label_tag %}
+                {% render_field form.first_name autocomplete="given-name" placeholder="John" %}
+                <p class="display-none"></p>
+            </div>
+            <div class="form-group">
+                {% render_field form.last_name.label_tag %}
+                {% render_field form.last_name autocomplete="family-name" placeholder="Doe" %}
+                <p class="display-none"></p>
+            </div>
+            <div class="form-group">
+                {% render_field form.phone.label_tag %}
+                {% render_field form.phone autocomplete="tel" pattern="[353]{3}[0-9]{9}" placeholder="353881234567" %}
+                <p class="display-none"></p>
+            </div>
+            <div class="form-group">
+                {% render_field form.county.label_tag %}
+                {% render_field form.county list="countyNames" placeholder="Roscommon" %}
+                <p class="display-none countiesErrors"></p>
+            </div>
+            <div class="btn-wrapper">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        {% if counties %}
+            <datalist id="countyNames">
+                {% for county in counties %}<option value="{{ county }}"></option>{% endfor %}
+            </datalist>
+        {% endif %}
+    </div>
 {% endblock content %}
+{% block jsfiles %}
+    <script src="{% static 'sign_in_sign_out/sign_in_sign_out.js' %}"></script>
+{% endblock jsfiles %}
